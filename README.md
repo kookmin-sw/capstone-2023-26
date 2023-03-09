@@ -51,13 +51,13 @@
 | <img src="https://avatars.githubusercontent.com/u/66055587" width="180" height="160"> | <img src="https://avatars.githubusercontent.com/u/66055587" width="180" height="160"> |<img src="https://avatars.githubusercontent.com/u/66055587" width="180" height="160">  |
 |:--------:|:--------:|:--------:|
 |[권소예](https://github.com/soyekwon)|[서정현](https://github.com/junghyeon0427)|[이재원](https://github.com/ljwljy51) |
-| 프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정 |프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정 |프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정 |
+| ..........프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정.......... |..........프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정.......... |..........프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정.......... |
 
 ## Autonomous Driving
 | <img src="https://avatars.githubusercontent.com/u/66055587" width="180" height="160"> | <img src="https://avatars.githubusercontent.com/u/66055587" width="180" height="160"> |<img src="https://avatars.githubusercontent.com/u/66055587" width="180" height="160">  |
 |:--------:|:--------:|:--------:|
 | [강윤석](https://github.com/YunSeok-Kang) | [조현아](https://github.com/hacho08) | [박민준](https://github.com/mjun4138) |
-| 프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정 |프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정 |프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정 |
+| ..........프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정.......... |..........프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정.......... |..........프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정.......... |
 </div>
 
 </br>
