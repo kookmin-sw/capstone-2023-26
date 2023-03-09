@@ -69,7 +69,6 @@
 </br>
 
 ## 💁🏻 팀원 소개
-</br>
 <div align=center padding="200">
 
 ## Object Detection
