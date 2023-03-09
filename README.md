@@ -49,16 +49,21 @@
 
  <code>압사 사고를 방지하기 위한 인구 밀집도 추정</code>
  </br>
+
  단위 면적당 headcount를 감지하여 ~~~
  </br>
  </br>
+
  <code>실종 아동 찾기</code>
  </br>
+
  face recognition을 활용하여 ~~
  </br>
  </br>
+
  <code>폭력, 성범죄 예방 </code>
  </br>
+
  pose estimation을 활용하여 ~~
 
 </br>
@@ -72,6 +77,8 @@
 |:--------:|:--------:|:--------:|
 |[권소예](https://github.com/soyekwon)|[서정현](https://github.com/junghyeon0427)|[이재원](https://github.com/ljwljy51) |
 | ..........프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정.......... |..........프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정.......... |..........프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정.......... |
+
+</br>
 
 ## Autonomous Driving
 | <img src="https://avatars.githubusercontent.com/u/66055587" width="180" height="160"> | <img src="https://avatars.githubusercontent.com/u/66055587" width="180" height="160"> |<img src="https://avatars.githubusercontent.com/u/66055587" width="180" height="160">  |
