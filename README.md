@@ -41,7 +41,7 @@
 
 <code>인공지능에 기반한 드론을 활용하여 다양한 문제를 해결</code>
 </br></br>
- 각종 사고, 범죄를 예방하기 위해 사람이 24시간동안 모니터링 하는 것은 현실적으로 불가능합니다. </br> 사람 대신 cctv를 두어 감시한다해도 불가피하게 존재하는 cctv사각지대, 야외 환경에서는 각종 사고나 범죄를 예방하기 어렵습니다. </br> 따라서 인공지능에 기반한 드론을 활용하여 각종 사고나 범죄를 예방하려합니다. 
+ 각종 사고, 범죄를 예방하기 위해 사람이 24시간동안 모니터링 하는 것은 현실적으로 불가능합니다. </br> 사람 대신 cctv를 두어 감시한다해도 불가피하게 존재하는 cctv사각지대, 야외 환경에서는 각종 사고나 범죄를 예방하기 어렵습니다. 따라서 인공지능에 기반한 드론을 활용하여 각종 사고나 범죄를 예방하려합니다. 
 
 </br>
 
@@ -50,7 +50,7 @@
  <code>압사 사고를 방지하기 위한 인구 밀집도 추정</code>
  </br>
 
- 단위 면적당 headcount를 감지하여 ~~~
+ 단위 면적당 headcount를 세어 ~~~
  </br>
  </br>
 
@@ -72,7 +72,7 @@
 <div align=center padding="200">
 
 ## Object Detection
-| <img src="https://avatars.githubusercontent.com/u/66055587" width="180" height="160"> | <img src="https://avatars.githubusercontent.com/u/66055587" width="180" height="160"> |<img src="https://avatars.githubusercontent.com/u/66055587" width="180" height="160">  |
+| <img src="https://avatars.githubusercontent.com/u/71240296?v=4" width="180" height="160"> | <img src="https://avatars.githubusercontent.com/u/66055587" width="180" height="160"> |<img src="https://avatars.githubusercontent.com/u/102154146?v=4" width="180" height="160">  |
 |:--------:|:--------:|:--------:|
 |[권소예](https://github.com/soyekwon)|[서정현](https://github.com/junghyeon0427)|[이재원](https://github.com/ljwljy51) |
 | ..........프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정.......... |..........프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정.......... |..........프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정.......... |
@@ -80,7 +80,7 @@
 </br>
 
 ## Autonomous Driving
-| <img src="https://avatars.githubusercontent.com/u/66055587" width="180" height="160"> | <img src="https://avatars.githubusercontent.com/u/66055587" width="180" height="160"> |<img src="https://avatars.githubusercontent.com/u/66055587" width="180" height="160">  |
+| <img src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="160"> | <img src="https://avatars.githubusercontent.com/u/48677366?v=4" width="180" height="160"> |<img src="https://avatars.githubusercontent.com/u/66055587" width="180" height="160">  |
 |:--------:|:--------:|:--------:|
 | [강윤석](https://github.com/YunSeok-Kang) | [조현아](https://github.com/hacho08) | [박민준](https://github.com/mjun4138) |
 | ..........프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정.......... |..........프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정.......... |..........프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정.......... |
