@@ -1,77 +1,89 @@
-[![Open in Visual Studio Code](https://classroom.github.com/assets/open-in-vscode-c66648af7eb3fe8bc4f294546bfd86ef473780cde1dea487d3c4ff354943c9ae.svg)](https://classroom.github.com/online_ide?assignment_repo_id=10031186&assignment_repo_type=AssignmentRepo)
-# Welcome to GitHub
+# DITTO: Drone Is Tracking Twenty-four-seven Ours
 
-캡스톤 팀 생성을 축하합니다.
+<img width="1774" alt="스크린샷 2022-09-14 오후 7 21 17" src="img/drone.png">
 
-## 팀소개 및 페이지를 꾸며주세요.
+</br>
 
-- 프로젝트 소개
-  - 프로젝트 설치방법 및 데모, 사용방법, 프리뷰등을 readme.md에 작성.
-  - Api나 사용방법등 내용이 많을경우 wiki에 꾸미고 링크 추가.
+<div align=center padding="200">
+<img src="https://img.shields.io/badge/pytorch-FF4154?style=for-the-badge&logo=pytorch&logoColor=white">
+  <img src="https://img.shields.io/badge/YOLO-F7DF1E?style=for-the-badge&logo=yolo&logoColor=black">
+  <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+    <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+     <img src="https://img.shields.io/badge/Django-00C7B7?style=for-the-badge&logo=Django&logoColor=white">
+     <img src="https://img.shields.io/badge/Javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+     <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black">
+    <img src="https://img.shields.io/badge/styled components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white"/>
+    <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
 
-- 팀페이지 꾸미기
-  - 프로젝트 소개 및 팀원 소개
-  - index.md 예시보고 수정.
+</div>
 
-- GitHub Pages 리파지토리 Settings > Options > GitHub Pages 
-  - Source를 marster branch
-  - Theme Chooser에서 태마선택
-  - 수정후 팀페이지 확인하여 점검.
+</br>
 
-**팀페이지 주소** -> https://kookmin-sw.github.io/ '{{자신의 리파지토리 아이디}}'
+## 목차
 
-**예시)** 2023년 0조  https://kookmin-sw.github.io/capstone-2023-00/
+1. [🤖 프로젝트 소개](#-프로젝트-소개)
 
+2. [💁🏻 팀원 소개](#-팀원-소개)
 
-## 내용에 아래와 같은 내용들을 추가하세요.
+3. [🎨 프로젝트 구조](#-프로젝트-구조)
 
-### 1. 프로잭트 소개
+4. [🔨 작업 방식](#-작업-방식)
 
-프로젝트
+5. [💻 주요 기능](#-주요-기능)
 
-### 2. 소개 영상
+6. [🎥 데모 영상](#-데모-영상)
 
-프로젝트 소개하는 영상을 추가하세요
+7. [✨ 기대 효과](#-기대-효과)
 
-### 3. 팀 소개
+</br>
 
-팀을 소개하세요.
+## 🤖 프로젝트 소개
 
-팀원정보 및 담당이나 사진 및 SNS를 이용하여 소개하세요.
+<code>인공지능에 기반한 드론을 활용하여 다양한 문제를 해결</code>
 
-### 4. 사용법
+</br>
 
-소스코드제출시 설치법이나 사용법을 작성하세요.
+## 💁🏻 팀원 소개
+</br>
+<div align=center padding="200">
 
-### 5. 기타
+## Object Detection
+| <img src="https://avatars.githubusercontent.com/u/66055587" width="180" height="160"> | <img src="https://avatars.githubusercontent.com/u/66055587" width="180" height="160"> |<img src="https://avatars.githubusercontent.com/u/66055587" width="180" height="160">  |
+|:--------:|:--------:|:--------:|
+|[권소예](https://github.com/soyekwon)|[서정현](https://github.com/junghyeon0427)|[이재원](https://github.com/ljwljy51) |
+| 프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정 |프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정 |프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정 |
 
-추가적인 내용은 자유롭게 작성하세요.
+## Autonomous Driving
+| <img src="https://avatars.githubusercontent.com/u/66055587" width="180" height="160"> | <img src="https://avatars.githubusercontent.com/u/66055587" width="180" height="160"> |<img src="https://avatars.githubusercontent.com/u/66055587" width="180" height="160">  |
+|:--------:|:--------:|:--------:|
+| [강윤석](https://github.com/YunSeok-Kang) | [조현아](https://github.com/hacho08) | [박민준](https://github.com/mjun4138) |
+| 프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정 |프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정 |프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정 |
+</div>
 
+</br>
+</br>
 
-## Markdown을 사용하여 내용꾸미기
+## 🎨 프로젝트 구조 
 
-Markdown은 작문을 스타일링하기위한 가볍고 사용하기 쉬운 구문입니다. 여기에는 다음을위한 규칙이 포함됩니다.
+</br>
 
-```markdown
-Syntax highlighted code block
+## 🔨 작업 방식
 
-# Header 1
-## Header 2
-### Header 3
+github의 issue와 pull request기능을 적극 활용해 프로젝트 작업 진행 
 
-- Bulleted
-- List
+</br>
 
-1. Numbered
-2. List
+<img src="img/github_project.jpg">
+(이미지 나중에 바꿀 예정)
 
-**Bold** and _Italic_ and `Code` text
+</br>
 
-[Link](url) and ![Image](src)
-```
+## 💻 주요 기능
 
-자세한 내용은 [GitHub Flavored Markdown](https://guides.github.com/features/mastering-markdown/).
+</br>
 
-### Support or Contact
+## 🎥 데모 영상
 
-readme 파일 생성에 추가적인 도움이 필요하면 [도움말](https://help.github.com/articles/about-readmes/) 이나 [contact support](https://github.com/contact) 을 이용하세요.
+</br>
+
+## ✨ 기대 효과
