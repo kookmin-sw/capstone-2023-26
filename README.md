@@ -90,6 +90,7 @@
 </br>
 
 ## 🎨 프로젝트 구조 
+![시스템 구성](https://user-images.githubusercontent.com/16894765/224232236-19a1d09d-2df2-4218-801f-59e5647a8385.jpeg)
 
 </br>
 
