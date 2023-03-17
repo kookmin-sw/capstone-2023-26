@@ -1,13 +1,10 @@
-import './App.css';
-import Location from './location';
+import Map from './map';
 
 function App() {
   return (
-    <div>
-      hi
-      <Location/>
-      
-    </div>
+    <>
+      <Map/>
+    </>
   );
 }
 
