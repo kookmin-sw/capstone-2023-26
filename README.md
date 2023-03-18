@@ -70,12 +70,16 @@
 
 ## Object Detection
 
+<br/>
+
 | <img src="https://avatars.githubusercontent.com/u/71240296?v=4" width="180" height="160"> | <img src="https://avatars.githubusercontent.com/u/66055587" width="180" height="160"> |<img src="https://avatars.githubusercontent.com/u/102154146?v=4" width="180" height="160">  |
 |:--------:|:--------:|:--------:|
 |[권소예](https://github.com/soyekwon)|[서정현](https://github.com/junghyeon0427)|[이재원](https://github.com/ljwljy51) |
 | ..........프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정.......... |..........프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정.......... |..........프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정.......... |
 
 ## Autonomous Driving
+
+<br/>
 
 | <img src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="160"> | <img src="https://avatars.githubusercontent.com/u/48677366?v=4" width="180" height="160"> |<img src="https://avatars.githubusercontent.com/u/66055587" width="180" height="160">  |
 |:--------:|:--------:|:--------:|
