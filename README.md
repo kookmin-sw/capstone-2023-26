@@ -1,23 +1,20 @@
 # DITTO: Drone Is Tracking Twenty-four-seven Ours
 
-<img width="1774" alt="스크린샷 2022-09-14 오후 7 21 17" src="img/drone.png">
+<img alt="main_img" src="img/drone.png">
 
-</br>
-
-<div align=center padding="200">
-<img src="https://img.shields.io/badge/pytorch-FF4154?style=for-the-badge&logo=pytorch&logoColor=white">
+<div align=center >
+  <img src="https://img.shields.io/badge/pytorch-FF4154?style=for-the-badge&logo=pytorch&logoColor=white">
   <img src="https://img.shields.io/badge/YOLO-F7DF1E?style=for-the-badge&logo=yolo&logoColor=black">
   <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
-    <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
-     <img src="https://img.shields.io/badge/Django-00C7B7?style=for-the-badge&logo=Django&logoColor=white">
-     <img src="https://img.shields.io/badge/Javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
-     <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black">
-    <img src="https://img.shields.io/badge/styled components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white"/>
-    <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
-
+  <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
+  <img src="https://img.shields.io/badge/Django-00C7B7?style=for-the-badge&logo=Django&logoColor=white">
+  <img src="https://img.shields.io/badge/Javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
+  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black">
+  <img src="https://img.shields.io/badge/styled components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white"/>
+  <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
 </div>
 
-</br>
+<br/><br/>
 
 ## 목차
 
@@ -35,14 +32,13 @@
 
 7. [✨ 기대 효과](#-기대-효과)
 
-</br>
+<br/><br/>
 
 ## 🤖 프로젝트 소개
 
 <code>드론을 활용한 야외 인구 밀집도 및 위험 감지 서비스</code>
 </br></br>
 대규모 야외 행사에서 드론을 활용하여 측정한 인구 밀집도를 지도에 표시함으로써 사고를 예방합니다. 넓은 시야를 가진 드론을 통해 쓰러짐, 폭행 등의 위험 상황을 빠르게 감지하고 사용자들에게 알립니다. 사용자는 붐비고 위험한 구역을 피해 안전하게 야외 행사를 즐길 수 있습니다. </br>시민들의 안전하고 즐거운 야외활동에 DITTO가 함께합니다 :) 
-
 
 <br/><br/>
 
@@ -71,7 +67,6 @@
 
  <code>인구 밀집도 지도 </code>
  </br>
-
  계산된 인구 밀집도를 사용자가 편안하게 볼 수 있도록 지도에 분류된 색상으로 표시합니다. 사용자는 이를 통해 혼잡한 곳은 피하며 사고를 예방하고 안전하게 야외활동을 즐길 수 있습니다.  
 
  <br/><br/>
@@ -80,41 +75,41 @@
 <div align=center padding="200">
 
 ## Object Detection
+
+<br/>
+
 | <img src="https://avatars.githubusercontent.com/u/71240296?v=4" width="180" height="160"> | <img src="https://avatars.githubusercontent.com/u/66055587" width="180" height="160"> |<img src="https://avatars.githubusercontent.com/u/102154146?v=4" width="180" height="160">  |
 |:--------:|:--------:|:--------:|
 |[권소예](https://github.com/soyekwon)|[서정현](https://github.com/junghyeon0427)|[이재원](https://github.com/ljwljy51) |
 | ..........프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정.......... |..........프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정.......... |..........프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정.......... |
 
-</br>
-
 ## Autonomous Driving
+
+<br/>
+
 | <img src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="160"> | <img src="https://avatars.githubusercontent.com/u/48677366?v=4" width="180" height="160"> |<img src="https://avatars.githubusercontent.com/u/66055587" width="180" height="160">  |
 |:--------:|:--------:|:--------:|
 | [강윤석](https://github.com/YunSeok-Kang) | [조현아](https://github.com/hacho08) | [박민준](https://github.com/mjun4138) |
 | ..........프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정.......... |..........프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정.......... |..........프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정.......... |
 </div>
 
-</br>
-</br>
+<br/><br/>
 
 ## 🎨 프로젝트 구조 
 ![시스템 구성](https://user-images.githubusercontent.com/16894765/224232236-19a1d09d-2df2-4218-801f-59e5647a8385.jpeg)
 
-</br>
+<br/><br/>
 
 ## 🔨 작업 방식
 
 github의 issue와 pull request기능을 적극 활용해 프로젝트 작업 진행 
-
-</br>
-
 <img src="img/github_project.jpg">
 (이미지 나중에 바꿀 예정)
 
-</br>
+<br/><br/>
 
 ## 🎥 데모 영상
 
-</br>
+<br/><br/>
 
 ## ✨ 기대 효과
