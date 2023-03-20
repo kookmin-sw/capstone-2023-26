@@ -22,13 +22,13 @@
 
 2. [💻 주요 기능](#-주요-기능)
 
-3. [💁🏻 팀원 소개](#-팀원-소개)
+3. [🎥 데모 영상](#-데모-영상)
 
-4. [🎨 프로젝트 구조](#-프로젝트-구조)
+4. [💁🏻 팀원 소개](#-팀원-소개)
 
-5. [🔨 작업 방식](#-작업-방식)
+5. [🎨 프로젝트 구조](#-프로젝트-구조)
 
-6. [🎥 데모 영상](#-데모-영상)
+6. [🔨 작업 방식](#-작업-방식)
 
 7. [✨ 기대 효과](#-기대-효과)
 
@@ -57,45 +57,48 @@
 
 <br/><br/>
 
+## 🎥 데모 영상
+
+<br/><br/>
+
 ## 💁🏻 팀원 소개
-<div align=center>
-
-## Object Detection 
 
 <br/>
 
-| <img src="https://avatars.githubusercontent.com/u/71240296?v=4" width="180" height="160"> | <img src="https://avatars.githubusercontent.com/u/66055587" width="180" height="160"> |<img src="https://avatars.githubusercontent.com/u/102154146?v=4" width="180" height="160">  |
-|:--------:|:--------:|:--------:|
-|[권소예](https://github.com/soyekwon)|[서정현](https://github.com/junghyeon0427)|[이재원](https://github.com/ljwljy51) |
-| ..........프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정.......... |..........프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정.......... |..........프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정.......... |
-
-
-## Autonomous Driving
+|                                                       [강윤석](https://github.com/YunSeok-Kang)                                                      |                                                      [권소예](https://github.com/soyekwon)                                                     |                                                       [박민준](https://github.com/mjun4138)                                                    |
+| :--------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------: |
+| <img src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="160"> | <img src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="160">| <img src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="160"> |
+|                                                🧑🏻‍💻 학번: xxxx3082                                                 |                                                👩🏻‍💻 학번: xxxx1552                                                 |                                                👩🏻‍💻 학번: xxxx1611                                                 |
+|                                      📌 Role:                                      |                                       📌 Role:                                         |                                       📌 Role:                                         |
+|                                             📧 Email: ysck73@kookmin.ac.kr                                           |                                             📧 Email: soye0710@kookmin.ac.kr                                          |                                             📧 Email: pmj4138@kookmin.ac.kr                                          |
 
 <br/>
 
-| <img src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="160"> | <img src="https://avatars.githubusercontent.com/u/48677366?v=4" width="180" height="160"> |<img src="https://avatars.githubusercontent.com/u/66055587" width="180" height="160">  |
-|:--------:|:--------:|:--------:|
-| [강윤석](https://github.com/YunSeok-Kang) | [조현아](https://github.com/hacho08) | [박민준](https://github.com/mjun4138) |
-| ..........프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정.......... |..........프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정.......... |..........프로젝트 완료 후 본인이 담당한 개발 내용 적을 예정.......... |
-</div>
+|                                                       [서정현](https://github.com/junghyeon0427)                                                      |                                                      [이재원](https://github.com/ljwljy51)                                                    |                                                       [조현아](https://github.com/hacho08)                                                 |
+| :--------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------: |
+| <img src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="160"> | <img src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="160">| <img src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="160"> |
+|                                                🧑🏻‍💻 학번: xxxx1383                                                 |                                                👩🏻‍💻 학번: xxxx0498                                                 |                                                👩🏻‍💻 학번: xxxx2912                                                 |
+|                                      📌 Role:                                      |                                       📌 Role:                                         |                                       📌 Role:                                         |
+|                                             📧 Email: jh04270312@kookmin.ac.kr                                          |                                             📧 Email: ljwljy51@kookmin.ac.kr                                          |                                             📧 Email:  chcho0819@kookmin.ac.kr                                          |
+
 
 <br/><br/>
 
 ## 🎨 프로젝트 구조 
+
+<br/>
+
 ![시스템 구성](https://user-images.githubusercontent.com/16894765/224232236-19a1d09d-2df2-4218-801f-59e5647a8385.jpeg)
 
 <br/><br/>
 
 ## 🔨 작업 방식
 
+<br/>
+
 github의 issue와 pull request기능을 적극 활용해 프로젝트 작업 진행 
 <img src="img/github_project.jpg">
 (이미지 나중에 바꿀 예정)
-
-<br/><br/>
-
-## 🎥 데모 영상
 
 <br/><br/>
 
