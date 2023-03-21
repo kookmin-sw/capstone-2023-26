@@ -37,7 +37,9 @@
 ## 🤖 프로젝트 소개
 
 <code>드론을 활용한 야외 인구 밀집도 및 위험 감지 서비스</code>
+
 <br/>
+
 대규모 야외 행사에서 드론을 활용하여 측정한 인구 밀집도를 지도에 표시함으로써 사고를 예방합니다. 넓은 시야를 가진 드론을 통해 쓰러짐, 폭행 등의 위험 상황을 빠르게 감지하고 사용자들에게 알립니다. 사용자는 붐비고 위험한 구역을 피해 안전하게 야외 행사를 즐길 수 있습니다. 시민들의 안전하고 즐거운 야외활동에 DITTO가 함께합니다 :) 
 
 <br/><br/>
@@ -67,6 +69,7 @@
 
  <code>인구 밀집도 지도 </code>
  <br/>
+
  계산된 인구 밀집도를 사용자가 편안하게 볼 수 있도록 지도에 분류된 색상으로 표시합니다. 사용자는 이를 통해 혼잡한 곳은 피하며 사고를 예방하고 안전하게 야외활동을 즐길 수 있습니다.  
 
 <br/><br/>
@@ -81,7 +84,7 @@
 
 |                                                       [강윤석](https://github.com/YunSeok-Kang)                                                      |                                                      [권소예](https://github.com/soyekwon)                                                     |                                                       [박민준](https://github.com/mjun4138)                                                    |
 | :--------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------: |
-| <img src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="160"> | <img src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="160">| <img src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="160"> |
+| <img src="https://avatars.githubusercontent.com/u/35187793?v=4" width="200" height="180"> | <img src="https://avatars.githubusercontent.com/u/35187793?v=4" width="200" height="180">| <img src="https://avatars.githubusercontent.com/u/35187793?v=4" width="200" height="180"> |
 |                                                🧑🏻‍💻 학번: xxxx3082                                                 |                                                👩🏻‍💻 학번: xxxx1552                                                 |                                                👩🏻‍💻 학번: xxxx1611                                                 |
 |                                      📌 Role:                                      |                                       📌 Role:                                         |                                       📌 Role:                                         |
 |                                             📧 Email: ysck73@kookmin.ac.kr                                           |                                             📧 Email: soye0710@kookmin.ac.kr                                          |                                             📧 Email: pmj4138@kookmin.ac.kr                                          |
@@ -90,7 +93,7 @@
 
 |                                                       [서정현](https://github.com/junghyeon0427)                                                      |                                                      [이재원](https://github.com/ljwljy51)                                                    |                                                       [조현아](https://github.com/hacho08)                                                 |
 | :--------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------: |
-| <img src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="160"> | <img src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="160">| <img src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="160"> |
+| <img src="https://avatars.githubusercontent.com/u/35187793?v=4"  width="200" height="180"> | <img src="https://avatars.githubusercontent.com/u/35187793?v=4"  width="200" height="180">| <img src="https://avatars.githubusercontent.com/u/35187793?v=4"  width="200" height="180"> |
 |                                                🧑🏻‍💻 학번: xxxx1383                                                 |                                                👩🏻‍💻 학번: xxxx0498                                                 |                                                👩🏻‍💻 학번: xxxx2912                                                 |
 |                                      📌 Role:                                      |                                       📌 Role:                                         |                                       📌 Role:                                         |
 |                                             📧 Email: jh04270312@kookmin.ac.kr                                          |                                             📧 Email: ljwljy51@kookmin.ac.kr                                          |                                             📧 Email:  chcho0819@kookmin.ac.kr                                          |
