@@ -1,12 +1,12 @@
 /*global kakao*/ 
 import React, { useEffect } from 'react'
 
-const Map =()=> {
+const Map =(props)=> {
   useEffect(()=>{
     var container = document.getElementById('map');
     var options = {
-      center: new kakao.maps.LatLng(33.450701, 126.570667),
-      level: 3
+      center: new kakao.maps.LatLng(props.x , props.y),
+      level: 2
     };
     var map = new kakao.maps.Map(container, options);
 
@@ -34,7 +34,7 @@ const Map =()=> {
     });
     polygon.setMap(map);
   
-  }, [])
+  },)
 
     return (
         <>
