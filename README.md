@@ -109,9 +109,6 @@
 <br/><br/>
 
 ## 🔨 작업 방식
-
-<br/>
-
 github의 issue와 pull request기능을 적극 활용해 프로젝트 작업 진행 
 <img src="img/project.jpg">
 (이미지 나중에 바꿀 예정)
