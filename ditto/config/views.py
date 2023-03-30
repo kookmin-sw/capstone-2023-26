@@ -1,6 +1,7 @@
 from django.shortcuts import render
+from django.http import StreamingHttpResponse
+
 # Create your views here.
-# CRUD Create, Update
 
 def home(request):
     name = 'home'
