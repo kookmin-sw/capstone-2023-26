@@ -26,7 +26,7 @@ const areaList = ["서울특별시", "인천광역시", "대구광역시", "대�
 const Area = (props) =>{
 	const navigate = useNavigate();
 	const onClickBtn = (x) => {
-		props.changeId(x);
+		props.changeAreaId(x);
 		navigate("/place");
 	};
 
