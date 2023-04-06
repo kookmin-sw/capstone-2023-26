@@ -8,7 +8,7 @@ import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 import Button from '@mui/material/Button';
 
 const Icon = styled(AddLocationAltIcon)`
-	color: #74EABC  !important;
+  color: #74EABC  !important;
   margin: 0 0.3rem 0 0;
 `;
 
