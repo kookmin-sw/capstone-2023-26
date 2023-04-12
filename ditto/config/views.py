@@ -8,4 +8,4 @@ def home(request):
 
 def test(request):
     name = 'test'
-    return render(request, '../templates/test.html')
+    return render(request, '../templates/administer.html')
