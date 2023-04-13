@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% block title %}Administer{% endblock %}
+
+{% block content %}
+<div style="width:100%;">
+	<div style="width: 30%; margin: 2rem auto; font-size: 1.4rem; text-align: center">
+		<h4>국민대학교-대동제</h4>
+		
+		실시간 모니터링
+	</div>
+	<div style="display: flex; flex-direction: row; gap:7%;">
+		<div style="width: 46%; height: 33vh; background:#eeee; text-align: center">
+			인구 밀집도 실시간 영상
+		</div>
+		<div style="width: 46%; height: 33vh; background:#eeee; text-align: center">
+			Crowd Counting 실시간 영상
+		</div>
+	</div>
+	<div style="display: flex; flex-direction: row; gap:7%; margin-top:2rem">
+		<div id="map" style="width: 46%; height: 33vh;"></div>
+		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e00ee7b35d9447fc1b074a96fd8ee6d0"></script>
+		<script>
+		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+			mapOption = { 
+				center: new kakao.maps.LatLng(37.61090035882, 126.997259182), // 지도의 중심좌표
+				level: 3 // 지도의 확대 레벨
+			};
+
+		// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+		var map = new kakao.maps.Map(mapContainer, mapOption); 
+		</script>
+		<div style="width: 46%; height: 33vh; padding:1rem;">
+			<div style="display: flex; flex-direction: row; gap: 8px">
+				<img src="/static/imgs/alert.png" width="35" height="35">
+				<h4 style="margin-top:6px;">위험 알림</h4>	
+			</div>
+		<div>
+			<div style="display: flex; flex-direction: row; padding:8px">
+				<h5 style="margin: 5px">13:04:51 쓰러짐 발생</h5>
+				<button type="button" class="btn btn-light btn-sm" style="background-color: #C9F7E4; height: 2.2rem; cursor:pointer;">영상 확인</button>
+			</div>
+			<div style="display: flex; flex-direction: row; padding:8px">
+				<h5 style="margin: 5px;">11:40:56 쓰러짐 발생</h5>
+				<button type="button" class="btn btn-light btn-sm" style="background-color: #C9F7E4; height: 2.2rem; cursor:pointer;">영상 확인</button>
+			</div>
+			
+		</div>
+	</div>
+</div>
+{% endblock %}
