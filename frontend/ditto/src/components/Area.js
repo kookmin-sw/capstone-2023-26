@@ -8,7 +8,7 @@ import AddLocationAltIcon from '@mui/icons-material/AddLocationAlt';
 import Button from '@mui/material/Button';
 
 const Icon = styled(AddLocationAltIcon)`
-	color: #74EABC  !important;
+  color: #74EABC  !important;
   margin: 0 0.3rem 0 0;
 `;
 
@@ -26,7 +26,7 @@ const areaList = ["서울특별시", "인천광역시", "대구광역시", "대�
 const Area = (props) =>{
 	const navigate = useNavigate();
 	const onClickBtn = (x) => {
-		props.changeId(x);
+		props.changeAreaId(x);
 		navigate("/place");
 	};
 

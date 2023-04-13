@@ -16,9 +16,8 @@ const Icon = styled(RoomIcon)`
 
 const Place = (props) =>{
 	const navigate = useNavigate();
-	const onClickBtn = (x, y) => {
-		props.changeX(x);
-		props.changeY(y);
+	const onClickBtn = (id) => {
+		props.changePlcId(id);
 		navigate("/map");
 	};
 
@@ -26,7 +25,7 @@ const Place = (props) =>{
 		const newArr = [];
 		for (let i = 0; i < places.length; i += 1) {
 		  newArr.push(
-			<ListItem onClick={()=> onClickBtn(places[i][2], places[i][3])}>
+			<ListItem onClick={()=> onClickBtn(i)}>
 			<ListItemText primary={places[i][0]} secondary={places[i][1]} />
 			<ListItemAvatar>
 			  <Avatar sx={{background:"#f4f4f4"}}>
@@ -43,7 +42,7 @@ const Place = (props) =>{
     <FlexBox center column>
 		<Navbar/>
 		<List sx={{ width: '100%', maxWidth: 250, bgcolor: 'background.paper', marginTop:2 }}>
-			{Btns(dummyPlaces[props.id]["place"])}
+			{Btns(dummyPlaces[props.areaId]["place"])}
 		</List>	
     </FlexBox>
   );
