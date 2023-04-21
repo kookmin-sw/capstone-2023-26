@@ -1,0 +1,33 @@
+.Logo { 
+	width: 165px;
+	height: 38px;
+	cursor:pointer;
+	margin: 0 0 10px 0;
+}
+
+.PlaceContainer { 
+	margin: 16px auto;
+	width: 218px; 
+	position:relative;
+}
+
+.Label1 { 
+	margin: 5px; 
+	text-align: left;
+	color: #3D3D3D 
+}
+
+.Label2 { 
+	margin: 5px; 
+	color: #888888; 
+	text-align: left;
+}
+
+.Icon{
+	width: 50px;
+	height: 50px;
+	cursor:pointer; 
+	position:absolute; 
+	right:0; 
+	top:1px;
+}
