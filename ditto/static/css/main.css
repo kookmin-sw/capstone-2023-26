@@ -6,7 +6,7 @@
 }
 
 .PlaceContainer { 
-	margin: 16px auto;
+	margin: 20px auto;
 	width: 218px; 
 	position:relative;
 }
@@ -29,5 +29,4 @@
 	cursor:pointer; 
 	position:absolute; 
 	right:0; 
-	top:1px;
 }
