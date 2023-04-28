@@ -71,6 +71,7 @@ def main(args, debug=False):
     out = cv2.VideoWriter('output002.avi', fourcc, fps, (int(w//128*128),int(h//128*128)))
     
     while True:
+      start=time.time()
       hasFrame, img_frame=cap.read() #프레임 읽어옴
       if not hasFrame: #더이상 받아올 프레임 없는 경우
         break
@@ -106,6 +107,7 @@ def main(args, debug=False):
       for p in points:
           img_to_draw = cv2.circle(img_to_draw, (int(p[0]), int(p[1])), size, (0, 0, 255), -1)
       img_to_draw=cv2.cvtColor(np.array(img_to_draw), cv2.COLOR_BGR2RGB)
+      print("processing time: ", time.time()-start)
       out.write(img_to_draw)
     cap.release()
     out.release()
