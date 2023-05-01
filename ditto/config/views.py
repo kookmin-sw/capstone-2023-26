@@ -10,6 +10,10 @@ def main(request):
     name = 'main'
     return render(request, '../templates/main.html')
 
+def map(request):
+    name = 'map'
+    return render(request, '../templates/map.html')
+
 def test(request):
     name = 'test'
     return render(request, '../templates/administer.html')

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>인구 밀집도 지도</title>
+    
+</head>
+<body>
+<div id="map" style="width:100%;height:100vh;"></div>    
+
+<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e00ee7b35d9447fc1b074a96fd8ee6d0"></script>
+<script>
+var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+    mapOption = { 
+        center: new kakao.maps.LatLng(37.61063235882, 126.997259182), // 지도의 중심좌표
+        level: 2 // 지도의 확대 레벨
+    };  
+
+var map = new kakao.maps.Map(mapContainer, mapOption); // 지도를 생성합니다
+
+{% comment %} for (let i = 0; i < tmp.length; i += 1) {
+	var circle = new kakao.maps.Circle({
+	  center : new kakao.maps.LatLng(tmp[i][0], tmp[i][1]),  // 원의 중심좌표 입니다 
+	  radius: 16, // 미터 단위의 원의 반지름입니다 
+	  strokeOpacity: 0, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+	  fillColor: '#ff001691', // 채우기 색깔입니다
+	  fillOpacity: 0.8  // 채우기 불투명도 입니다   
+	}); 
+	circle.setMap(map);
+  } {% endcomment %}
+
+// 지도에 표시할 원을 생성합니다
+var circle = new kakao.maps.Circle({
+    center : new kakao.maps.LatLng(37.6109026256, 126.9961832276),  // 원의 중심좌표 입니다 
+    radius: 22, // 미터 단위의 원의 반지름입니다 
+    strokeColor: '#75B8FA', // 선의 색깔입니다
+    strokeOpacity: 0, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+    fillColor: '#ff001691', // 채우기 색깔입니다
+    fillOpacity: 0.7  // 채우기 불투명도 입니다   
+}); 
+
+// 지도에 원을 표시합니다 
+circle.setMap(map); 
+
+
+</script>
+</body>
+</html>
