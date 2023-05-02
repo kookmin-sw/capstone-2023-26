@@ -19,10 +19,11 @@
 	<div style="display: flex; flex-direction: row; gap:7%; margin-top:2rem">
 		<div id="map" style="width: 46%; height: 33vh;"></div>
 		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e00ee7b35d9447fc1b074a96fd8ee6d0"></script>
-		<script>
+		<script type="module">
+		import { dummyMaps } from "/static/data/test.js"
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 			mapOption = { 
-				center: new kakao.maps.LatLng(37.61090035882, 126.997259182), // 지도의 중심좌표
+				center: new kakao.maps.LatLng(dummyMaps[0][0]['location'][0], dummyMaps[0][0]['location'][1]), // 지도의 중심좌표
 				level: 3 // 지도의 확대 레벨
 			};
 
