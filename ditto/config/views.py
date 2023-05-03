@@ -21,3 +21,7 @@ def test(request):
 def administer(request):
     name = 'admin'
     return render(request, '../templates/admin/main.html')
+
+def detail(request):
+    name = 'detail'
+    return render(request, '../templates/admin/detail.html')
