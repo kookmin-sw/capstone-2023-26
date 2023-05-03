@@ -8,7 +8,7 @@ def home(request):
 
 def main(request):
     name = 'main'
-    return render(request, '../templates/main.html')
+    return render(request, '../templates/user/main.html')
 
 def map(request):
     name = 'map'
@@ -16,4 +16,8 @@ def map(request):
 
 def test(request):
     name = 'test'
-    return render(request, '../templates/administer.html')
+    return render(request, '../templates/admin/administer.html')
+
+def administer(request):
+    name = 'admin'
+    return render(request, '../templates/admin/main.html')
