@@ -5,15 +5,17 @@
 <div style="width: 100%; height:100vh; background:#18181F;">
 <div style="width:1300px; background:#242531; margin-top:2rem;">
 	<div style="display: flex; flex-direction: row; gap:38%;">
-		<div style="color:white; padding:0.4rem; margin:0 auto; font-size:1.25rem">
-			국민대학교
+		<div style="color:white; padding:0.4rem; margin:0 auto; font-size:1.2rem">
+			11:40:56 쓰러짐 발생
+			<img src="/static/imgs/alert.png" width="28" height="28">
 		</div>
+		
 		
 	</div>
 	<div style="width: 100%; height: 3px; background:#18181F;"></div>
 
 	<div style="display: flex; flex-direction: row; gap:0.25%;">
-		<div style="width: 78%; height: 42.5vh; background:#898989; text-align: center; margin:0.5rem auto;">
+		<div style="width: 80%; height: 45vh; background:#898989; text-align: center; margin:0.5rem auto;">
 			실시간 영상
 		</div>
 	</div>
@@ -21,22 +23,16 @@
 	<div style="width: 100%; height: 3px; background:#18181F;"></div>
 	
 	<div style="display: flex; flex-direction: row; gap:56%;">
-		<div style="color:white; padding:0.4rem;">
-			Map
+		<div style="color:white; padding:0.4rem; font-size:1.2rem; margin:0 auto;">
+			사고 발생 위치
 			<img src="/static/imgs/map.png" width="24" height="22">
 		</div>
-		<div style="color:white; padding:0.4rem;">
-			
-			Alert
-			<img src="/static/imgs/alert.png" width="25" height="25">
-		</div>
-		
 	</div>
 
 	<div style="width: 100%; height: 3px; background:#18181F;"></div>
 	
 	<div style="display: flex; flex-direction: row; gap:1%; ">
-		<div id="map" style="width: 60%; height: 44vh; margin-top:0.5rem;"></div>
+		<div id="map" style="width: 80%; height: 44vh; margin:0.5rem auto;"></div>
 		<script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e00ee7b35d9447fc1b074a96fd8ee6d0"></script>
 		<script>
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
@@ -48,24 +44,6 @@
 		// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
 		var map = new kakao.maps.Map(mapContainer, mapOption); 
 		</script>
-
-		<div style="width: 3px; height: 45vh; background:#18181F; "></div>
-
-		<div style="width: 38%; height: 33vh; padding:0.5rem;">
-
-			<div style="display: flex; flex-direction: row; padding:4px;">
-				<div style="margin: 8px; color:white;">09:48:56 쓰러짐 발생</div>
-				<button type="button" class="btn btn-light btn-sm" style="background-color: #8FECC0; color: 18181F; height: 2rem; cursor:pointer; border: none; margin-top: 4px;">영상 확인</button>
-			</div>
-			<div style="display: flex; flex-direction: row; padding:4px">
-				<div style="margin: 8px; color:white;">11:40:56 쓰러짐 발생</div>
-				<button type="button" class="btn btn-light btn-sm" style="background-color: #8FECC0; color: 18181F; height: 2rem; cursor:pointer; border: none; margin-top: 4px;">영상 확인</button>
-			</div>
-			<div style="display: flex; flex-direction: row; padding:4px;">
-				<div style="margin: 8px; color:white;">12:30:56 쓰러짐 발생</div>
-				<button type="button" class="btn btn-light btn-sm" style="background-color: #8FECC0; color: 18181F; height: 2rem; cursor:pointer; border: none; margin-top: 4px;">영상 확인</button>
-			</div>
-		</div>
 
 
 	</div>
