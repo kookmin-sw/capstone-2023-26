@@ -16,6 +16,7 @@
         <div style="max-width: 1300px; height: 5vh; margin: 20px auto; position: relative;">
             <img src="/static/imgs/logo.png" width="165" height="38" style="margin-left:15px; cursor:pointer;">
             {% if user.is_authenticated %}
+            welcome {{user.username}}
             <button type="button" class="btn btn-light"  style="position: absolute; top: 5px; right: 100px; background-color: #C9F7E4; cursor:pointer;"><a href="{% url 'logout' %}" style="color: #363636; text-decoration-line: none;">Log out</a></button>
             {% else %}
             <button type="button" class="btn btn-light"  style="position: absolute; top: 5px; right: 100px; background-color: #C9F7E4; cursor:pointer;"><a href="{% url 'login' %}" style="color: #363636; text-decoration-line: none;" >Log in</a></button>

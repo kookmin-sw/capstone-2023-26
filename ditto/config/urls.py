@@ -16,17 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from locations.views import LocationViewSet
-from .views import home, test, main
+from events.views import EventViewSet
+from .views import home, test
 
 router = routers.DefaultRouter()
-router.register('location', LocationViewSet)
+router.register('event', EventViewSet)
 
 urlpatterns = [
+    path('', home),
+    path('api/', include(router.urls)),
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
-    path('', home),
     path('test/', test, name='test'),
-    path('main/', main),
-    path('api/', include(router.urls)),
+    path('event/', include('events.urls'))
 ]
