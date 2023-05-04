@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<link href="../static/css/main.css" rel="stylesheet">
+		<link href="/static/css/main.css" rel="stylesheet">
         <title>Ditto {% block title %}{% endblock %}</title>
         <style>
         </style>
@@ -19,7 +19,7 @@
 						<h4 class="Label1">{{event.event_name}}</h4>
 						<h5 class="Label2">{{event.location}}</h5>
 					</div> 
-					<a href="{% url 'test' %}" style="color: #363636; text-decoration-line: none;"><img src="/static/imgs/icon.png" class="Icon"></a>
+					<a href="{% url 'control' event.id %}" style="color: #363636; text-decoration-line: none;"><img src="/static/imgs/icon.png" class="Icon"></a>
 				</div>
 			</div>
 			{% endfor %}
