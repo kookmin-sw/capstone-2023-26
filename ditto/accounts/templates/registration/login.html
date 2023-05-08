@@ -2,16 +2,20 @@
 {% block title %}- Login{% endblock %}
 
 {% block content %}
-    <div class="row">
-        <div class="col-md-2"></div>
-        <div class="col-md-8 panel panel-default">
-            <div class="alert alert-info">Please enter your login information.</div>
+    <div style="width: 34%; height: 46vh; border-radius: 26px; background:#242531; margin: 10% auto; padding:50px 60px;">
             <form action="" method="post">
-                {{form.as_p}}
                 {% csrf_token %}
-                <input class="btn btn-primary" type="submit" value="Login">
+                <div class="form-group" style="margin-bottom: 20px;">
+                  <label for="exampleInputEmail1" style="color:white;">User Name</label>
+                  <input class="form-control" placeholder="Enter username" style="width: 330px; height:40px;">
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your username with anyone else.</small>
+                </div>
+                <div class="form-group" style="margin-bottom: 30px;">
+                    <label for="exampleInputPassword1" style="color:white;">Password</label>
+                    <input type="password" class="form-control" placeholder="Password" style="width: 330px; height:40px;" >
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your password with anyone else.</small>
+                  </div>
+                  <input class="btn btn-primary" type="submit" value="Login" style="width: 330px; height:40px; background-color: #8FECC0; border:none; color: #191A21;">
             </form>
-        </div>
-        <div class="col-md-2"></div>
     </div>
 {% endblock %}
