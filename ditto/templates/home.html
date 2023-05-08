@@ -9,7 +9,7 @@
 if(Hls.isSupported()) {
     var video = document.getElementById('video');
     var hls = new Hls();
-    hls.loadSource('https://889962c23ee6.ap-northeast-2.playback.live-video.net/api/video/v1/ap-northeast-2.196202674046.channel.ppLGhcD0q6ZR.m3u8'); // 동영상경로
+    hls.loadSource('https://540f41fc71d9.ap-northeast-2.playback.live-video.net/api/video/v1/ap-northeast-2.392988993234.channel.eknAgsglpDNs.m3u8'); // 동영상경로
     hls.attachMedia(video);
     hls.on(Hls.Events.MANIFEST_PARSED,function() {
         video.play();
@@ -19,7 +19,7 @@ if(Hls.isSupported()) {
 // When the browser has built-in HLS support (check using `canPlayType`), we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video element throught the `src` property.
 // This is using the built-in support of the plain video element, without using hls.js.
     else if (video.canPlayType('application/vnd.apple.mpegurl')) {
-    video.src = 'https://889962c23ee6.ap-northeast-2.playback.live-video.net/api/video/v1/ap-northeast-2.196202674046.channel.ppLGhcD0q6ZR.m3u8'; // 동영상경로
+    video.src = 'https://540f41fc71d9.ap-northeast-2.playback.live-video.net/api/video/v1/ap-northeast-2.392988993234.channel.eknAgsglpDNs.m3u8'; // 동영상경로
     video.addEventListener('canplay',function() {
         video.play();
     });
