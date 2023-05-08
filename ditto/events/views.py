@@ -28,3 +28,6 @@ def control(request, event_id):
     coordinate = Event.objects.get(id=event_id).coordinate
     return render(request, '../templates/control.html', {'coordinate': coordinate})
 
+def control_detail(request):
+    name = 'control_detail'
+    return render(request, '../templates/control_detail.html')
