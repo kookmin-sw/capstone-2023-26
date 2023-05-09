@@ -4,3 +4,7 @@ from django.shortcuts import render
 def home(request):
     name = 'home'
     return render(request, '../templates/home.html')
+
+def map(request):
+    name = 'map'
+    return render(request, '../templates/map.html')
