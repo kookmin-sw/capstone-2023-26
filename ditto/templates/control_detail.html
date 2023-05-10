@@ -1,54 +1,59 @@
-{% extends 'base.html' %}
-{% block title %}Administer{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Ditto {% block title %}{% endblock %}</title>
+        <style>
+        </style>
+    </head>
 
-{% block content %}
-<div style="width: 100%; height:100vh; background:#18181F;">
-<div style="width:1300px; background:#242531; margin-top:2rem;">
-   <div style="display: flex; flex-direction: row; gap:38%;">
-      <div style="color:white; padding:0.4rem; margin:0 auto; font-size:1.2rem">
-         11:40:56 쓰러짐 발생
-         <img src="/static/imgs/alert.png" width="28" height="28">
+    <body style="background:#18181F;">
+      <div style="width:1300px; background:#242531; margin:2rem auto;">
+         <div style="display: flex; flex-direction: row; margin-left:42%;">
+            <div style="color:white; padding:0.25rem; font-size:1.2rem">
+               11:40:56 쓰러짐 발생
+            </div>
+               <img src="/static/imgs/alert.png" width="28" height="28">
+         </div>
+         <div style="width: 100%; height: 3px; background:#18181F;"></div>
+
+         <div style="display: flex; flex-direction: row; gap:0.25%;">
+            <div style="width: 80%; height: 45vh; background:#898989; text-align: center; margin:0.5rem auto;">
+               실시간 영상
+            </div>
+         </div>
+
+         <div style="width: 100%; height: 3px; background:#18181F;"></div>
+         
+         <div style="display: flex; flex-direction: row; margin-left:42%;">
+            <div style="color:white; padding:0.25rem; font-size:1.2rem">
+               사고 발생 위치
+            </div>
+               <img src="/static/imgs/map.png" width="27" height="27">
+         </div>
+
+
+         <div style="width: 100%; height: 3px; background:#18181F;"></div>
+         
+         <div style="display: flex; flex-direction: row; gap:1%; ">
+            <div id="map" style="width: 80%; height: 44vh; margin:0.5rem auto;"></div>
+            <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e00ee7b35d9447fc1b074a96fd8ee6d0"></script>
+            <script>
+            var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+               mapOption = { 
+                  center: new kakao.maps.LatLng(37.61090035882, 126.997259182), // 지도의 중심좌표
+                  level: 3 // 지도의 확대 레벨
+               };
+
+            // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+            var map = new kakao.maps.Map(mapContainer, mapOption); 
+            map.setZoomable(false);
+            map.setDraggable(false);   
+            </script>
+
+
+         </div>
       </div>
-      
-      
-   </div>
-   <div style="width: 100%; height: 3px; background:#18181F;"></div>
-
-   <div style="display: flex; flex-direction: row; gap:0.25%;">
-      <div style="width: 80%; height: 45vh; background:#898989; text-align: center; margin:0.5rem auto;">
-         실시간 영상
-      </div>
-   </div>
-
-   <div style="width: 100%; height: 3px; background:#18181F;"></div>
-   
-   <div style="display: flex; flex-direction: row; gap:56%;">
-      <div style="color:white; padding:0.4rem; font-size:1.2rem; margin:0 auto;">
-         사고 발생 위치
-         <img src="/static/imgs/map.png" width="24" height="22">
-      </div>
-   </div>
-
-   <div style="width: 100%; height: 3px; background:#18181F;"></div>
-   
-   <div style="display: flex; flex-direction: row; gap:1%; ">
-      <div id="map" style="width: 80%; height: 44vh; margin:0.5rem auto;"></div>
-      <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e00ee7b35d9447fc1b074a96fd8ee6d0"></script>
-      <script>
-      var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-         mapOption = { 
-            center: new kakao.maps.LatLng(37.61090035882, 126.997259182), // 지도의 중심좌표
-            level: 3 // 지도의 확대 레벨
-         };
-
-      // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
-      var map = new kakao.maps.Map(mapContainer, mapOption); 
-      map.setZoomable(false);
-		map.setDraggable(false);   
-      </script>
-
-
-   </div>
-</div>
-</div>
-{% endblock %}
+</body>
+</html> 

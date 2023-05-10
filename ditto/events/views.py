@@ -14,7 +14,7 @@ def admin_events(request):
     name = 'admin'
     events = Event.objects.filter(user_id=request.user.id) # 진행 여부와 상관없이 자신이 관리하는 모든 행사
     
-    return render(request, "../templates/location_list.html", {"events": events})
+    return render(request, "../templates/location_admin.html", {"events": events})
 
 def user_events(request):
     name = 'user'
@@ -24,7 +24,6 @@ def user_events(request):
 
 def control(request, event_id):
     name = 'control'
-    
     coordinate = Event.objects.get(id=event_id).coordinate
     return render(request, '../templates/control.html', {'coordinate': coordinate})
 
