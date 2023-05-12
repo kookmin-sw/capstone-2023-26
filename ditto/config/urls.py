@@ -17,7 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from events.views import EventViewSet
-from .views import home, map
+from .views import home, map, area
 
 router = routers.DefaultRouter()
 router.register('event', EventViewSet)
@@ -29,4 +29,5 @@ urlpatterns = [
     path('accounts/', include('accounts.urls')),
     path('event/', include('events.urls')),
     path('map/', map),
+    path('area/', area),
 ]

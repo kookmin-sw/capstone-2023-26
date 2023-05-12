@@ -20,7 +20,7 @@ def user_events(request):
     name = 'user'
     events = Event.objects.filter(is_being_held=1) # 진행중인 모든 행사
     
-    return render(request, "../templates/location_list.html", {"events": events})
+    return render(request, "../templates/location_user.html", {"events": events})
 
 def control(request, event_id):
     name = 'control'
