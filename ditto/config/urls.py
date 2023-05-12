@@ -16,19 +16,18 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from events.views import EventViewSet
-from .views import home, map, area
+from events.views import EventViewSet, CityViewSet
+from .views import home, map
 from events import views
 
 router = routers.DefaultRouter()
 router.register('event', EventViewSet)
+router.register('city', CityViewSet)
 
 urlpatterns = [
-    path('', area),
     path('api/', include(router.urls)),
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
-    path('event/', include('events.urls')),
+    path('', include('events.urls')),
     path('map/', map),
-    path('area/', area),
 ]
