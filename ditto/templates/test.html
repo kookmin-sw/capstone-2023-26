@@ -29,11 +29,10 @@
         <div class="container-fluid">
           
           <div class="main">
-
             <div class="row sparkboxes mt-3">
               
-              
-              <div style="width: 20rem; margin-left: 73.5%; ">
+             
+              <div style="width: 20rem; margin-left: 73.5%;">
                 <div class="box box3">
                   <div class="details">
                     
@@ -43,30 +42,21 @@
                   </div>
                   <div id="spark3"></div>
                 </div>
-              </div>
-
-              {% comment %} <div style="width: 20rem; margin:0.75rem;">
-                <div class="box box4">
-                  <div class="details">
-                    <h3>22</h3>
-                    <h4>TEMPERATURE</h4>
-                  </div>
-                  <div id="spark4"></div>
-                </div>
-              </div> {% endcomment %}
-
+              </div>             
+              
             </div>
 
-            <div class="row mt-4">
-              <div class="col-md-5">
-                <div style="margin:0; background:#2B2D3E; padding:0.5rem; border-radius: 1.2rem; box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.5);">
+            <div class="row mt-3">
+              <div class="col-md-4">
+                <div style="background:#2B2D3E; border-radius: 1.2rem; box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.5);">
                   <div id="radialBarBottom"></div>
                 </div>
               </div>
-              <div class="col-md-7">
-                <div style="margin:0; background:#2B2D3E; padding:0.5rem; border-radius: 1.2rem; box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.5);">
+              <div class="col-md-8">
+                <div style="background:#2B2D3E; padding:1.2rem 0 0.5rem 1.2rem; border-radius: 1.2rem; box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.5);">
+                  <div style="display: flex;">
                   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-                  <div style="text-align:center;"><video autoplay muted id="video" style="height: 39vh;"></video></div>
+                  <div><video autoplay muted id="video" style="height: 38vh; background:white;"></video></div>
                   <script>
                      if(Hls.isSupported()) {
                         var video = document.getElementById('video');
@@ -87,6 +77,15 @@
                         });
                      }
                   </script>
+                  <div style="width: 13.5rem; margin-left: 1%;">
+                    <a href="#">
+                      <div style="margin: 8px; color:white; font-weight: 600; font-size: 0.8rem;">09:48 쓰러짐 발생</div>
+                    </a>
+                      <div style="margin: 8px; color:white; font-weight: 600;  font-size: 0.8rem;">11:40 쓰러짐 발생</div>
+                      <div style="margin: 8px; color:white; font-weight: 600;  font-size: 0.8rem;">12:30 쓰러짐 발생</div>
+                  </div>
+                </div>
+                  
                 </div>
               </div>
             </div>
@@ -118,15 +117,6 @@
                   var circle = new kakao.maps.Circle({
                       center : new kakao.maps.LatLng(37.61092005882, 126.997259182),  // 원의 중심좌표 입니다 
                       radius: 8, // 미터 단위의 원의 반지름입니다 
-                      strokeOpacity: 0, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-                      fillColor: '#ff001691', // 채우기 색깔입니다
-                      fillOpacity: 0.7  // 채우기 불투명도 입니다   
-                    }); 
-                  circle.setMap(map);
-            
-                  var circle = new kakao.maps.Circle({
-                      center : new kakao.maps.LatLng(37.61092005882, 126.996009182),  // 원의 중심좌표 입니다 
-                      radius: 3, // 미터 단위의 원의 반지름입니다 
                       strokeOpacity: 0, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
                       fillColor: '#ff001691', // 채우기 색깔입니다
                       fillOpacity: 0.7  // 채우기 불투명도 입니다   
