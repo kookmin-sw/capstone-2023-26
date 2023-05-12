@@ -8,4 +8,5 @@ urlpatterns = [
     path('user/map/<int:map_id>', map, name="map"),
     path('control/<int:event_id>/', control, name="control"),
     path('control/detail/', control_detail, name="control_detail"),
+    
 ]

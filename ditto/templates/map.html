@@ -9,78 +9,47 @@
     </head>
 
     <body>
-	<div style="text-align: center;">
-		<a href="{% url 'user' %}">
-	    	<img src="/static/imgs/logo.png" width="165" height="38" style="cursor:pointer;">
-		</a>
-	</div>
-      <div id="map" style="width: 100%; height: 95vh; margin:5px auto;"></div>
+	    <img src="/static/imgs/logo.png" width="165" height="38" style="cursor:pointer;">
+      <div id="map" style="width: 100%; height: 95vh; margin:1rem auto;"></div>
       <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e00ee7b35d9447fc1b074a96fd8ee6d0"></script>
-      <script>
-		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
-			mapOption = { 
-				center: new kakao.maps.LatLng({{coordinate.0}}, {{coordinate.1}}), // 지도의 중심좌표
-				level: 3 // 지도의 확대 레벨
-			};
+         <script>
+         var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+            mapOption = { 
+               center: new kakao.maps.LatLng({{coordinate.0}}, {{coordinate.1}}), // 지도의 중심좌표
+               level: 3 // 지도의 확대 레벨
+            };
 
-		// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
-		var map = new kakao.maps.Map(mapContainer, mapOption);
+         // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+         var map = new kakao.maps.Map(mapContainer, mapOption); 
 
-		var circle = new kakao.maps.Circle({
-			center : new kakao.maps.LatLng(37.61090035882, 126.997259182),  // 원의 중심좌표 입니다 
-			radius: 3, // 미터 단위의 원의 반지름입니다 
-			strokeOpacity: 0, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-			fillColor: '#ff001691', // 채우기 색깔입니다
-			fillOpacity: 0.7  // 채우기 불투명도 입니다   
-		  }); 
-		circle.setMap(map);
-
-		var circle = new kakao.maps.Circle({
-			center : new kakao.maps.LatLng(37.61092005882, 126.997259182),  // 원의 중심좌표 입니다 
-			radius: 3, // 미터 단위의 원의 반지름입니다 
-			strokeOpacity: 0, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-			fillColor: '#ff001691', // 채우기 색깔입니다
-			fillOpacity: 0.7  // 채우기 불투명도 입니다   
-		  }); 
-		circle.setMap(map);
-
-		var circle = new kakao.maps.Circle({
-			center : new kakao.maps.LatLng(37.61092005882, 126.997209182),  // 원의 중심좌표 입니다 
-			radius: 3, // 미터 단위의 원의 반지름입니다 
-			strokeOpacity: 0, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-			fillColor: '#ff001691', // 채우기 색깔입니다
-			fillOpacity: 0.7  // 채우기 불투명도 입니다   
-		  }); 
-		circle.setMap(map);
-
-		var circle = new kakao.maps.Circle({
-			center : new kakao.maps.LatLng(37.61092005882, 126.997299182),  // 원의 중심좌표 입니다 
-			radius: 3, // 미터 단위의 원의 반지름입니다 
-			strokeOpacity: 0, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-			fillColor: '#ff001691', // 채우기 색깔입니다
-			fillOpacity: 0.7  // 채우기 불투명도 입니다   
-		  }); 
-		circle.setMap(map);
-
-		var circle = new kakao.maps.Circle({
-			center : new kakao.maps.LatLng(37.61092005882, 126.997179182),  // 원의 중심좌표 입니다 
-			radius: 3, // 미터 단위의 원의 반지름입니다 
-			strokeOpacity: 0, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-			fillColor: '#ff001691', // 채우기 색깔입니다
-			fillOpacity: 0.7  // 채우기 불투명도 입니다   
-		  }); 
-		circle.setMap(map);
-
-		var circle = new kakao.maps.Circle({
-			center : new kakao.maps.LatLng(37.61092005882, 126.997140182),  // 원의 중심좌표 입니다 
-			radius: 3, // 미터 단위의 원의 반지름입니다 
-			strokeOpacity: 0, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-			fillColor: '#ff001691', // 채우기 색깔입니다
-			fillOpacity: 0.7  // 채우기 불투명도 입니다   
-		  }); 
-		circle.setMap(map);
-		
-		map.setDraggable(false);  
-      </script>
+         var circle = new kakao.maps.Circle({
+            center : new kakao.maps.LatLng(37.61090035882, 126.997259182),  // 원의 중심좌표 입니다 
+            radius: 3, // 미터 단위의 원의 반지름입니다 
+            strokeOpacity: 0, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+            fillColor: '#ff001691', // 채우기 색깔입니다
+            fillOpacity: 0.7  // 채우기 불투명도 입니다   
+           }); 
+         circle.setMap(map);
+   
+         var circle = new kakao.maps.Circle({
+            center : new kakao.maps.LatLng(37.61092005882, 126.997259182),  // 원의 중심좌표 입니다 
+            radius: 3, // 미터 단위의 원의 반지름입니다 
+            strokeOpacity: 0, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+            fillColor: '#ff001691', // 채우기 색깔입니다
+            fillOpacity: 0.7  // 채우기 불투명도 입니다   
+           }); 
+         circle.setMap(map);
+   
+         var circle = new kakao.maps.Circle({
+            center : new kakao.maps.LatLng(37.61092005882, 126.997209182),  // 원의 중심좌표 입니다 
+            radius: 3, // 미터 단위의 원의 반지름입니다 
+            strokeOpacity: 0, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+            fillColor: '#ff001691', // 채우기 색깔입니다
+            fillOpacity: 0.7  // 채우기 불투명도 입니다   
+           }); 
+         circle.setMap(map);
+         map.setZoomable(false);
+         map.setDraggable(false);   
+         </script>
 </body>
 </html>

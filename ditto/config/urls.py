@@ -31,4 +31,5 @@ urlpatterns = [
     path('event/', include('events.urls')),
     path('map/', map),
     path('area/', area),
+    path('home', home),
 ]
