@@ -1,14 +1,26 @@
-{% extends 'base.html' %}
-{% block title %}Administer{% endblock %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <title>Ditto {% block title %}{% endblock %}</title>
+        <style>
+        </style>
+    </head>
 
-{% block content %}
-      <div id="map" style="width: 100%; height: 100vh; margin:2rem auto;"></div>
+    <body>
+	<div style="text-align: center;">
+		<a href="{% url 'user' %}">
+	    	<img src="/static/imgs/logo.png" width="165" height="38" style="cursor:pointer;">
+		</a>
+	</div>
+      <div id="map" style="width: 100%; height: 95vh; margin:5px auto;"></div>
       <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e00ee7b35d9447fc1b074a96fd8ee6d0"></script>
       <script>
 		var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
 			mapOption = { 
-				center: new kakao.maps.LatLng(37.61090035882, 126.997259182), // 지도의 중심좌표
-				level: 2 // 지도의 확대 레벨
+				center: new kakao.maps.LatLng({{coordinate.0}}, {{coordinate.1}}), // 지도의 중심좌표
+				level: 3 // 지도의 확대 레벨
 			};
 
 		// 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
@@ -68,8 +80,7 @@
 		  }); 
 		circle.setMap(map);
 		
-		{% comment %} map.setZoomable(false);
-		map.setDraggable(false);     {% endcomment %}
+		map.setDraggable(false);  
       </script>
-
-{% endblock %}
+</body>
+</html>

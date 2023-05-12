@@ -22,6 +22,11 @@ def user_events(request):
     
     return render(request, "../templates/location_user.html", {"events": events})
 
+def map(request, map_id):
+    name = 'map'
+    coordinate = Event.objects.get(id=map_id).coordinate
+    return render(request, "../templates/map.html", {'coordinate': coordinate})
+
 def control(request, event_id):
     name = 'control'
     coordinate = Event.objects.get(id=event_id).coordinate

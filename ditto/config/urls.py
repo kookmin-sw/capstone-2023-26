@@ -18,12 +18,13 @@ from django.urls import path, include
 from rest_framework import routers
 from events.views import EventViewSet
 from .views import home, map, area
+from events import views
 
 router = routers.DefaultRouter()
 router.register('event', EventViewSet)
 
 urlpatterns = [
-    path('', home),
+    path('', area),
     path('api/', include(router.urls)),
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
