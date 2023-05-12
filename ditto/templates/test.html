@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Dashboard - Dark Style</title>
+    <title>Administer</title>
 
     <link
       rel="stylesheet"
@@ -19,84 +19,127 @@
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <link rel="stylesheet" href="assets/styles.css" />
+    <link rel="stylesheet" href="../../static/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
   </head>
 
   <body>
     <div id="wrapper">
       <div class="content-area">
         <div class="container-fluid">
-          <div class="text-right mt-3 mb-3 d-fixed">
-            <a
-              href="https://github.com/apexcharts/apexcharts.js/tree/master/samples/vanilla-js/dashboards/dark"
-              target="_blank"
-              class="btn btn-outline-warning mr-2"
-            >
-              <span class="btn-text">View Code</span>
-            </a>
-          </div>
+          
           <div class="main">
-            <div class="row sparkboxes mt-4">
-              <div class="col-md-3">
-                <div class="box box1">
-                  <div class="details">
-                    <h3>1213</h3>
-                    <h4>CLICKS</h4>
-                  </div>
-                  <div id="spark1"></div>
-                </div>
-              </div>
-              <div class="col-md-3">
-                <div class="box box2">
-                  <div class="details">
-                    <h3>422</h3>
-                    <h4>VIEWS</h4>
-                  </div>
-                  <div id="spark2"></div>
-                </div>
-              </div>
-              <div class="col-md-3">
+
+            <div class="row sparkboxes mt-3">
+              
+              
+              <div style="width: 20rem; margin-left: 73.5%; ">
                 <div class="box box3">
                   <div class="details">
-                    <h3>311</h3>
-                    <h4>LEADS</h4>
+                    
+                    <h3>68%</h3>
+                    <h4>DRONE BATTERY</h4>
+                    
                   </div>
                   <div id="spark3"></div>
                 </div>
               </div>
-              <div class="col-md-3">
+
+              {% comment %} <div style="width: 20rem; margin:0.75rem;">
                 <div class="box box4">
                   <div class="details">
                     <h3>22</h3>
-                    <h4>SALES</h4>
+                    <h4>TEMPERATURE</h4>
                   </div>
                   <div id="spark4"></div>
                 </div>
-              </div>
+              </div> {% endcomment %}
+
             </div>
 
             <div class="row mt-4">
               <div class="col-md-5">
-                <div class="box shadow mt-4">
+                <div style="margin:0; background:#2B2D3E; padding:0.5rem; border-radius: 1.2rem; box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.5);">
                   <div id="radialBarBottom"></div>
                 </div>
               </div>
               <div class="col-md-7">
-                <div class="box shadow mt-4">
-                  <div id="line-adwords" class=""></div>
+                <div style="margin:0; background:#2B2D3E; padding:0.5rem; border-radius: 1.2rem; box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.5);">
+                  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+                  <div style="text-align:center;"><video autoplay muted id="video" style="height: 39vh;"></video></div>
+                  <script>
+                     if(Hls.isSupported()) {
+                        var video = document.getElementById('video');
+                        var hls = new Hls();
+                        hls.loadSource("https://540f41fc71d9.ap-northeast-2.playback.live-video.net/api/video/v1/ap-northeast-2.392988993234.channel.eknAgsglpDNs.m3u8"); // 동영상경로
+                        hls.attachMedia(video);
+                        hls.on(Hls.Events.MANIFEST_PARSED,function() {
+                              video.play();
+                        });
+                     }
+                     // hls.js is not supported on platforms that do not have Media Source Extensions (MSE) enabled.
+                     // When the browser has built-in HLS support (check using `canPlayType`), we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video element throught the `src` property.
+                     // This is using the built-in support of the plain video element, without using hls.js.
+                     else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                        video.src = "https://540f41fc71d9.ap-northeast-2.playback.live-video.net/api/video/v1/ap-northeast-2.392988993234.channel.eknAgsglpDNs.m3u8"; // 동영상경로
+                        video.addEventListener('canplay',function() {
+                              video.play();
+                        });
+                     }
+                  </script>
                 </div>
               </div>
             </div>
 
             <div class="row mt-4">
               <div class="col-md-5">
-                <div class="box shadow mt-4">
-                  <div id="barchart"></div>
+                <div style="margin:0; background:#2B2D3E; padding:1rem; border-radius: 1.2rem; box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.5);">
+                  <div id="map" style="width: 100%; height: 34.5vh; margin:5px auto;"></div>
+                <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e00ee7b35d9447fc1b074a96fd8ee6d0"></script>
+                  <script>
+                  var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                      mapOption = { 
+                        center: new kakao.maps.LatLng(37.61092005882, 126.997209182), // 지도의 중심좌표
+                        level: 3 // 지도의 확대 레벨
+                      };
+
+                  // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+                  var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+                  var circle = new kakao.maps.Circle({
+                      center : new kakao.maps.LatLng(37.61090035882, 126.996259182),  // 원의 중심좌표 입니다 
+                      radius: 6, // 미터 단위의 원의 반지름입니다 
+                      strokeOpacity: 0, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+                      fillColor: '#ff001691', // 채우기 색깔입니다
+                      fillOpacity: 0.7  // 채우기 불투명도 입니다   
+                    }); 
+                  circle.setMap(map);
+            
+                  var circle = new kakao.maps.Circle({
+                      center : new kakao.maps.LatLng(37.61092005882, 126.997259182),  // 원의 중심좌표 입니다 
+                      radius: 8, // 미터 단위의 원의 반지름입니다 
+                      strokeOpacity: 0, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+                      fillColor: '#ff001691', // 채우기 색깔입니다
+                      fillOpacity: 0.7  // 채우기 불투명도 입니다   
+                    }); 
+                  circle.setMap(map);
+            
+                  var circle = new kakao.maps.Circle({
+                      center : new kakao.maps.LatLng(37.61092005882, 126.996009182),  // 원의 중심좌표 입니다 
+                      radius: 3, // 미터 단위의 원의 반지름입니다 
+                      strokeOpacity: 0, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+                      fillColor: '#ff001691', // 채우기 색깔입니다
+                      fillOpacity: 0.7  // 채우기 불투명도 입니다   
+                    }); 
+                  circle.setMap(map);
+                  map.setZoomable(false);
+                  map.setDraggable(false);   
+                  </script>
                 </div>
               </div>
               <div class="col-md-7">
-                <div class="box shadow mt-4">
-                  <div id="areachart"></div>
+                <div style="margin:0; background:#2B2D3E; padding: 0 1rem; border-radius: 1.2rem; box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.5);">
+                  <div id="line-adwords" class=""></div>
                 </div>
               </div>
             </div>
@@ -107,6 +150,6 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.slim.min.js"></script>
     <script src="../../../../dist/apexcharts.js"></script>
-    <script src="assets/scripts.js"></script>
+    <script src="../static/data/scripts.js"></script>
   </body>
 </html>
