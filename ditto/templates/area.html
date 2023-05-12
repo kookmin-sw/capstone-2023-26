@@ -12,18 +12,16 @@
     <body>
         <div style="text-align: center;">
             <img src="/static/imgs/logo.png" class="Logo">
-			<div style="margin: 10px auto; width: 188px; position:relative;">
+			{% for city in city_list %}
+			<div class="PlaceContainer">
 				<div style="display: flex;">
-						<h4 style="margin:0.8rem; text-align: left;">서울특별시</h4>
-					<img src="/static/imgs/icon.png" width="45" height="45" style="cursor:pointer; position:absolute; right:0;">
+					<div>
+						<h4 class="Label1">{{city.city_name}}</h4>
+					</div> 
+					<a href="{% url 'user' city.id %}" style="color: #363636; text-decoration-line: none;"><img src="/static/imgs/icon.png" class="Icon"></a>
 				</div>
 			</div>
-			<div style="margin: 10px auto; width: 188px; position:relative;">
-				<div style="display: flex;">
-						<h4 style="margin:0.8rem; text-align: left;">경기도</h4>
-					<img src="/static/imgs/icon.png" width="45" height="45" style="cursor:pointer; position:absolute; right:0;">
-				</div>
-			</div>
+			{% endfor %}
         </div> 
     </body>
 </html> 

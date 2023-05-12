@@ -8,8 +8,3 @@ def home(request):
 def map(request):
     name = 'map'
     return render(request, '../templates/map.html')
-
-
-def area(request):
-    name = 'area'
-    return render(request, '../templates/area.html')
