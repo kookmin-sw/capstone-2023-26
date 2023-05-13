@@ -44,7 +44,8 @@ class Drone:
     def evaluate_conditon_to_server(self):
         current_time = time.localtime()
         if current_time.tm_sec % self.msg_to_server_interval == 0:
-            print(f'execute! {time.strftime('%Y-%m-%d', current_time)}')
+            time_str = time.strftime('%Y-%m-%d', current_time)
+            print(f'execute! {time_str}')
             # target_idx = int(current_time.tm_sec / self.msg_to_server_interval)
             self.send_msg_to_server('test')
             # print(current_time.tm_sec / self.msg_to_server_interval)
