@@ -28,7 +28,8 @@ class Drone:
 
     def drone_update(self):
         while self.enabled:
-            print('drone-update')
+            # print('drone-update')
+            print(self.target_drone_info.get_attitude())
             # self.evaluate_conditon_to_server()
             # print(time.localtime().tm_sec)
 
