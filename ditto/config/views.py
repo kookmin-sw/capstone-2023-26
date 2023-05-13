@@ -3,7 +3,7 @@ from django.shortcuts import render
 
 def home(request):
     name = 'home'
-    return render(request, '../templates/home.html')
+    return render(request, '../templates/test.html')
 
 def map(request):
     name = 'map'

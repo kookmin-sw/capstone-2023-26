@@ -18,10 +18,29 @@
       </div>
       <div style="width: 100%; height: 3px; background:#18181F;"></div>
 
-      <div style="display: flex; flex-direction: row; gap:0.25%;">
-         <div style="width: 78%; height: 42.5vh; background:#898989; text-align: center; margin:0.5rem auto;">
-            실시간 영상
-         </div>
+      <div>
+         <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+         <div style="text-align:center;"><video autoplay muted id="video" style="height: 50vh;"></video></div>
+         <script>
+            if(Hls.isSupported()) {
+               var video = document.getElementById('video');
+               var hls = new Hls();
+               hls.loadSource("https://540f41fc71d9.ap-northeast-2.playback.live-video.net/api/video/v1/ap-northeast-2.392988993234.channel.eknAgsglpDNs.m3u8"); // 동영상경로
+               hls.attachMedia(video);
+               hls.on(Hls.Events.MANIFEST_PARSED,function() {
+                     video.play();
+               });
+            }
+            // hls.js is not supported on platforms that do not have Media Source Extensions (MSE) enabled.
+            // When the browser has built-in HLS support (check using `canPlayType`), we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video element throught the `src` property.
+            // This is using the built-in support of the plain video element, without using hls.js.
+            else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+               video.src = "https://540f41fc71d9.ap-northeast-2.playback.live-video.net/api/video/v1/ap-northeast-2.392988993234.channel.eknAgsglpDNs.m3u8"; // 동영상경로
+               video.addEventListener('canplay',function() {
+                     video.play();
+               });
+            }
+         </script>
       </div>
 
       <div style="width: 100%; height: 3px; background:#18181F;"></div>
@@ -57,6 +76,33 @@
 
          // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
          var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+         var circle = new kakao.maps.Circle({
+            center : new kakao.maps.LatLng(37.61090035882, 126.997259182),  // 원의 중심좌표 입니다 
+            radius: 3, // 미터 단위의 원의 반지름입니다 
+            strokeOpacity: 0, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+            fillColor: '#ff001691', // 채우기 색깔입니다
+            fillOpacity: 0.7  // 채우기 불투명도 입니다   
+           }); 
+         circle.setMap(map);
+   
+         var circle = new kakao.maps.Circle({
+            center : new kakao.maps.LatLng(37.61092005882, 126.997259182),  // 원의 중심좌표 입니다 
+            radius: 3, // 미터 단위의 원의 반지름입니다 
+            strokeOpacity: 0, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+            fillColor: '#ff001691', // 채우기 색깔입니다
+            fillOpacity: 0.7  // 채우기 불투명도 입니다   
+           }); 
+         circle.setMap(map);
+   
+         var circle = new kakao.maps.Circle({
+            center : new kakao.maps.LatLng(37.61092005882, 126.997209182),  // 원의 중심좌표 입니다 
+            radius: 3, // 미터 단위의 원의 반지름입니다 
+            strokeOpacity: 0, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+            fillColor: '#ff001691', // 채우기 색깔입니다
+            fillOpacity: 0.7  // 채우기 불투명도 입니다   
+           }); 
+         circle.setMap(map);
          map.setZoomable(false);
          map.setDraggable(false);   
          </script>
@@ -67,15 +113,21 @@
 
             <div style="display: flex; flex-direction: row; padding:4px;">
                <div style="margin: 8px; color:white;">09:48:56 쓰러짐 발생</div>
-               <button type="button" class="btn btn-light btn-sm" style="background-color: #8FECC0; color: 18181F; height: 2rem; cursor:pointer; border: none; border-radius: 2px; margin-top: 4px;">영상 확인</button>
+               <a href="{% url 'control_detail' %}">
+                  <button type="button" class="btn btn-light btn-sm" style="background-color: #8FECC0; color: 18181F; height: 2rem; cursor:pointer; border: none; border-radius: 2px; margin-top: 4px;">영상 확인</button>
+               </a>
             </div>
             <div style="display: flex; flex-direction: row; padding:4px">
                <div style="margin: 8px; color:white;">11:40:56 쓰러짐 발생</div>
-               <button type="button" class="btn btn-light btn-sm" style="background-color: #8FECC0; color: 18181F; height: 2rem; cursor:pointer; border: none; border-radius: 2px; margin-top: 4px;">영상 확인</button>
+               <a href="{% url 'control_detail' %}">
+                  <button type="button" class="btn btn-light btn-sm" style="background-color: #8FECC0; color: 18181F; height: 2rem; cursor:pointer; border: none; border-radius: 2px; margin-top: 4px;">영상 확인</button>
+               </a>
             </div>
             <div style="display: flex; flex-direction: row; padding:4px;">
                <div style="margin: 8px; color:white;">12:30:56 쓰러짐 발생</div>
-               <button type="button" class="btn btn-light btn-sm" style="background-color: #8FECC0; color: 18181F; height: 2rem; cursor:pointer; border: none; border-radius: 2px; margin-top: 4px;">영상 확인</button>
+               <a href="{% url 'control_detail' %}">
+                  <button type="button" class="btn btn-light btn-sm" style="background-color: #8FECC0; color: 18181F; height: 2rem; cursor:pointer; border: none; border-radius: 2px; margin-top: 4px;">영상 확인</button>
+               </a>
             </div>
          </div>
 
