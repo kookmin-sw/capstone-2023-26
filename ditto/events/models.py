@@ -18,3 +18,19 @@ class Event(models.Model):
 
     class Meta:
         ordering = ['id']
+        
+class AlertLog(models.Model):
+    event_id = models.ForeignKey("events.event", on_delete=models.CASCADE)
+    time = models.TimeField()
+    s3key = models.CharField(max_length=100)
+    
+    class Meta:
+        ordering = ['time']
+        
+class RecordingLog(models.Model):
+    event_id = models.ForeignKey("events.event", on_delete=models.CASCADE)
+    time = models.TimeField()
+    s3key = models.CharField(max_length=100)
+    
+    class Meta:
+        ordering = ['time']
