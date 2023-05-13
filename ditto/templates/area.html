@@ -2,8 +2,8 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-		<link href="../../static/css/main.css" rel="stylesheet">
+        <meta name="viewport">
+		<link href="../../static/css/area.css" rel="stylesheet">
         <title>Ditto {% block title %}{% endblock %}</title>
         <style>
         </style>
@@ -14,12 +14,14 @@
             <img src="/static/imgs/logo.png" class="Logo">
 			{% for city in city_list %}
 			<div class="PlaceContainer">
-				<div style="display: flex;">
-					<div>
-						<h4 class="Label1">{{city.city_name}}</h4>
-					</div> 
-					<a href="{% url 'user' city.id %}"><img src="/static/imgs/icon.png" class="Icon"></a>
-				</div>
+                <a href="{% url 'user' city.id %}" style="text-decoration: none;">
+                    <div style="display: flex;">
+                        <div>
+                            <h4 class="Label">{{city.city_name}}</h4>
+                        </div> 
+                        <img src="/static/imgs/icon.png" class="Icon">
+                    </div>
+                </a>
 			</div>
 			{% endfor %}
         </div> 
