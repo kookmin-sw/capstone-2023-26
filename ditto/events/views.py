@@ -48,6 +48,12 @@ def control_detail(request):
     name = 'control_detail'
     return render(request, '../templates/control_detail.html')
 
+def control_record(request, event_id):
+    name = 'control_record'
+    
+    record = RecordingLog.objects.get(event_id=event_id)
+    return render(request, '../templates/control_record.html', {'records': record})
+
 def area(request):
     name = 'area'
     
