@@ -1,11 +1,16 @@
 from drone_info import DroneInfo
 import time
+from datetime import datetime
+
 import threading
+
+import requests
+import json
 
 class Drone:
     def __init__(self):
         # 매 분의 n초마다 서버로 데이터 전송
-        self.msg_to_server_interval = 10
+        self.msg_to_server_interval = 5
         # self.message_sent_status_list = [0] * int(60 / self.msg_to_server_interval)
         # print(self.message_sent_status_list)
 
@@ -29,7 +34,7 @@ class Drone:
     def drone_update(self):
         while self.enabled:
             # print('drone-update')
-            print(self.target_drone_info.get_attitude())
+            # print(self.target_drone_info.get_attitude())
             # self.evaluate_conditon_to_server()
             # print(time.localtime().tm_sec)
 
@@ -44,14 +49,37 @@ class Drone:
     def evaluate_conditon_to_server(self):
         current_time = time.localtime()
         if current_time.tm_sec % self.msg_to_server_interval == 0:
-            time_str = time.strftime('%Y-%m-%d', current_time)
-            print(f'execute! {time_str}')
-            # target_idx = int(current_time.tm_sec / self.msg_to_server_interval)
-            self.send_msg_to_server('test')
-            # print(current_time.tm_sec / self.msg_to_server_interval)
+            pos_json = self.target_drone_info.get_position()
+            voltage = 11.1
+            event_id = 1
 
-    def send_msg_to_server(self, msg):
-        pass
+            # data = {
+            #     'time': "17:30:00",
+            #     'coordinate': [0, 0],
+            #     'voltage': 101.1,
+            #     'event_id': 1
+            # }
+
+            url = 'http://13.209.19.200:8000/api/droneinfo/'
+            data = {
+                'time': time.strftime('%H:%M:%S', current_time),
+                'coordinate': pos_json,
+                'voltage': voltage,
+                'event_id': event_id
+            }
+
+            self.send_msg_to_server(url, data)
+            # response = requests.post(url, json=data)
+            # print(response.status_code)
+
+    def send_msg_to_server(self, url, params):
+        response = requests.post(url, json=params)
+        
+        # response = requests.post(url, json=params)
+        # print(response.url)
+
+        print(response.status_code)
+        # print(response.text)
 
 if __name__=="__main__":
     drone_main = Drone()
