@@ -1,15 +1,19 @@
 from django.shortcuts import render
 from rest_framework import viewsets
-from .serializers import HeadCountSerializer
-from .models import HeadCount
+from .serializers import HeadCountSerializer, DroneInfoSerializer
+from .models import HeadCount, DroneInfo
 from django.http import HttpResponse, JsonResponse
 
 
 # Create your views here.
+class DroneInfoViewSet(viewsets.ModelViewSet):
+    queryset = DroneInfo.objects.all()
+    serializer_class = DroneInfoSerializer
+    
 class HeadCountViewSet(viewsets.ModelViewSet):
     queryset = HeadCount.objects.all()
     serializer_class = HeadCountSerializer
-
+    
 def test(self, request):
     print("testttt")
     dummy_data = {
