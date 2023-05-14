@@ -17,18 +17,23 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from events.views import EventViewSet, CityViewSet
-from .views import home, map
+from .views import home, clientmap
 from events import views
+from map import views
+from map.views import HeadCountViewSet
+
 
 router = routers.DefaultRouter()
 router.register('event', EventViewSet)
 router.register('city', CityViewSet)
+router.register('headcount', HeadCountViewSet)
 
 urlpatterns = [
     path('api/', include(router.urls)),
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
     path('', include('events.urls')),
-    path('map/', map),
+    path('clientmap/', clientmap),
     path('test/', home),
+
 ]

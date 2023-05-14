@@ -11,6 +11,7 @@ class HeadCountViewSet(viewsets.ModelViewSet):
     serializer_class = HeadCountSerializer
 
 def test(self, request):
+    print("testttt")
     dummy_data = {
         'name': '죠르디',
         'type': '공룡',
