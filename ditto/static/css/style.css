@@ -4,6 +4,10 @@ body {
 	color: #b1b1b1 !important;
 	font-family: Montserrat, Arial, sans-serif;
   }
+
+a { 
+	text-decoration:none !important;
+}
   
   .body-bg {
 	background: #F3F4FA !important;

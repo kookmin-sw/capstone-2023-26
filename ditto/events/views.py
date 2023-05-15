@@ -38,7 +38,7 @@ def control(request, event_id):
     name = 'control'
     events = Event.objects.filter(user_id=request.user.id)
     event = Event.objects.get(id=event_id)
-    return render(request, '../templates/control.html', {'event': event, 'events':events})
+    return render(request, '../templates/control.html', {'event': event, 'events':events, 'event_id':event_id})
 
 def map(request, event_id):
     name = 'map'

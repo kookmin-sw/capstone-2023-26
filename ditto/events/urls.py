@@ -4,8 +4,8 @@ from .views import admin_events, user_events, map, control, control_detail, area
 
 urlpatterns = [
     path('administer/', admin_events),
-    path('user/<int:city_id>', user_events, name="user"),
-    path('user/map/<int:event_id>', map, name="map"),
+    path('<int:city_id>', user_events, name="user"),
+    path('<int:event_id>/map', map, name="map"),
     path('administer/<int:event_id>/', control, name="control"),
     path('control/detail/', control_detail, name="control_detail"),
     path('control/record/', control_record, name="record"),

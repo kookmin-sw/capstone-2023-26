@@ -3,6 +3,10 @@ body {
 	font-family: Montserrat, Arial, sans-serif;
   }
 
+a { 
+	text-decoration:none !important;
+}
+
 .Logo { 
 	width: 165px;
 	height: 38px;

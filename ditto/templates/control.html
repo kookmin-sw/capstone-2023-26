@@ -189,11 +189,21 @@
                 <div class="box">
                   <div id="graph"></div>
                   <script>
+                    color_id = {{event_id}}%3
+                    if(color_id==0){
+                      color_id =  '#4C83FF'
+                    }
+                    else if(color_id==1){
+                      color_id =  '#00e396'
+                    }
+                    else{
+                      color_id =  '#f02fc2'
+                    }
                     var options = {
                       series: [{
                       name: '시간별 인구',
                       data: [3, 33, 21, 42, 19, 32, 40],
-                      color: '#00e396'
+                      color: color_id
                     }],
                     title: {
                       text: '시간별 사람수',
