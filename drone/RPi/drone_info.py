@@ -33,12 +33,14 @@ class DroneInfo:
         # self.vehicle.gps_0.
         json_data = None
         if self.vehicle:
-            print(self.vehicle.gps_0)
+            # print(self.vehicle.gps_0)
+            location_global = self.vehicle.location.global_frame
+            data = {'lat':location_global.lat, 'lon': location_global.lon, 'alt':location_global.alt}
         else:
             data = {'x': 100, 'y': 200}
             json_data = json.dumps(data)
 
-        return [100, 200]
+        return data
 
 
     def get_groundspeed(self):
