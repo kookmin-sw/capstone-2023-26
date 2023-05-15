@@ -33,7 +33,7 @@ class DroneInfo:
         # self.vehicle.gps_0.
         json_data = None
         if self.vehicle:
-            pass
+            print(self.vehicle.gps_0)
         else:
             data = {'x': 100, 'y': 200}
             json_data = json.dumps(data)
