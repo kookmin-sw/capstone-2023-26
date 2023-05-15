@@ -1,4 +1,7 @@
-
+body {
+	background: #343E59;
+	font-family: Montserrat, Arial, sans-serif;
+  }
 
 .Logo { 
 	width: 165px;
@@ -9,7 +12,7 @@
 
 .PlaceContainer { 
 	margin: 8px auto;
-	width: 218px; 
+	width: 138px; 
 	position:relative;
 	cursor:pointer;
 }

@@ -35,8 +35,29 @@
                   <h4 style="margin-left: 7.8rem;">68%</h4> 
               </div>             
             </div>
+            
+            
 
             <div class="row mt-3">
+              <div class="col-md-2">
+                {% for event in events %}
+                <div class="PlaceContainer">
+                 
+                  <div style="display: flex; gap: 20%;">
+                    <div>
+                      <h4 class="Label1">{{event.event_name}}</h4>
+                      <h5 class="Label2">{{event.location}}</h5>
+                    </div> 
+                    <img src="/static/imgs/map.png" class="Icon">
+                  </div>
+                  <div style="width: 158px; height: 2px; background:#2B2D3E; margin:3px auto;"></div>
+                  
+                </div> 
+
+                {% endfor %}  
+
+              </div>
+              
               <div class="col-md-4">
                 <div class="box">
                   <div id="pie"></div>
@@ -104,7 +125,7 @@
                     </script>
                 </div>
               </div>
-              <div class="col-md-8">
+              <div class="col-md-6">
                 <div class="box">
                   <div style="display: flex;">
                   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
@@ -119,9 +140,6 @@
                               video.play();
                         });
                      }
-                     // hls.js is not supported on platforms that do not have Media Source Extensions (MSE) enabled.
-                     // When the browser has built-in HLS support (check using `canPlayType`), we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video element throught the `src` property.
-                     // This is using the built-in support of the plain video element, without using hls.js.
                      else if (video.canPlayType('application/vnd.apple.mpegurl')) {
                         video.src = "https://540f41fc71d9.ap-northeast-2.playback.live-video.net/api/video/v1/ap-northeast-2.392988993234.channel.eknAgsglpDNs.m3u8"; // 동영상경로
                         video.addEventListener('canplay',function() {
@@ -129,13 +147,6 @@
                         });
                      }
                   </script>
-                  <div style="width: 9rem; margin-left: 1%;">
-                    <a href="#">
-                      <div class="label">09:48 쓰러짐 발생</div>
-                    </a>
-                      <div class="label">11:40 쓰러짐 발생</div>
-                      <div class="label">12:30 쓰러짐 발생</div>
-                  </div>
                 </div>
                   
                 </div>
@@ -143,8 +154,9 @@
             </div>
 
             <div class="row mt-4">
-              <div class="col-md-5">
+              <div class="col-md-6">
                 <div class="box">
+                  <div style="display:flex;">
                   <div id="map" style="width: 100%; height: 38vh; margin-top: 0.5rem;"></div>
                     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e00ee7b35d9447fc1b074a96fd8ee6d0"></script>
                     <script>
@@ -156,15 +168,6 @@
 
                       // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
                       var map = new kakao.maps.Map(mapContainer, mapOption); 
-
-                      var circle = new kakao.maps.Circle({
-                          center : new kakao.maps.LatLng(37.61090035882, 126.996259182),  // 원의 중심좌표 입니다 
-                          radius: 6, // 미터 단위의 원의 반지름입니다 
-                          strokeOpacity: 0, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
-                          fillColor: '#ff001691', // 채우기 색깔입니다
-                          fillOpacity: 0.7  // 채우기 불투명도 입니다   
-                        }); 
-                      circle.setMap(map);
                 
                       var circle = new kakao.maps.Circle({
                           center : new kakao.maps.LatLng(37.61092005882, 126.997259182),  // 원의 중심좌표 입니다 
@@ -177,9 +180,17 @@
                       map.setZoomable(false);
                       map.setDraggable(false);   
                     </script>
+                      <div style="width: 10rem; margin-left: 1%;">
+                        <a href="#">
+                          <div class="label">09:48 쓰러짐 발생</div>
+                        </a>
+                          <div class="label">11:40 쓰러짐 발생</div>
+                          <div class="label">12:30 쓰러짐 발생</div>
+                      </div> 
+                    </div>
                 </div>
               </div>
-              <div class="col-md-7">
+              <div class="col-md-6">
                 <div class="box">
                   <div id="graph"></div>
                   <script>
@@ -187,7 +198,7 @@
                       series: [{
                       name: '시간별 인구',
                       data: [3, 33, 21, 42, 19, 32, 40],
-                      color: '#f02fc2'
+                      color: '#00e396'
                     }],
                     title: {
                       text: '시간별 사람수',

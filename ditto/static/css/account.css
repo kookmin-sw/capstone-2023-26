@@ -1,0 +1,14 @@
+body {
+	background: #343E59;
+	color: #777;
+	font-family: Montserrat, Arial, sans-serif;
+}
+
+.container{
+	width: 25.5%; 
+	height: 45vh; 
+	border-radius: 26px; 
+	background:#2B2D3E; 
+	margin: 10% auto; 
+	padding:50px 60px;
+}

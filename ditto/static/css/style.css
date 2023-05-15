@@ -51,4 +51,33 @@ body {
 	font-weight: 600; 
 	font-size: 0.8rem;
 }
+
+.PlaceContainer { 
+	margin: 8px auto;
+	width: 170px; 
+	position:relative;
+	cursor:pointer;
+}
+
+.Label1 { 
+	margin: 5px; 
+	text-align: left;
+	color: #ffffff;
+	font-size: 0.85rem;
+}
+
+.Label2 { 
+	margin: 5px; 
+	color: #a1a1a1; 
+	text-align: left;
+	font-size: 0.7rem;
+}
+
+.Icon{
+	width: 28px;
+	height: 28px;
+	position:absolute; 
+	top: 8px;
+	right:0; 
+}
   
