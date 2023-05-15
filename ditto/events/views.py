@@ -3,8 +3,8 @@ from django.shortcuts import render
 # Create your views here.
 
 from rest_framework import viewsets
-from .serializers import EventSerializer, CitySerializer
-from .models import Event, City
+from .serializers import EventSerializer, CitySerializer, AlertLogSerializer, RecordingLogSerializer
+from .models import Event, City, AlertLog, RecordingLog
 
 class EventViewSet(viewsets.ModelViewSet):
     queryset = Event.objects.all()
@@ -13,6 +13,14 @@ class EventViewSet(viewsets.ModelViewSet):
 class CityViewSet(viewsets.ModelViewSet):
     queryset = City.objects.all()
     serializer_class = CitySerializer
+    
+class AlertLogViewSet(viewsets.ModelViewSet):
+    queryset = AlertLog.objects.all()
+    serializer_class = AlertLogSerializer
+    
+class RecordingLogViewSet(viewsets.ModelViewSet):
+    queryset = RecordingLog.objects.all()
+    serializer_class = RecordingLogSerializer
     
 def admin_events(request):
     name = 'admin'
@@ -39,6 +47,12 @@ def control(request, event_id):
 def control_detail(request):
     name = 'control_detail'
     return render(request, '../templates/control_detail.html')
+
+def control_record(request, event_id):
+    name = 'control_record'
+    
+    record = RecordingLog.objects.get(event_id=event_id)
+    return render(request, '../templates/control_record.html', {'records': record})
 
 def area(request):
     name = 'area'

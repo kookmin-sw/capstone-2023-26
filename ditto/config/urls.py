@@ -16,13 +16,17 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
-from events.views import EventViewSet, CityViewSet
+from events.views import EventViewSet, CityViewSet, AlertLogViewSet, RecordingLogViewSet
 from .views import home, map
 from events import views
+from map.views import DroneInfoViewSet
 
 router = routers.DefaultRouter()
 router.register('event', EventViewSet)
 router.register('city', CityViewSet)
+router.register('alertlog', AlertLogViewSet)
+router.register('recordinglog', RecordingLogViewSet)
+router.register('droneinfo', DroneInfoViewSet)
 
 urlpatterns = [
     path('api/', include(router.urls)),

@@ -29,6 +29,7 @@ DEBUG = True
 ALLOWED_HOSTS = [
     "43.201.173.18",
      '127.0.0.1',
+     '*'
 ]
 
 
@@ -43,6 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'accounts',
     'events',
+    'map',
     'rest_framework',
 ]
 
