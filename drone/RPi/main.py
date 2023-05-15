@@ -86,4 +86,4 @@ if __name__=="__main__":
     drone_main.drone_main()
 
     # main 루프가 종료되면 update문도 함께 종료됨.
-    time.sleep(20 * 60) # 20분간 실행됨
+    time.sleep(60 * 60) # 20분간 실행됨
