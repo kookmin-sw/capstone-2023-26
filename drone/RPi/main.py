@@ -60,7 +60,7 @@ class Drone:
             #     'event_id': 1
             # }
 
-            url = 'http://13.209.19.200:8000/api/droneinfo/'
+            url = 'http://13.125.5.137:8000/api/droneinfo/'
             data = {
                 'time': time.strftime('%H:%M:%S', current_time),
                 'coordinate': pos_json,
