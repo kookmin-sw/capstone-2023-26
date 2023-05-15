@@ -11,7 +11,17 @@
     <title>Ditto</title>
 
     <link rel="stylesheet" href="../../static/css/account.css" />
+    
     <div class="container">
+      <div style="display:flex; width: 7.5rem; margin:0.75rem auto;">
+        <a href="{% url 'login' %}">
+          <h5>login</h5>
+        </a>
+      <h5> &nbsp;/&nbsp; </h5>
+      <a href="{% url 'register' %}">
+          <h5>signup</h5>
+        </a>
+      </div>
             <form action="" method="post">
                 {% csrf_token %}
                 <div class="form-group" style="margin-bottom: 20px;">

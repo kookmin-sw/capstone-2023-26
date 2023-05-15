@@ -1,14 +1,22 @@
 body {
 	background: #343E59;
-	color: #777;
+	color: #b3b3b3;
 	font-family: Montserrat, Arial, sans-serif;
 }
 
+a { 
+	color:#b3b3b3;
+	text-decoration:none !important;
+}
+
+h5{
+	color:#b3b3b3;
+}
+
 .container{
-	width: 25.5%; 
-	height: 45vh; 
+	width: 25.5%;  
 	border-radius: 26px; 
 	background:#2B2D3E; 
-	margin: 10% auto; 
-	padding:50px 60px;
+	margin: 8% auto; 
+	padding: 30px 60px 55px 60px;
 }
