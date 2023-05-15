@@ -50,6 +50,9 @@ class Drone:
         current_time = time.localtime()
         if current_time.tm_sec % self.msg_to_server_interval == 0:
             pos_json = self.target_drone_info.get_position()
+            attitude = self.target_drone_info.get_attitude()
+            print(attitude)
+            
             voltage = 11.1
             event_id = 1
 
