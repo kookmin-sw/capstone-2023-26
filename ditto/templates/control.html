@@ -41,20 +41,22 @@
             <div class="row mt-3">
               <div class="col-md-2">
                 {% for event in events %}
+					
                 <div class="PlaceContainer">
-                 
-                  <div style="display: flex; gap: 20%;">
+				          <a href="{% url 'control' event.id %}">
+                  <div style="display: flex; gap: 18%;">
                     <div>
                       <h4 class="Label1">{{event.event_name}}</h4>
                       <h5 class="Label2">{{event.location}}</h5>
                     </div> 
                     <img src="/static/imgs/map.png" class="Icon">
                   </div>
-                  <div style="width: 158px; height: 2px; background:#2B2D3E; margin:3px auto;"></div>
+				          </a>
+                  <div style="width: 170px; height: 2px; background:#2B2D3E; margin:3px auto;"></div>
                   
                 </div> 
 
-                {% endfor %}  
+                {% endfor %}   
 
               </div>
               
@@ -91,7 +93,7 @@
                         lineCap: 'round'
                       },
                       title: {
-                        text: '대동제',
+                        text: '{{event.event_name}}',
                         align: 'left',
                         offsetY: 25,
                         offsetX: 20,
@@ -162,7 +164,7 @@
                     <script>
                       var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
                           mapOption = { 
-                            center: new kakao.maps.LatLng(37.61092005882, 126.997209182), // 지도의 중심좌표
+                            center: new kakao.maps.LatLng({{event.coordinate.0}}, {{event.coordinate.1}}), // 지도의 중심좌표
                             level: 3 // 지도의 확대 레벨
                           };
 
@@ -180,13 +182,6 @@
                       map.setZoomable(false);
                       map.setDraggable(false);   
                     </script>
-                      <div style="width: 10rem; margin-left: 1%;">
-                        <a href="#">
-                          <div class="label">09:48 쓰러짐 발생</div>
-                        </a>
-                          <div class="label">11:40 쓰러짐 발생</div>
-                          <div class="label">12:30 쓰러짐 발생</div>
-                      </div> 
                     </div>
                 </div>
               </div>
