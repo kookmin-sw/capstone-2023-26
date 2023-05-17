@@ -14,6 +14,9 @@ class Event(models.Model):
     coordinate = models.JSONField()
     crowd = models.JSONField()
     is_being_held = models.BooleanField(default=False)
+    initial_coordinate = models.FloatField(blank=True, null=True)
+    range = models.IntegerField(default=1000)
+    num_div = models.IntegerField(default=100)
     
 
     class Meta:
