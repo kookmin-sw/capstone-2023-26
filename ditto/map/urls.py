@@ -6,5 +6,5 @@ from .views import test
 # router.register("HeadCount", views.HeadCountViewSet)
 
 urlpatterns  = [
-    path('',  test)
+    
 ]
