@@ -23,7 +23,7 @@ window.Apex = {
 	  }
 	}
   };
-  
+
   var spark3 = {
 	chart: {
 	  id: 'spark3',
@@ -78,7 +78,7 @@ window.Apex = {
 	  }
 	}
   }
-  
+
   new ApexCharts(document.querySelector("#spark3"), spark3).render();
 
   var optionsA = {
@@ -116,7 +116,7 @@ window.Apex = {
 
   var chartt = new ApexCharts(document.querySelector("#line-adwords"), optionsA);
   chartt.render();
-  
+
 //   var optionsLine = {
 // 	chart: {
 // 	  height: 328,
@@ -174,10 +174,10 @@ window.Apex = {
 // 	  offsetY: -20
 // 	}
 //   }
-  
+
 //   var chartLine = new ApexCharts(document.querySelector('#line-adwords'), optionsLine);
 //   chartLine.render();
-  
+
   var optionsCircle4 = {
 	chart: {
 	  type: 'radialBar',
@@ -192,14 +192,14 @@ window.Apex = {
 		  margin: 5,
 		  size: '48%',
 		  background: 'transparent',
-  
+
 		},
 		track: {
 		  show: false,
 		},
 		startAngle: -180,
 		endAngle: 180
-  
+
 	  },
 	},
 	stroke: {
@@ -227,7 +227,6 @@ window.Apex = {
 	  offsetY: 252
 	},
   }
-  
+
   var chartCircle4 = new ApexCharts(document.querySelector('#radialBarBottom'), optionsCircle4);
   chartCircle4.render();
-  

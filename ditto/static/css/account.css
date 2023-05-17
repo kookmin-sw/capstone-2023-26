@@ -1,0 +1,21 @@
+body {
+	background: #343E59;
+	color: #b3b3b3;
+	font-family: Montserrat, Arial, sans-serif;
+}
+
+a { 
+	text-decoration:none !important;
+}
+
+h5{
+	color:#b3b3b3;
+}
+
+.container{
+	width: 25.5%;  
+	border-radius: 26px; 
+	background:#2B2D3E; 
+	margin: 8% auto; 
+	padding: 30px 60px 55px 60px;
+}

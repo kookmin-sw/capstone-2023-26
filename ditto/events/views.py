@@ -34,15 +34,16 @@ def user_events(request, city_id):
     
     return render(request, "../templates/location_user.html", {"events": events})
 
+def control(request, event_id):
+    name = 'control'
+    events = Event.objects.filter(user_id=request.user.id)
+    event = Event.objects.get(id=event_id)
+    return render(request, '../templates/control.html', {'event': event, 'events':events, 'event_id':event_id})
+
 def map(request, event_id):
     name = 'map'
     coordinate = Event.objects.get(id=event_id).coordinate
     return render(request, "../templates/map.html", {'coordinate': coordinate})
-
-def control(request, event_id):
-    name = 'control'
-    coordinate = Event.objects.get(id=event_id).coordinate
-    return render(request, '../templates/control.html', {'coordinate': coordinate})
 
 def control_detail(request):
     name = 'control_detail'

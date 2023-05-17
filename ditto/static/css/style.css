@@ -1,21 +1,20 @@
 
 body {
 	background: #343E59;
-	color: #777;
+	color: #b1b1b1 !important;
 	font-family: Montserrat, Arial, sans-serif;
   }
+
+a { 
+	text-decoration:none !important;
+}
   
   .body-bg {
 	background: #F3F4FA !important;
   }
   
-  h1, h2, h3, h4, h5, h6, strong {
+  h1, h2, h3, h4, h5, h6{
 	font-weight: 600;
-  }
-  
-  body {
-	/*background: linear-gradient(45deg,#3a3a60,#5f5f8e);
-	min-height: 100vh;*/
   }
   
   .content-area {
@@ -24,8 +23,10 @@ body {
   }
   
   .box {
-	background-color: #2B2D3E;
-	padding: 20px 5px;
+	background:#2B2D3E; 
+	padding: 0.5rem 1rem; 
+	border-radius: 1.2rem; 
+	box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.5);
   }
   
   .shadow {
@@ -40,31 +41,47 @@ body {
 	border-radius: 5px;
   }
   
-  .sparkboxes .box .details {
-	position: absolute;
-	color: #fff;
-	transform: scale(0.7) translate(-22px, 20px);
-  }
-  .sparkboxes strong {
-	position: relative;
-	z-index: 3;
-	top: -8px;
-	color: #fff;
-  }
-  
-  
-  .sparkboxes .box1 {
-	background-image: linear-gradient( 135deg, #2AFADF 10%, #4C83FF 100%);
-  }
-  
-  .sparkboxes .box2 {
-	background-image: linear-gradient( 135deg, #2AFADF 10%, #4C83FF 100%);
-  }
   
   .sparkboxes .box3 {
 	background-image: linear-gradient( 135deg,  #00e396 10%, #4C83FF 100%);
+	width: 13.2rem;
+	color: white;
+	margin-left: 82%;
   }
+
+  .label{
+	margin: 9px 6px; 
+	color:#e7e7e7; 
+	font-weight: 600; 
+	font-size: 0.8rem;
+}
+
+.PlaceContainer { 
+	margin: 8px auto;
+	width: 170px; 
+	position:relative;
+	cursor:pointer;
+}
+
+.Label1 { 
+	margin: 5px; 
+	text-align: left;
+	color: #ffffff;
+	font-size: 0.85rem;
+}
+
+.Label2 { 
+	margin: 5px; 
+	color: #a1a1a1; 
+	text-align: left;
+	font-size: 0.7rem;
+}
+
+.Icon{
+	width: 28px;
+	height: 28px;
+	position:absolute; 
+	top: 8px;
+	right:0; 
+}
   
-  .sparkboxes .box4 {
-	background-image: linear-gradient( 135deg, #EE9AE5 10%, #5961F9 100%);
-  }
