@@ -26,12 +26,12 @@
                 {% csrf_token %}
                 <div class="form-group" style="margin-bottom: 20px;">
                   <label for="exampleInputEmail1" style="color:white;">User Name</label>
-                  <input class="form-control" placeholder="Enter username" style="width: 330px; height:40px;">
+                  {{ form.username }}
                   <small id="emailHelp" class="form-text text-muted">We'll never share your username with anyone else.</small>
                 </div>
                 <div class="form-group" style="margin-bottom: 30px;">
                     <label for="exampleInputPassword1" style="color:white;">Password</label>
-                    <input type="password" class="form-control" placeholder="Password" style="width: 330px; height:40px;" >
+                    {{ form.password }}
                     <small id="emailHelp" class="form-text text-muted">We'll never share your password with anyone else.</small>
                   </div>
                   <input class="btn btn-primary" type="submit" value="Login" style="width: 330px; height:40px; background-color: #8FECC0; border:none; color: #191A21;">
