@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 
@@ -27,7 +27,8 @@ def admin_events(request):
     name = 'admin'
     events = Event.objects.filter(user_id=request.user.id) # 진행 여부와 상관없이 자신이 관리하는 모든 행사
     
-    return render(request, "../templates/location_admin.html", {"events": events})
+    #return render(request, "../templates/location_admin.html", {"events": events})
+    return redirect('control', 1)
 
 def user_events(request, city_id):
     name = 'user'
