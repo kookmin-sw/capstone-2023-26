@@ -24,7 +24,7 @@ class Event(models.Model):
         
 class AlertLog(models.Model):
     event_id = models.ForeignKey("events.event", on_delete=models.CASCADE)
-    time = models.TimeField()
+    time = models.DateTimeField()
     s3key = models.CharField(max_length=100)
     
     class Meta:
@@ -32,7 +32,7 @@ class AlertLog(models.Model):
         
 class RecordingLog(models.Model):
     event_id = models.ForeignKey("events.event", on_delete=models.CASCADE)
-    time = models.TimeField()
+    time = models.DateTimeField()
     s3key = models.CharField(max_length=100)
     
     class Meta:
