@@ -45,9 +45,7 @@ a {
   
   .sparkboxes .box3 {
 	background-image: linear-gradient( 135deg,  #00e396 10%, #4C83FF 100%);
-	width: 13.2rem;
 	color: white;
-	margin-left: 82%;
   }
 
   .label{
@@ -59,7 +57,7 @@ a {
 
 .PlaceContainer { 
 	margin: 8px auto;
-	width: 155px; 
+	width: 160px; 
 	position:relative;
 	cursor:pointer;
 }
@@ -92,6 +90,7 @@ a {
 	cursor: pointer;
 	position: absolute;
 	right: 2rem;
+	fill: white;
 }
   
 
@@ -144,11 +143,11 @@ h5{
 
 .logout-btn{
 	position: absolute; 
-	right:14.5%;
-	background:#2B2D3E; 
+	right:12%;
 	font-weight: 800; 
 	padding: 0.5rem; 
 	border-radius:0.5rem; 
 	cursor:pointer;
-	color: #b1b1b1;
+	background-image: linear-gradient( 135deg,  #00e396 10%, #4C83FF 100%);
+	color: white;
 }
