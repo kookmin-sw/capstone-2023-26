@@ -46,6 +46,7 @@ INSTALLED_APPS = [
     'events',
     'map',
     'rest_framework',
+    'django_crontab'
 ]
 
 MIDDLEWARE = [
@@ -56,6 +57,11 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+]
+
+# 주기적인 자동 수행 위함
+CRONJOBS = [
+    ('*/1 * * * *', 'config.cron.updateCountHistory', '>> /tmp/scheduled_job.log')
 ]
 
 ROOT_URLCONF = 'config.urls'

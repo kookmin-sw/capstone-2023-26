@@ -1,35 +1,43 @@
+from typing import Any
 from django.shortcuts import render, get_object_or_404
 from rest_framework import viewsets
 from .serializers import HeadCountSerializer, DroneInfoSerializer
-from .models import HeadCount, DroneInfo
+from .models import HeadCount, DroneInfo, CountHistory
+from events.models import Event
 from django.http import HttpResponse, JsonResponse
 from rest_framework.response import Response
 from rest_framework.views import APIView
 import json
+import math
 from datetime import datetime, timedelta
 from time import time
-import math
+from django.db.models import Sum
+
 
 # Create your views here.
 class DroneInfoViewSet(viewsets.ModelViewSet):
     queryset = DroneInfo.objects.all()
     serializer_class = DroneInfoSerializer
-    
-# class HeadCountViewSet(viewsets.ModelViewSet):
-#     queryset = HeadCount.objects.all()
-#     serializer_class = HeadCountSerializer
 
 class HeadCountAPI(APIView):
+
+    # def __init__(self):
+    #     super().__init__()
+    #     print("__init__")
+    #     self.record = DroneInfo.objects.order_by("time").first()
+    #     print("event_id!!!!: ", self.record.event_id)
+    #     print("event_id!!!!: ", self.record.time)
+    #     print("event_id!!!!: ", self.record.coordinate)
+    #     print("event_id!!!!: ", self.record.voltage)
+
     def get(self, request):
+
         queryset = HeadCount.objects.all()
         serializer = HeadCountSerializer(queryset, many=True)
+        
         return Response(serializer.data)
     
     def post(self, request):
-        # js = json.loads({"count": 0, "timestamp": "2023-05-14 00:20:45"})
-
-        # for each in js:
-        #     print(each.value)
 
         js = json.loads(request.body)
         print(js)
@@ -49,26 +57,25 @@ class HeadCountAPI(APIView):
         end_t = f'{end_t:%H:%M:%S}'
 
         drone_records = DroneInfo.objects.filter(time__lte=now_t).order_by("-time").first()
-        
-        # 중심 위도 경도
-        record = DroneInfo.objects.order_by("time").first()
 
-        c_lat = record.coordinate[0]
-        c_lng = record.coordinate[1]
+        # FK로 해당 event object 다 가져와짐 
+        event = drone_records.event_id
+
+        # 중심 위도 경도
+        c_lat = event.coordinate[0]
+        c_lng = event.coordinate[1]
         
-        print(drone_records.time, drone_records.coordinate, drone_records.event_id)
+        # print(drone_records.time, drone_records.coordinate, drone_records.event_id)
         
         # 새로운 위도 경도
         new_lat = drone_records.coordinate[0]
         new_lng = drone_records.coordinate[1]
 
-        print(c_lat, c_lng, new_lat, new_lng)
-
         # 반경 몇미터를 볼 것인지 지정
-        m = 1000
+        m = event.range
 
         # 총 그리드를 몇바이 몇으로 할것인지 지정 
-        divide_by = 100
+        divide_by = event.num_div
 
         # 중심 x,y 인덱스 계산 
         cx = divide_by / 2
@@ -78,13 +85,17 @@ class HeadCountAPI(APIView):
 
         x, y = Plot.find_index(cx, cy, c_lat, c_lng, new_lat, new_lng, per_idx)
         print(x, y)
-
-
-        new = HeadCount(row=y, col=x, count=count)
-        event_id = drone_records.event_id
-        new.event_id = event_id
-        new.save()
         
+        exist = HeadCount.objects.filter(row=y, col=x)
+        if len(exist):
+            exist[0].count = count
+            exist[0].save()
+        else: 
+            new = HeadCount(row=y, col=x, count=count)
+            event_id = drone_records.event_id
+            new.event_id = event_id
+            new.save()
+
         serializer = HeadCountSerializer(data=request.data)
         if serializer.is_valid():
             print("is_valid()")
@@ -133,3 +144,4 @@ class Plot:
         
         # flooring 하여 반환
         return int(cx), int(cy)
+    
