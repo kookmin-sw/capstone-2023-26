@@ -10,7 +10,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
     <title>Ditto</title>
 
-    <link rel="stylesheet" href="../../static/css/account.css" />
+    <link rel="stylesheet" href="../../static/css/style.css" />
     <div class="container">
         <div style="display:flex; width: 7.5rem; margin:0.5rem auto;">
             <a href="{% url 'login' %}">
@@ -23,25 +23,25 @@
           </div>
             <form action="" method="post">
                 {% csrf_token %}
-                <div class="form-group" style="margin:0.75rem auto;">
+                <div class="boxx">
                   <label for="exampleInputEmail1" style="color:white;">First Name</label>
-                  <input class="form-control" placeholder="Enter username" style="width: 330px; height:38px;">
+                  {{ form.first_name }}
                 </div>
-                <div class="form-group" style="margin-bottom: 20px;">
+                <div class="boxx">
                     <label for="exampleInputEmail1" style="color:white;">Last Name</label>
-                    <input class="form-control" placeholder="Enter username" style="width: 330px; height:38px;">
+                    {{ form.last_name }}
                 </div>
-                <div class="form-group" style="margin-bottom: 20px;">
+                <div class="boxx">
                     <label for="exampleInputEmail1" style="color:white;">Email address</label>
-                    <input class="form-control" placeholder="Enter username" style="width: 330px; height:38px;">
+                    {{ form.email }}
                 </div>
-                <div class="form-group" style="margin-bottom: 20px;">
+                <div class="boxx">
                     <label for="exampleInputPassword1" style="color:white;">Password</label>
-                    <input type="password" class="form-control" placeholder="Password" style="width: 330px; height:38px;" >
+                     {{ form.password }}
                   </div>
-                  <div class="form-group" style="margin-bottom: 30px;">
+                  <div class="boxx">
                     <label for="exampleInputPassword1" style="color:white;">Repeat Password</label>
-                    <input type="password" class="form-control" placeholder="Password" style="width: 330px; height:38px;" >
+                     {{ form.password }}
                   </div>
                   <input class="btn btn-primary" type="submit" value="Signup" style="width: 330px; height:38px; background-color: #8FECC0; border:none; color: #191A21;">
             </form>

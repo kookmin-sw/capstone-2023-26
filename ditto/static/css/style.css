@@ -13,7 +13,7 @@ a {
 	background: #F3F4FA !important;
   }
   
-  h1, h2, h3, h4, h5, h6{
+  h1, h2, h3, h4, h6{
 	font-weight: 600;
   }
   
@@ -85,3 +85,50 @@ a {
 	right:0; 
 }
   
+
+h5{
+	color:#b3b3b3;
+}
+
+.boxx{
+	margin-bottom: 20px; 
+	display: flex; 
+	flex-direction: column;
+}
+
+.container{
+	width: 25.5%;  
+	border-radius: 26px; 
+	background:#2B2D3E; 
+	margin: 8% auto; 
+	padding: 30px 60px 55px 60px;
+}
+
+.container-login{
+	position: relative;
+	text-align: center; 
+	padding: 7%;
+	width: 100%;
+}
+
+.blur-img{
+	filter: blur(10px);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 80%;
+    height: 80vh;
+}
+
+.login-btn{
+	position: absolute; 
+	top: 40%; 
+	right: 48%; 
+	background:#2B2D3E; 
+	font-weight: 800; 
+	padding: 0.5rem; 
+	border-radius:0.5rem; 
+	cursor:pointer;
+	color: #b1b1b1;
+}
