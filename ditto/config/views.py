@@ -5,6 +5,6 @@ def home(request):
     name = 'home'
     return render(request, '../templates/test.html')
 
-def map(request):
-    name = 'map'
+def clientmap(request):
+    name = 'clientmap'
     return render(request, '../templates/map.html')

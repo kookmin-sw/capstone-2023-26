@@ -17,13 +17,16 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
 from events.views import EventViewSet, CityViewSet, AlertLogViewSet, RecordingLogViewSet
-from .views import home, map
+from .views import home, clientmap
 from events import views
-from map.views import DroneInfoViewSet
+from map import views
+from map.views import DroneInfoViewSet, HeadCountAPI #HeadCountViewSet
+
 
 router = routers.DefaultRouter()
 router.register('event', EventViewSet)
 router.register('city', CityViewSet)
+# router.register('headcount', HeadCountViewSet)
 router.register('alertlog', AlertLogViewSet)
 router.register('recordinglog', RecordingLogViewSet)
 router.register('droneinfo', DroneInfoViewSet)
@@ -33,6 +36,8 @@ urlpatterns = [
     path('admin/', admin.site.urls),
     path('accounts/', include('accounts.urls')),
     path('', include('events.urls')),
-    path('map/', map),
+    path('clientmap/', clientmap),
     path('test/', home),
+    path('api/headcount/', HeadCountAPI.as_view())
+
 ]

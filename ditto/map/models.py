@@ -20,3 +20,11 @@ class HeadCount(models.Model):
 
     class Meta:
         ordering = ['id']
+
+class CountHistory(models.Model):
+    update_time = models.DateTimeField(auto_now=True)
+    event_id = models.ForeignKey("events.Event", on_delete=models.CASCADE)
+    count = models.IntegerField(null=False, default=0)
+
+    class Meta:
+        ordering = ['id']
