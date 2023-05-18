@@ -18,6 +18,7 @@ distro==1.7.0
 distro-info===1.1build1
 Django==4.2.1
 djangorestframework==3.14.0
+django-crontab==0.7.1
 ec2-hibinit-agent==1.0.0
 hibagent==1.0.1
 httplib2==0.20.2
