@@ -3,7 +3,7 @@
   "model": "admin.logentry",
   "pk": 1,
   "fields": {
-    "action_time": "2023-05-17T21:51:22.075",
+    "action_time": "2023-05-18T19:52:27.948",
     "user": 1,
     "content_type": 7,
     "object_id": "1",
@@ -16,7 +16,7 @@
   "model": "admin.logentry",
   "pk": 2,
   "fields": {
-    "action_time": "2023-05-17T21:51:55.156",
+    "action_time": "2023-05-18T19:52:30.120",
     "user": 1,
     "content_type": 7,
     "object_id": "2",
@@ -29,7 +29,7 @@
   "model": "admin.logentry",
   "pk": 3,
   "fields": {
-    "action_time": "2023-05-17T21:51:59.009",
+    "action_time": "2023-05-18T19:52:31.931",
     "user": 1,
     "content_type": 7,
     "object_id": "3",
@@ -42,7 +42,7 @@
   "model": "admin.logentry",
   "pk": 4,
   "fields": {
-    "action_time": "2023-05-17T21:52:03.194",
+    "action_time": "2023-05-18T19:52:34.575",
     "user": 1,
     "content_type": 7,
     "object_id": "4",
@@ -55,7 +55,7 @@
   "model": "admin.logentry",
   "pk": 5,
   "fields": {
-    "action_time": "2023-05-17T21:52:08.713",
+    "action_time": "2023-05-18T19:52:37.174",
     "user": 1,
     "content_type": 7,
     "object_id": "5",
@@ -68,167 +68,11 @@
   "model": "admin.logentry",
   "pk": 6,
   "fields": {
-    "action_time": "2023-05-17T21:52:13.471",
+    "action_time": "2023-05-18T19:52:39.184",
     "user": 1,
     "content_type": 7,
     "object_id": "6",
     "object_repr": "City object (6)",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 7,
-  "fields": {
-    "action_time": "2023-05-17T21:52:17.411",
-    "user": 1,
-    "content_type": 7,
-    "object_id": "7",
-    "object_repr": "City object (7)",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 8,
-  "fields": {
-    "action_time": "2023-05-17T21:52:20.842",
-    "user": 1,
-    "content_type": 7,
-    "object_id": "8",
-    "object_repr": "City object (8)",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 9,
-  "fields": {
-    "action_time": "2023-05-17T21:52:24.629",
-    "user": 1,
-    "content_type": 7,
-    "object_id": "9",
-    "object_repr": "City object (9)",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 10,
-  "fields": {
-    "action_time": "2023-05-17T21:52:28.794",
-    "user": 1,
-    "content_type": 7,
-    "object_id": "10",
-    "object_repr": "City object (10)",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 11,
-  "fields": {
-    "action_time": "2023-05-17T21:52:32.793",
-    "user": 1,
-    "content_type": 7,
-    "object_id": "11",
-    "object_repr": "City object (11)",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 12,
-  "fields": {
-    "action_time": "2023-05-17T21:52:36.238",
-    "user": 1,
-    "content_type": 7,
-    "object_id": "12",
-    "object_repr": "City object (12)",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 13,
-  "fields": {
-    "action_time": "2023-05-17T21:52:39.395",
-    "user": 1,
-    "content_type": 7,
-    "object_id": "13",
-    "object_repr": "City object (13)",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 14,
-  "fields": {
-    "action_time": "2023-05-17T21:52:42.761",
-    "user": 1,
-    "content_type": 7,
-    "object_id": "14",
-    "object_repr": "City object (14)",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 15,
-  "fields": {
-    "action_time": "2023-05-17T21:52:48.237",
-    "user": 1,
-    "content_type": 7,
-    "object_id": "15",
-    "object_repr": "City object (15)",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 16,
-  "fields": {
-    "action_time": "2023-05-17T21:52:53.226",
-    "user": 1,
-    "content_type": 7,
-    "object_id": "16",
-    "object_repr": "City object (16)",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 17,
-  "fields": {
-    "action_time": "2023-05-17T21:52:58.809",
-    "user": 1,
-    "content_type": 7,
-    "object_id": "17",
-    "object_repr": "City object (17)",
-    "action_flag": 1,
-    "change_message": "[{\"added\": {}}]"
-  }
-},
-{
-  "model": "admin.logentry",
-  "pk": 18,
-  "fields": {
-    "action_time": "2023-05-17T21:53:32.964",
-    "user": 1,
-    "content_type": 8,
-    "object_id": "1",
-    "object_repr": "Event object (1)",
     "action_flag": 1,
     "change_message": "[{\"added\": {}}]"
   }
@@ -666,19 +510,55 @@
   }
 },
 {
+  "model": "auth.permission",
+  "pk": 49,
+  "fields": {
+    "name": "Can add count history",
+    "content_type": 13,
+    "codename": "add_counthistory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 50,
+  "fields": {
+    "name": "Can change count history",
+    "content_type": 13,
+    "codename": "change_counthistory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 51,
+  "fields": {
+    "name": "Can delete count history",
+    "content_type": 13,
+    "codename": "delete_counthistory"
+  }
+},
+{
+  "model": "auth.permission",
+  "pk": 52,
+  "fields": {
+    "name": "Can view count history",
+    "content_type": 13,
+    "codename": "view_counthistory"
+  }
+},
+{
   "model": "auth.user",
   "pk": 1,
   "fields": {
-    "password": "pbkdf2_sha256$390000$2bhX6PXrPFsIhRpSm52UCQ$8KI03OzGsAbdrDvM9h4pYZkprbR5hRy8CaAYKJSIrnk=",
-    "last_login": "2023-05-17T21:51:10.729",
+    "password": "pbkdf2_sha256$390000$XMTXnNYuYEjKxWGF1K7yuz$+hk4zRdNOeJObXM49zQbE92Vbbcz09SZd57NlqWko3Y=",
+    "last_login": "2023-05-18T19:52:17.301",
     "is_superuser": true,
     "username": "admin",
     "first_name": "",
     "last_name": "",
-    "email": "pmj4138@kookmin.ac.kr",
+    "email": "pmj4138@gmail.com",
     "is_staff": true,
     "is_active": true,
-    "date_joined": "2023-05-17T21:51:02.755",
+    "date_joined": "2023-05-18T19:52:09.391",
     "groups": [],
     "user_permissions": []
   }
@@ -780,11 +660,19 @@
   }
 },
 {
-  "model": "sessions.session",
-  "pk": "mn6gz2ezxwn5b0qahbbulvct20pej93r",
+  "model": "contenttypes.contenttype",
+  "pk": 13,
   "fields": {
-    "session_data": ".eJxVjDEOgzAMAP-SuYoCcQx07M4bIttxCm0VJAJT1b9XSAztene6t4m0b1Pcq65xTuZqGnP5ZUzy1HKI9KByX6wsZVtntkdiT1vtuCR93c72bzBRnY5t5xofBpd97loIAOw1QK--S8IizAPhIEF7BUBixORyC4hMGcQFNp8vz9Y4AA:1pzGcY:zU0nSofLldcCkhzh5s6cNorsqAYWSpeMiieYzIF97po",
-    "expire_date": "2023-05-31T21:51:10.730"
+    "app_label": "map",
+    "model": "counthistory"
+  }
+},
+{
+  "model": "sessions.session",
+  "pk": "15ejxt4aof7hi993e17xcd4vihgri8mn",
+  "fields": {
+    "session_data": ".eJxVjDsOwjAQBe_iGlm7_sWipOcM1tq7wQHkSHFSIe4OkVJA-2bmvVSiba1p67KkidVZoTr9bpnKQ9oO-E7tNusyt3WZst4VfdCurzPL83K4fweVev3WYgXEO3ZChg2YwUKmEYtECNERQQAsIyP6wbLBwQQHLkYrxvMYGdX7A98JN1E:1pzbF3:l01sOyGcqssJDhEuRxzqV83y_T4J-nXgZhxoVAYjEz4",
+    "expire_date": "2023-06-01T19:52:17.302"
   }
 },
 {
@@ -805,105 +693,28 @@
   "model": "events.city",
   "pk": 3,
   "fields": {
-    "city_name": "대구광역시"
+    "city_name": "경기도"
   }
 },
 {
   "model": "events.city",
   "pk": 4,
   "fields": {
-    "city_name": "인천광역시"
+    "city_name": "대구광역시"
   }
 },
 {
   "model": "events.city",
   "pk": 5,
   "fields": {
-    "city_name": "광주광역시"
+    "city_name": "인천광역시"
   }
 },
 {
   "model": "events.city",
   "pk": 6,
   "fields": {
-    "city_name": "대전광역시"
-  }
-},
-{
-  "model": "events.city",
-  "pk": 7,
-  "fields": {
-    "city_name": "울산광역시"
-  }
-},
-{
-  "model": "events.city",
-  "pk": 8,
-  "fields": {
-    "city_name": "경기도"
-  }
-},
-{
-  "model": "events.city",
-  "pk": 9,
-  "fields": {
-    "city_name": "강원도"
-  }
-},
-{
-  "model": "events.city",
-  "pk": 10,
-  "fields": {
-    "city_name": "충청북도"
-  }
-},
-{
-  "model": "events.city",
-  "pk": 11,
-  "fields": {
-    "city_name": "충청남도"
-  }
-},
-{
-  "model": "events.city",
-  "pk": 12,
-  "fields": {
-    "city_name": "전라북도"
-  }
-},
-{
-  "model": "events.city",
-  "pk": 13,
-  "fields": {
-    "city_name": "전라남도"
-  }
-},
-{
-  "model": "events.city",
-  "pk": 14,
-  "fields": {
-    "city_name": "경상북도"
-  }
-},
-{
-  "model": "events.city",
-  "pk": 15,
-  "fields": {
-    "city_name": "경상남도"
-  }
-},
-{
-  "model": "events.city",
-  "pk": 16,
-  "fields": {
-    "city_name": "제주특별자치도"
-  }
-},
-{
-  "model": "events.city",
-  "pk": 17,
-  "fields": {
-    "city_name": "세종특별자치시"
+    "city_name": "광주광역시"
   }
 },
 {
@@ -918,9 +729,8 @@
       37.61063235882,
       126.997259182
     ],
-    "crowd": 0,
     "is_being_held": true,
-    "initial_coordinate": null,
+    "initial_coordinate": {},
     "range": 1000,
     "num_div": 100
   }
