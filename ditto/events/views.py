@@ -1,10 +1,11 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 # Create your views here.
 
 from rest_framework import viewsets
 from .serializers import EventSerializer, CitySerializer, AlertLogSerializer, RecordingLogSerializer
 from .models import Event, City, AlertLog, RecordingLog
+from map.models import HeadCount
 
 class EventViewSet(viewsets.ModelViewSet):
     queryset = Event.objects.all()
@@ -26,7 +27,8 @@ def admin_events(request):
     name = 'admin'
     events = Event.objects.filter(user_id=request.user.id) # 진행 여부와 상관없이 자신이 관리하는 모든 행사
     
-    return render(request, "../templates/location_admin.html", {"events": events})
+    #return render(request, "../templates/location_admin.html", {"events": events})
+    return redirect('control', 1)
 
 def user_events(request, city_id):
     name = 'user'
@@ -38,12 +40,16 @@ def control(request, event_id):
     name = 'control'
     events = Event.objects.filter(user_id=request.user.id)
     event = Event.objects.get(id=event_id)
-    return render(request, '../templates/control.html', {'event': event, 'events':events, 'event_id':event_id})
+    
+    headcount = HeadCount.objects.filter(id=event_id)
+    return render(request, '../templates/control.html', {'event': event, 'events':events, 'event_id':event_id, 'headcounts': headcount})
 
 def map(request, event_id):
     name = 'map'
     coordinate = Event.objects.get(id=event_id).coordinate
-    return render(request, "../templates/map.html", {'coordinate': coordinate})
+    
+    headcount = HeadCount.objects.filter(id=event_id)
+    return render(request, "../templates/map.html", {'coordinate': coordinate, 'headcounts': headcount})
 
 def control_detail(request):
     name = 'control_detail'

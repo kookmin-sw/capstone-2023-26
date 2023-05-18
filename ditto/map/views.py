@@ -1,7 +1,7 @@
 from typing import Any
 from django.shortcuts import render, get_object_or_404
 from rest_framework import viewsets
-from .serializers import HeadCountSerializer, DroneInfoSerializer
+from .serializers import HeadCountSerializer, DroneInfoSerializer, CountHistorySerializer
 from .models import HeadCount, DroneInfo, CountHistory
 from events.models import Event
 from django.http import HttpResponse, JsonResponse
@@ -18,6 +18,10 @@ from django.db.models import Sum
 class DroneInfoViewSet(viewsets.ModelViewSet):
     queryset = DroneInfo.objects.all()
     serializer_class = DroneInfoSerializer
+
+class CountHistoryViewSet(viewsets.ModelViewSet):
+    queryset = CountHistory.objects.all()
+    serializer_class = CountHistorySerializer
 
 class HeadCountAPI(APIView):
 
@@ -45,18 +49,18 @@ class HeadCountAPI(APIView):
         time = js["timestamp"]
         print(count)
 
-        inputdt = datetime(year=int(time[:4]), month=int(time[5:7]), day=int(time[8:10]), hour=int(time[11:13]), minute=int(time[14:16]), second=int(time[17:19]))
+        # inputdt = datetime(year=int(time[:4]), month=int(time[5:7]), day=int(time[8:10]), hour=int(time[11:13]), minute=int(time[14:16]), second=int(time[17:19]))
         # to_dt = datetime(year=int(t_to[:4]), month=int(t_to[4:6]), day=int(t_to[6:8]), hour=int(t_to[8:10]), minute=int(t_to[10:12]), second=int(t_to[12:14]))
         
-        now_t = datetime.time(inputdt)
-        from_t = datetime.time(inputdt - timedelta(minutes=3))
-        end_t = datetime.time(inputdt + timedelta(minutes=3))
+        # now_t = datetime.time(inputdt)
+        # from_t = datetime.time(inputdt - timedelta(minutes=3))
+        # end_t = datetime.time(inputdt + timedelta(minutes=3))
         
-        now_t = f'{now_t:%H:%M:%S}'
-        from_t = f'{from_t:%H:%M:%S}'
-        end_t = f'{end_t:%H:%M:%S}'
+        # now_t = f'{now_t:%H:%M:%S}'
+        # from_t = f'{from_t:%H:%M:%S}'
+        # end_t = f'{end_t:%H:%M:%S}'
 
-        drone_records = DroneInfo.objects.filter(time__lte=now_t).order_by("-time").first()
+        drone_records = DroneInfo.objects.filter(time__lte=time).order_by("-time").first()
 
         # FK로 해당 event object 다 가져와짐 
         event = drone_records.event_id
@@ -89,9 +93,10 @@ class HeadCountAPI(APIView):
         exist = HeadCount.objects.filter(row=y, col=x)
         if len(exist):
             exist[0].count = count
+            exist[0].coordinate = [new_lat, new_lng]
             exist[0].save()
         else: 
-            new = HeadCount(row=y, col=x, count=count)
+            new = HeadCount(row=y, col=x, count=count, coordinate=[new_lat, new_lng])
             event_id = drone_records.event_id
             new.event_id = event_id
             new.save()

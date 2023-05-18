@@ -6,7 +6,6 @@ from datetime import datetime
 def updateCountHistory():
     print(datetime.now())
     headcounts = HeadCount.objects.values("event_id").annotate(Sum('count'))
-    print(len(headcounts))
     for headcount in headcounts:
         print(datetime.now())
         history = CountHistory(count=headcount["count__sum"])

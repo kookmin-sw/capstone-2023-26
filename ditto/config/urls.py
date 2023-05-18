@@ -20,7 +20,7 @@ from events.views import EventViewSet, CityViewSet, AlertLogViewSet, RecordingLo
 from .views import home, clientmap
 from events import views
 from map import views
-from map.views import DroneInfoViewSet, HeadCountAPI #HeadCountViewSet
+from map.views import DroneInfoViewSet, HeadCountAPI, CountHistoryViewSet #HeadCountViewSet
 
 
 router = routers.DefaultRouter()
@@ -30,6 +30,7 @@ router.register('city', CityViewSet)
 router.register('alertlog', AlertLogViewSet)
 router.register('recordinglog', RecordingLogViewSet)
 router.register('droneinfo', DroneInfoViewSet)
+router.register('counthistory', CountHistoryViewSet)
 
 urlpatterns = [
     path('api/', include(router.urls)),
