@@ -24,12 +24,15 @@
       </div>
             <form action="" method="post">
                 {% csrf_token %}
-                <div class="form-group" style="margin-bottom: 20px;">
+                <div class="box">
                   <label for="exampleInputEmail1" style="color:white;">User Name</label>
+                  
+                  
                   {{ form.username }}
+
                   <small id="emailHelp" class="form-text text-muted">We'll never share your username with anyone else.</small>
                 </div>
-                <div class="form-group" style="margin-bottom: 30px;">
+                <div class="box">
                     <label for="exampleInputPassword1" style="color:white;">Password</label>
                     {{ form.password }}
                     <small id="emailHelp" class="form-text text-muted">We'll never share your password with anyone else.</small>

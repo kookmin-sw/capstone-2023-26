@@ -12,6 +12,12 @@ h5{
 	color:#b3b3b3;
 }
 
+.box{
+	margin-bottom: 20px; 
+	display: flex; 
+	flex-direction: column;
+}
+
 .container{
 	width: 25.5%;  
 	border-radius: 26px; 
