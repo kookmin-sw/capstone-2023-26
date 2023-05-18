@@ -24,6 +24,7 @@
   </head>
 
   <body>
+    {% if user.is_authenticated %}
     <div id="wrapper">
       <div class="content-area">
         <div class="container-fluid">
@@ -43,7 +44,7 @@
                 {% for event in events %}
 					
                 <div class="PlaceContainer">
-				<a href="{% url 'control' event.id %}">
+				          <a href="{% url 'control' event.id %}">
                   <div style="display: flex; gap: 18%;">
                     <div>
                       <h4 class="Label1">{{event.event_name}}</h4>
@@ -235,6 +236,17 @@
         </div>
       </div>
     </div>
+    {% else %}
+    <div class="container-login">
+      <img class="blur-img" src="/static/imgs/blur.png">
+      <a href="{% url 'login' %}">
+        <div class="login-btn">
+          로그인 하러가기
+        </div>
+      </a>
+    </div>
+    {% endif %}
+  
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.slim.min.js"></script>
   </body>

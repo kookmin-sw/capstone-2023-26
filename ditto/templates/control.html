@@ -40,6 +40,11 @@
 
             <div class="row mt-3">
               <div class="col-md-2">
+                {% if user.is_authenticated %}
+                <p>로그인 함!</p>
+                {% else %}
+                <p>로그인 안 함!</p>
+                {% endif %}
                 {% for event in events %}
 					
                 <div class="PlaceContainer">
