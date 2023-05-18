@@ -4,10 +4,17 @@ from PyQt6.QtGui import QStandardItemModel, QStandardItem
 from PyQt6.QtGui import QImage, QPixmap
 
 import utils_ui
+import threading
+import time
+import ivs_rtmp
+
+import json # 이거 여기 있는거 맞냐
 
 class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
+
+        self.rtmp_url = ""
 
         self.setWindowTitle("Drone Simulator")
         self.resize(800, 600)
@@ -59,6 +66,7 @@ class MainWindow(QMainWindow):
         left_layout.addWidget(self.video_upload_button)
 
         self.json_upload_button = QPushButton("Select Json", self)
+        self.json_upload_button.clicked.connect(self.select_json)
         left_layout.addWidget(self.json_upload_button)
 
         grid_layout.addWidget(left_widget, 0, 0)
@@ -73,12 +81,12 @@ class MainWindow(QMainWindow):
         scroll_area = QScrollArea()
         scroll_area.setWidgetResizable(True)
         scroll_content = QWidget()
-        scroll_layout = QVBoxLayout(scroll_content)
+        self.scroll_layout = QVBoxLayout(scroll_content)
 
-        # 버튼 추가
-        for i in range(10):
-            button = QPushButton(f"Button {i+1}")
-            scroll_layout.addWidget(button)
+        # # 버튼 추가
+        # for i in range(10):
+        #     button = QPushButton(f"Button {i+1}")
+        #     scroll_layout.addWidget(button)
 
         scroll_area.setWidget(scroll_content)
         right_layout.addWidget(scroll_area)
@@ -114,11 +122,12 @@ class MainWindow(QMainWindow):
 
         # 하단 영역
         send_button = QPushButton("Send")
+        send_button.clicked.connect(self.send_data_to_server)
         self.statusBar().addPermanentWidget(send_button)
 
         # 중앙 하단 정렬
         self.statusBar().setSizeGripEnabled(False)
-        self.statusBar().setStyleSheet("QStatusBar::item {border: none;}") #border :3px solid black; padding: 100px;")
+        # self.statusBar().setStyleSheet("QStatusBar::item {border: none;}") #border :3px solid black; padding: 100px;")
 
         # 스크롤 바 스타일 설정
         scroll_area.setStyleSheet(
@@ -132,10 +141,16 @@ class MainWindow(QMainWindow):
         # 스크롤 속도 조절
         scroll_area.setVerticalScrollBarPolicy(Qt.ScrollBarPolicy.ScrollBarAlwaysOn)
 
+
+    """
+    functions
+    """
     def select_video(self):
         file_dialog = QFileDialog()
         video_file, _ = file_dialog.getOpenFileName(
             self, "Select Video", "", "Video Files (*.mp4 *.avi *.mkv)")
+
+        self.video_url = video_file
 
         if video_file:
             thumbnail_data = utils_ui.generate_thumbnail(video_file)
@@ -144,9 +159,15 @@ class MainWindow(QMainWindow):
             if thumbnail:
                 self.image_label.setPixmap(thumbnail.scaled(200, 150, Qt.AspectRatioMode.KeepAspectRatio))
 
-    def connection_check(self):
+    def select_json(self):
+        file_dialog = QFileDialog()
+        json_file, _= file_dialog.getOpenFileName(
+            self, "Select Json(Flight Data)", "", "Json File (*.json)")
         
+        if json_file:
+            self.load_data(json_file)
 
+    def connection_check(self):
         # 불리언 값을 받아와서 상태 원 표시를 변경합니다.
         is_validated = True  # 여기에서 실제 불리언 값을 받아오는 로직을 작성해야 합니다.
 
@@ -156,6 +177,29 @@ class MainWindow(QMainWindow):
         else:
             # self.status_label.setText("Not Validated")
             self.status_icon.setStyleSheet("border-radius: 5px; background-color: red;")
+
+    def load_data(self, json_path):
+        with open(json_path, "r") as file:
+            self.flight_data = json.load(file)
+        
+        for item in self.flight_data:
+            label = QLabel()
+            label.setText(f"ID: {item['id']} | Time: {item['time']} | Voltage: {item['voltage']}")
+            self.scroll_layout.addWidget(label)
+
+    def send_data_to_server(self):
+        sending_msg_thread = threading.Thread(target=self.sending_msg_update)
+        sending_msg_thread.daemon = True
+        sending_msg_thread.start()
+
+        print(self.video_url)
+
+        ivs_rtmp.send_video_to_rtmp_server(self.video_url, self.rtmp_url)
+
+    def sending_msg_update(self):
+        for i in range(len(self.flight_data)):
+            print(self.flight_data[i])
+            time.sleep(5) # 임의로 time interval 5로 지정
 
 if __name__ == "__main__":
     app = QApplication([])
