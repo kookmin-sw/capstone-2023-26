@@ -41,7 +41,7 @@ def control(request, event_id):
     events = Event.objects.filter(user_id=request.user.id)
     event = Event.objects.get(id=event_id)
     
-    headcount = HeadCount.objects.filter(id=event_id)
+    headcount = HeadCount.objects.filter(event_id_id=event_id)
     droneinfo = DroneInfo.objects.filter(id=event_id).last()
     return render(request, '../templates/control.html', {'event': event, 'events':events, 'event_id':event_id, 'headcounts': headcount, 'droneinfo': droneinfo})
 
