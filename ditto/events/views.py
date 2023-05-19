@@ -49,7 +49,7 @@ def map(request, event_id):
     name = 'map'
     coordinate = Event.objects.get(id=event_id).coordinate
     
-    headcount = HeadCount.objects.filter(id=event_id)
+    headcount = HeadCount.objects.filter(event_id_id=event_id)
     return render(request, "../templates/map.html", {'coordinate': coordinate, 'headcounts': headcount})
 
 def control_detail(request):

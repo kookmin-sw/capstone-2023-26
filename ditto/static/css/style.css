@@ -1,9 +1,8 @@
 
 body {
 	background: #343E59;
-	/* color: #b1b1b1 !important; */
-	font-family: Montserrat, Arial, sans-serif;
-  }
+	font-family: 'Wix Madefor Text', sans-serif !important;
+ }
 
 a { 
 	text-decoration:none !important;
@@ -132,7 +131,7 @@ h5{
 .login-btn{
 	position: absolute; 
 	top: 40%; 
-	right: 48%; 
+	right: 47%; 
 	background:#2B2D3E; 
 	font-weight: 800; 
 	padding: 0.5rem; 
@@ -145,7 +144,7 @@ h5{
 	position: absolute; 
 	right:12%;
 	font-weight: 800; 
-	padding: 0.5rem; 
+	padding: 0.5rem 0.7rem; 
 	border-radius:0.5rem; 
 	cursor:pointer;
 	background-image: linear-gradient( 135deg,  #00e396 10%, #4C83FF 100%);
