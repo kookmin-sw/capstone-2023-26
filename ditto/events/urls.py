@@ -1,6 +1,6 @@
 from django.contrib import admin
 from django.urls import path, include
-from .views import admin_events, user_events, map, control, control_detail, area, control_record
+from .views import admin_events, user_events, map, control, control_detail, area, control_record, initHeadcount
 
 urlpatterns = [
     path('administer/', admin_events),
@@ -9,5 +9,6 @@ urlpatterns = [
     path('administer/<int:event_id>/', control, name="control"),
     path('control/detail/', control_detail, name="control_detail"),
     path('control/record/', control_record, name="record"),
+    path('control/init/<int:event_id>', initHeadcount, name="initHeadcount"),
     path('', area, name='area')
 ]
