@@ -5,6 +5,7 @@ from PyQt6.QtGui import QImage, QPixmap
 
 import threading
 import time
+import datetime
 import json
 
 import utils.utils_ui
@@ -208,7 +209,8 @@ class MainWindow(QMainWindow):
             
             # self.networking.send_msg_to_server_with_params(self.ditto_backend_url + "/api/droneInfo/", params=self.flight_data[i])
             current_time = time.localtime()
-            self.flight_data[i]['time'] = time.strftime('%H:%M:%S', current_time)
+            # current_time = datetime.datetime.now()
+            self.flight_data[i]['time'] = time.strftime("%Y-%m-%d %H:%M:%S", current_time)
             print(self.flight_data[i])
            
             self.networking.send_msg_to_server_with_params('http://13.125.5.137:8000/api/droneinfo/', self.flight_data[i])
