@@ -216,13 +216,18 @@
                     {% for history in historys %}
                       
                       cnt.push({{history.count}});
-                      //console.log({{history.update_time}}); 
-                      time.push({{history.update_time}});
-                      //console.log({{history.update_time}});
+                      console.log({{history.count}});
                     {% endfor %}
 
+                    //console.log("{{times}}");
+
+                    {% for time in times %}
+                      
+                      time.push("{{time}}");
+                    {% endfor %} 
+
                     console.log(cnt);
-                    //console.log(time);
+                    console.log(time);
                     color_id = {{event_id}}%3
                     if(color_id==0){
                       color_id =  '#4C83FF'
@@ -260,16 +265,20 @@
                       },
                       xaxis: {
                         type: 'datetime',
-                        categories: ["2023-05-19 00:00:00.000", "2023-05-19 01:00:00.000", "2023-05-19 02:00:00.243865", "2023-05-19 03:00:00.243865", "2023-05-19 04:00:00.000", "2023-05-19 05:00:00.000", "2023-05-19 06:00:00.000",  "2023-05-19 07:00:00.000",  "2023-05-19 08:00:00.000",  "2023-05-19 09:00:00.000"]
+                        categories: time,
+                        labels: {
+                          datetimeUTC: false
+                        }
                       },
                       tooltip: {
                         x: {
-                          format: 'yy/MM/ HH:mm'
+                          format: 'yy/MM/dd HH:mm'
                         }
                       },
                       fill: {
                         opacity: 1
                       }
+                     
                     };
 
                     var chart = new ApexCharts(document.querySelector("#graph"), options);
