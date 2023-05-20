@@ -46,7 +46,8 @@ INSTALLED_APPS = [
     'events',
     'map',
     'rest_framework',
-    'django_crontab'
+    'django_crontab',
+    'boto3',
 ]
 
 MIDDLEWARE = [
@@ -140,3 +141,9 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_REDIRECT_URL = '/administer/'
 STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),] 
+
+AWS_ACCESS_KEY_ID = "AKIAVW77YE3JMOJGFPUT"
+
+AWS_SECRET_ACCESS_KEY = "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"
+
+AWS_STORAGE_BUCKET_NAME = "ivs-ditto"
