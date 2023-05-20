@@ -14,6 +14,7 @@ class DroneInfo(models.Model):
 class HeadCount(models.Model):
     row = models.IntegerField(null=False, blank=False)
     col = models.IntegerField(null=False, blank=False)
+    coordinate = models.JSONField(null=False, default=[0.0, 0.0])
     update_time = models.DateTimeField(auto_now=True)
     event_id = models.ForeignKey("events.Event", on_delete=models.CASCADE)
     count = models.IntegerField(null=False, default=0)

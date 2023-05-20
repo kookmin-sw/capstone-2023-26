@@ -9,11 +9,12 @@
         </style>
     </head>
 
-    <body>
-        <div style="text-align: center;">
-			<a href="{% url 'area' %}">
+    <body width="100%;">
+         <div style="text-align: center;"> 
+			 <a href="{% url 'area' %}"> 
             <img src="/static/imgs/logo.png" class="Logo">
-			</a>
+			 </a> 
+		 </div> 
 			{% for event in events %}
 			<div class="PlaceContainer">
 				<a href="{% url 'map' event.id %}" style="text-decoration-line: none;">

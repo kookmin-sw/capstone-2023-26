@@ -24,17 +24,22 @@
   </head>
 
   <body>
+    
     {% if user.is_authenticated %}
     <div id="wrapper">
       <div class="content-area">
         <div class="container-fluid">
           
-          <div class="main">
+          <div class="main" style="width: 1300px;">
             <div class="row sparkboxes mt-3">
-              <div class="box box3">
-                  <h5>DRONE BATTERY</h5>
-                  <h4 style="margin-left: 7.8rem;">68%</h4> 
-              </div>             
+
+              <div style="height: 2.5rem;">
+                <a href="{% url 'logout' %}">
+                  <div class="logout-btn">
+                    Logout
+                  </div>
+                </a>
+              </div>      
             </div>
             
             
@@ -53,7 +58,6 @@
                     <img src="/static/imgs/map.png" class="Icon">
                   </div>
 				</a>
-                  <div style="width: 170px; height: 2px; background:#2B2D3E; margin:3px auto;"></div>
                   
                 </div> 
 
@@ -132,7 +136,8 @@
                 <div class="box">
                   <div style="display: flex;">
                   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
-                  <div><video autoplay muted id="video" style="width: 100%; height: 38vh; background:#00000040; margin-top:8px;"></video></div>
+                  <div><video autoplay muted id="video" style="width: 100%; height: 38vh; background:#00000040; margin-top:2rem;"></video></div>
+                  
                   <script>
                      if(Hls.isSupported()) {
                         var video = document.getElementById('video');
@@ -241,7 +246,7 @@
       <img class="blur-img" src="/static/imgs/blur.png">
       <a href="{% url 'login' %}">
         <div class="login-btn">
-          로그인 하러가기
+          Login
         </div>
       </a>
     </div>
