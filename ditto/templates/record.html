@@ -16,8 +16,9 @@
 			{% for record in records %}
 			<div class="PlaceContainer">
 				<div style="display: flex; gap: 38%;">
-					<div>
-						<h4 class="Label1">{{record.s3key}}</h4>
+					<div>	
+						<h4 class="Label1">{{record.time}}</h4>
+						<a href="{% url 'download_video' key=record.s3key %}">동영상 다운로드 외않되</a>
 					</div> 
 				</div>
 			</div>  

@@ -1,5 +1,5 @@
 from typing import Any
-from django.shortcuts import render, get_object_or_404
+from django.shortcuts import render, get_object_or_404, redirect
 from rest_framework import viewsets
 from .serializers import HeadCountSerializer, DroneInfoSerializer, CountHistorySerializer
 from .models import HeadCount, DroneInfo, CountHistory
