@@ -69,5 +69,5 @@ def area(request):
     return render(request, '../templates/area.html', {'city_list': city_list})
 
 def initHeadcount(request, event_id):
-    HeadCount.objects.all().delete()
+    HeadCount.objects.filter(event_id_id=event_id).delete()
     return redirect('control', event_id)
