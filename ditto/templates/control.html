@@ -32,7 +32,7 @@
       <div class="content-area">
         <div class="container-fluid">
           
-          <div class="main" style="width: 1300px; background:white; position:relative;">
+          <div class="main" style="width: 1300px; position:relative;">
             <div class="row sparkboxes mt-3">
               <div style="height: 2.5rem;">
                 <a href="{% url 'logout' %}">
@@ -70,11 +70,11 @@
               
               
               <div class="col-md-6">
-                <div class="box" style="height:23rem;">
+                <div class="box" style="height:23.5rem;">
                   <div style="display:flex;">
                   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
                   
-                <video autoplay muted id="video" style="width: 97%; height: 21rem; background:#00000040; margin-top:6px;"></video>
+                <video autoplay muted id="video" style="width: 100%; height: 39vh; background:#00000040; margin-top:9px;"></video>
                   
                   <script>
                      if(Hls.isSupported()) {
@@ -94,7 +94,7 @@
                      }
                   </script>
                  
-                    <i class="bi bi-file-earmark-arrow-down" style="color:#dddd; margin:6px; cursor:pointer;"></i>
+                   
                   
                 </div>
                   
@@ -103,13 +103,13 @@
 
 
               <div class="col-md-4">
-                <div class="box" style="height:23rem;">
+                <div class="box" style="height:23.5rem;">
                   <div id="pie"></div>
                   <script>
                     var options = {
                       series: [{{droneinfo.voltage}}],
                       chart: {
-                      height: 378,
+                      height: 400,
                       type: 'radialBar',
                       dataLabels: {
                         style: {
@@ -120,7 +120,7 @@
                     plotOptions: {
                       radialBar: {
                         hollow: {
-                          size: '57%',
+                          size: '60%',
                         }
 
                       },
