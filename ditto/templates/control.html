@@ -32,7 +32,7 @@
       <div class="content-area">
         <div class="container-fluid">
           
-          <div class="main" style="width: 1300px;">
+          <div class="main" style="width: 1300px; background:white; position:relative;">
             <div class="row sparkboxes mt-3">
               <div style="height: 2.5rem;">
                 <a href="{% url 'logout' %}">
@@ -47,7 +47,7 @@
 
             <div class="row mt-4">
               <div class="col-md-2">
-                <div class="box">
+                <div class="box-event">
                 {% for event in events %}
 					
                 <div class="PlaceContainer">
@@ -60,7 +60,6 @@
                     <img src="/static/imgs/map.png" class="Icon">
                   </div>
 				          </a>
-                  <div style="width: 170px; height: 2px; background:#2B2D3E; margin:3px auto;"></div>
                   
                 </div> 
 
@@ -75,7 +74,7 @@
                   <div style="display:flex;">
                   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
                   
-                <video autoplay muted id="video" style="width: 97%; height: 40vh; background:#00000040; margin-top:6px;"></video>
+                <video autoplay muted id="video" style="width: 97%; height: 37vh; background:#00000040; margin-top:6px;"></video>
                   
                   <script>
                      if(Hls.isSupported()) {
@@ -249,6 +248,9 @@
                       x: {
                         format: 'yy/MM/ HH:mm'
                       },
+                    },
+                    fill: {
+                      opacity: 1
                     },
                     };
 
