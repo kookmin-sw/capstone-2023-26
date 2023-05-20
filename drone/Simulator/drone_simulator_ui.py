@@ -16,6 +16,9 @@ class MainWindow(QMainWindow):
     def __init__(self):
         super().__init__()
 
+         # 매 분의 n초마다 서버로 데이터 전송
+        self.msg_to_server_interval = 5
+
         self.ditto_backend_url = "http://13.125.5.137:8000"
         self.rtmp_url = None # 보안 상의 이유로 rtmp url은 지웠습니다.
         self.networking = Networking()
@@ -202,10 +205,14 @@ class MainWindow(QMainWindow):
 
     def sending_msg_update(self):
         for i in range(len(self.flight_data)):
-            print(self.flight_data[i])
+            
             # self.networking.send_msg_to_server_with_params(self.ditto_backend_url + "/api/droneInfo/", params=self.flight_data[i])
+            current_time = time.localtime()
+            self.flight_data[i]['time'] = time.strftime('%H:%M:%S', current_time)
+            print(self.flight_data[i])
+           
             self.networking.send_msg_to_server_with_params('http://13.125.5.137:8000/api/droneinfo/', self.flight_data[i])
-            time.sleep(5) # 임의로 time interval 5로 지정
+            time.sleep(5)
 
     def video_streaming_update(self):
         networking.ivs_rtmp.send_video_to_rtmp_server(self.video_url, self.rtmp_url)
