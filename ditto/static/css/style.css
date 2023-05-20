@@ -24,13 +24,13 @@ a {
   
   .box {
 	background:#2B2D3E; 
-	padding: 0.5rem 1rem; 
+	padding: 0.5rem 1.05rem; 
 	border-radius: 1.2rem; 
 	box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.5);
   }
 
   .box-event{
-	height: 23.5rem;
+	height: 23rem;
 	background:#2B2D3E; 
 	padding: 0.5rem 1rem; 
 	border-radius: 1.2rem; 
@@ -171,7 +171,7 @@ h5{
 .video-btn{
 	position: absolute; 
 	right: 5.5rem;
-	font-weight: 600; 
+	font-weight: 00; 
 	padding: 0.5rem 0.7rem; 
 	border-radius:0.5rem; 
 	cursor:pointer;

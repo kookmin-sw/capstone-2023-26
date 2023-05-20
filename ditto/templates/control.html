@@ -42,7 +42,7 @@
                 </a>
                 <a href="#">
                   <div class="video-btn">
-                    영상확인
+                    <i class="bi bi-camera-reels-fill"></i>
                   </div>
                 </a>
               </div>               
@@ -75,11 +75,11 @@
               
               
               <div class="col-md-6">
-                <div class="box" style="height:23.5rem;">
+                <div class="box" style="height:23rem;">
                   <div style="display:flex;">
                   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
                   
-                <video autoplay muted id="video" style="width: 100%; height: 39vh; background:#00000040; margin-top:9px;"></video>
+                <video autoplay muted id="video" style="width: 37.4rem; height: 20.5rem; background:#00000040; margin-top:0.75rem;"></video>
                   
                   <script>
                      if(Hls.isSupported()) {
@@ -108,7 +108,7 @@
 
 
               <div class="col-md-4">
-                <div class="box" style="height:23.5rem;">
+                <div class="box" style="height:23rem;">
                   <div id="pie"></div>
                   <script>
                     var options = {
@@ -149,7 +149,7 @@
                     <a href="{% url 'initHeadcount' event.id %}">
                     <i class="bi bi-arrow-clockwise" style="color:#dddd; cursor:pointer; position:absolute; right:2rem;"></i>
                     </a>
-                  <div id="map" style="width: 100%; height: 38vh; margin-top: 1.75rem;"></div>
+                  <div id="map" style="width: 100%; height: 36vh; margin-top: 1.75rem;"></div>
                   
                     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e00ee7b35d9447fc1b074a96fd8ee6d0"></script>
                     <script>
@@ -182,6 +182,12 @@
                         else{
                           var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
                           markerPosition = new kakao.maps.LatLng({{headcount.coordinate.0}}, {{headcount.coordinate.1}}); // 마커가 표시될 위치입니다
+                          var marker = new kakao.maps.Marker({
+                            position: markerPosition, 
+                            image: markerImage
+                          });
+                          opacity = 0.8;
+                          marker.setMap(map);  
                         }
                         
                         var circle = new kakao.maps.Circle({
@@ -192,14 +198,9 @@
                           fillOpacity: opacity   
                         }); 
                         circle.setMap(map);
-                    {% endfor %}
+                        {% endfor %}
                     
-                    var marker = new kakao.maps.Marker({
-                        position: markerPosition, 
-                        image: markerImage
-                    });
-
-                      marker.setMap(map);  
+                      
                       map.setZoomable(false);
                       map.setDraggable(false);   
                     </script>
@@ -210,6 +211,18 @@
                 <div class="box" style="height: 25rem;">
                   <div id="graph"></div>
                   <script>
+                    var cnt = [];
+                    var time = []; 
+                    {% for history in historys %}
+                      
+                      cnt.push({{history.count}});
+                      //console.log({{history.update_time}}); 
+                      time.push({{history.update_time}});
+                      //console.log({{history.update_time}});
+                    {% endfor %}
+
+                    console.log(cnt);
+                    //console.log(time);
                     color_id = {{event_id}}%3
                     if(color_id==0){
                       color_id =  '#4C83FF'
@@ -222,41 +235,41 @@
                     }
                     var options = {
                       series: [{
-                      name: '시간별 인구',
-                      data: [53, 94, 81, 112, 79, 102, 116],
-                      color: color_id
-                    }],
-                    title: {
-                      text: '시간별 사람수',
-                      align: 'left',
-                      offsetY: 25,
-                      offsetX: 20,
-                      style: {
-                        color:  '#cccccc'
+                        name: '시간별 인구',
+                        data: cnt,
+                        color: color_id
+                      }],
+                      title: {
+                        text: '시간별 사람수',
+                        align: 'left',
+                        offsetY: 25,
+                        offsetX: 20,
+                        style: {
+                          color: '#cccccc'
+                        }
                       },
-                    },
                       chart: {
-                      height: 360,
-                      type: 'area'
-                    },
-                    dataLabels: {
-                      enabled: false
-                    },
-                    stroke: {
-                      curve: 'smooth'
-                    },
-                    xaxis: {
-                      type: 'datetime',
-                      categories: ["2023-05-19 00:00:00.000", "2023-05-19 01:00:00.000", "2023-05-19 02:00:00.243865", "2023-05-19 03:00:00.243865", "2023-05-19 04:00:00.000", "2023-05-19 05:00:00.000", "2023-05-19 06:00:00.000"]
-                    },
-                    tooltip: {
-                      x: {
-                        format: 'yy/MM/ HH:mm'
+                        height: 378,
+                        type: 'area'
                       },
-                    },
-                    fill: {
-                      opacity: 1
-                    },
+                      dataLabels: {
+                        enabled: false
+                      },
+                      stroke: {
+                        curve: 'smooth'
+                      },
+                      xaxis: {
+                        type: 'datetime',
+                        categories: ["2023-05-19 00:00:00.000", "2023-05-19 01:00:00.000", "2023-05-19 02:00:00.243865", "2023-05-19 03:00:00.243865", "2023-05-19 04:00:00.000", "2023-05-19 05:00:00.000", "2023-05-19 06:00:00.000",  "2023-05-19 07:00:00.000",  "2023-05-19 08:00:00.000",  "2023-05-19 09:00:00.000"]
+                      },
+                      tooltip: {
+                        x: {
+                          format: 'yy/MM/ HH:mm'
+                        }
+                      },
+                      fill: {
+                        opacity: 1
+                      }
                     };
 
                     var chart = new ApexCharts(document.querySelector("#graph"), options);

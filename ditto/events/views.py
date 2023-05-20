@@ -44,7 +44,10 @@ def control(request, event_id):
     headcount = HeadCount.objects.filter(event_id_id=event_id)
     droneinfo = DroneInfo.objects.filter(id=event_id).last()
     print(history)
-    return render(request, '../templates/control.html', {'event': event, 'events':events, 'event_id':event_id, 'headcounts': headcount, 'droneinfo': droneinfo, 'history': history})
+    for i in history:
+        print(i.count)
+        print(i.update_time)
+    return render(request, '../templates/control.html', {'event': event, 'events':events, 'event_id':event_id, 'headcounts': headcount, 'droneinfo': droneinfo, 'historys': history})
 
 def map(request, event_id):
     name = 'map'
