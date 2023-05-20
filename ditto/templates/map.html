@@ -27,37 +27,47 @@
 
          // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
          var map = new kakao.maps.Map(mapContainer, mapOption); 
-         
 
-         {% for headcount in headcounts %}
-            if({{headcount.count}}< 5){
-               opacity = 0.2
-            }
-            else if({{headcount.count}} >= 5 && {{headcount.count}} < 11){
-               opacity = 0.4
-            }
-            else if({{headcount.count}} >= 11 && {{headcount.count}} < 16){
-               opacity = 0.6
-            }
-            else{
-               opacity = 0.8
-            }
-            console.log({{headcount.count}});
-            var circle = new kakao.maps.Circle({
-               center : new kakao.maps.LatLng({{headcount.coordinate.0}}, {{headcount.coordinate.1}}),
-               radius: 5, 
-               strokeOpacity: 0, 
-               fillColor: '#ff001691', 
-               fillOpacity: opacity   
-            }); 
-            circle.setMap(map);
-			{% endfor %}
+                      var imageSrc = "/static/imgs/marker.png",     
+                      imageSize = new kakao.maps.Size(28, 28), 
+                      imageOption = {offset: new kakao.maps.Point(27, 69)}; 
+                
+                      {% for headcount in headcounts %}
+                        if({{headcount.count}}< 5){
+                          opacity = 0.2
+                        }
+                        else if({{headcount.count}} >= 5 && {{headcount.count}} < 11){
+                          opacity = 0.4
+                        }
+                        else if({{headcount.count}} >= 11 && {{headcount.count}} < 16){
+                          opacity = 0.6
+                        }
+                        else if({{headcount.count}} >= 16 && {{headcount.count}} < 21){
+                          opacity = 0.8
+                        }
+                        else{
+                          var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
+                          markerPosition = new kakao.maps.LatLng({{headcount.coordinate.0}}, {{headcount.coordinate.1}}); // 마커가 표시될 위치입니다
+                        }
+                        
+                        var circle = new kakao.maps.Circle({
+                          center : new kakao.maps.LatLng({{headcount.coordinate.0}}, {{headcount.coordinate.1}}),
+                          radius: 5, 
+                          strokeOpacity: 0, 
+                          fillColor: '#ff001691', 
+                          fillOpacity: opacity   
+                        }); 
+                        circle.setMap(map);
+                    {% endfor %}
+                    
+                    var marker = new kakao.maps.Marker({
+                        position: markerPosition, 
+                        image: markerImage
+                    });
 
-         
-
-         circle.setMap(map);
-         map.setZoomable(false);
-         map.setDraggable(false);   
+                      marker.setMap(map);  
+                      map.setZoomable(false);
+                      map.setDraggable(false);   
          </script>
 </body>
 </html>
