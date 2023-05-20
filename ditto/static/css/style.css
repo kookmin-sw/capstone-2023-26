@@ -171,8 +171,17 @@ h5{
 .video-btn{
 	position: absolute; 
 	right: 5.5rem;
-	font-weight: 00; 
 	padding: 0.5rem 0.7rem; 
+	border-radius:0.5rem; 
+	cursor:pointer;
+	background-image: linear-gradient( 135deg,  #00e396 10%, #4C83FF 100%);
+	color: white;
+}
+
+.plus-btn{
+	position: absolute; 
+	right: 8.5rem; 
+	padding: 0.1rem 0.4rem; 
 	border-radius:0.5rem; 
 	cursor:pointer;
 	background-image: linear-gradient( 135deg,  #00e396 10%, #4C83FF 100%);

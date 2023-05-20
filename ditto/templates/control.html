@@ -45,6 +45,12 @@
                     <i class="bi bi-camera-reels-fill"></i>
                   </div>
                 </a>
+                <a href="{% url 'event-add' %}">
+                  <div class="plus-btn">
+                    <i class="bi bi-plus" style="font-size:1.5rem;"></i>
+
+                  </div>
+                </a>
               </div>               
             </div>
             
@@ -53,8 +59,9 @@
             <div class="row mt-4">
               <div class="col-md-2">
                 <div class="box-event">
-                {% for event in events %}
-					
+   
+                  {% for event in events %}
+                  
                 <div class="PlaceContainer">
 				          <a href="{% url 'control' event.id %}">
                   <div style="display: flex; gap: 18%;">
@@ -69,6 +76,7 @@
                 </div> 
 
                 {% endfor %}   
+              
               </div>
 
               </div>
@@ -294,12 +302,14 @@
 
     {% else %}
     <div class="container-login">
-      <img class="blur-img" src="/static/imgs/blur.png">
-      <a href="{% url 'login' %}">
-        <div class="login-btn">
-          Login 하러 가기
-        </div>
-      </a>
+      <div class="container-login">
+        <img class="blur-img" src="/static/imgs/blur.png">
+        <a href="{% url 'login' %}">
+          <div class="login-btn">
+            Login 하러 가기
+          </div>
+        </a>
+      </div>
     </div>
     {% endif %}
 

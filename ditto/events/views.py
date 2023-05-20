@@ -79,6 +79,10 @@ def area(request):
     city_list = City.objects.all()
     return render(request, '../templates/area.html', {'city_list': city_list})
 
+def eventAdd(request):
+    name = 'event-add'
+    return render(request, '../templates/event-add.html')
+
 def initHeadcount(request, event_id):
 
     HeadCount.objects.filter(event_id=event_id).delete()

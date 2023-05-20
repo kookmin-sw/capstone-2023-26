@@ -1,12 +1,13 @@
 from django.contrib import admin
 from django.urls import path, include
-from .views import admin_events, user_events, map, control, control_detail, area, control_record, initHeadcount, download_video
+from .views import admin_events, user_events, map, control, control_detail, area, control_record, initHeadcount, download_video, eventAdd
 
 urlpatterns = [
     path('administer/', admin_events),
     path('<int:city_id>', user_events, name="user"),
     path('<int:event_id>/map', map, name="map"),
     path('administer/<int:event_id>/', control, name="control"),
+    path('administer/add', eventAdd, name="event-add"),
     path('control/detail/', control_detail, name="control_detail"),
     path('administer/<int:event_id>/record', control_record, name="record"),
     path('control/init/<int:event_id>', initHeadcount, name="initHeadcount"),
