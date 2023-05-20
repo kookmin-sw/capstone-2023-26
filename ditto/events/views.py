@@ -5,7 +5,7 @@ from django.shortcuts import render, redirect
 from rest_framework import viewsets
 from .serializers import EventSerializer, CitySerializer, AlertLogSerializer, RecordingLogSerializer
 from .models import Event, City, AlertLog, RecordingLog
-from map.models import HeadCount, DroneInfo
+from map.models import HeadCount, DroneInfo, CountHistory
 
 class EventViewSet(viewsets.ModelViewSet):
     queryset = Event.objects.all()
@@ -40,10 +40,10 @@ def control(request, event_id):
     name = 'control'
     events = Event.objects.filter(user_id=request.user.id)
     event = Event.objects.get(id=event_id)
-    
+    history = CountHistory.objects.filter(event_id_id=event_id).order_by('update_time')[:10]
     headcount = HeadCount.objects.filter(event_id_id=event_id)
     droneinfo = DroneInfo.objects.filter(id=event_id).last()
-    return render(request, '../templates/control.html', {'event': event, 'events':events, 'event_id':event_id, 'headcounts': headcount, 'droneinfo': droneinfo})
+    return render(request, '../templates/control.html', {'event': event, 'events':events, 'event_id':event_id, 'headcounts': headcount, 'droneinfo': droneinfo, 'history': history})
 
 def map(request, event_id):
     name = 'map'
