@@ -94,7 +94,9 @@
                         });
                      }
                   </script>
-                  <i class="bi bi-file-earmark-arrow-down" style="color:#dddd; margin:6px; cursor:pointer;"></i>
+                 
+                    <i class="bi bi-file-earmark-arrow-down" style="color:#dddd; margin:6px; cursor:pointer;"></i>
+                  
                 </div>
                   
                 </div>
@@ -140,7 +142,9 @@
               <div class="col-md-5">
                 <div class="box">
                   <div style="display:flex; flex-direction:column;">
+                    <a href="{% url 'initHeadcount' event.id %}">
                     <i class="bi bi-arrow-clockwise" style="color:#dddd; cursor:pointer; position:absolute; right:2rem;"></i>
+                    </a>
                   <div id="map" style="width: 100%; height: 38vh; margin-top: 1.75rem;"></div>
                   
                     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e00ee7b35d9447fc1b074a96fd8ee6d0"></script>
@@ -153,6 +157,10 @@
 
                       // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
                       var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+                      var imageSrc = "/static/imgs/marker.png",     
+                      imageSize = new kakao.maps.Size(28, 28), 
+                      imageOption = {offset: new kakao.maps.Point(27, 69)}; 
                 
                       {% for headcount in headcounts %}
                         if({{headcount.count}}< 5){
@@ -164,10 +172,14 @@
                         else if({{headcount.count}} >= 11 && {{headcount.count}} < 16){
                           opacity = 0.6
                         }
-                        else{
+                        else if({{headcount.count}} >= 16 && {{headcount.count}} < 21){
                           opacity = 0.8
                         }
-                        console.log({{headcount.count}});
+                        else{
+                          var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
+                          markerPosition = new kakao.maps.LatLng({{headcount.coordinate.0}}, {{headcount.coordinate.1}}); // 마커가 표시될 위치입니다
+                        }
+                        
                         var circle = new kakao.maps.Circle({
                           center : new kakao.maps.LatLng({{headcount.coordinate.0}}, {{headcount.coordinate.1}}),
                           radius: 5, 
@@ -177,23 +189,13 @@
                         }); 
                         circle.setMap(map);
                     {% endfor %}
-
-                    var imageSrc = "/static/imgs/marker.png", // 마커이미지의 주소입니다    
-                    imageSize = new kakao.maps.Size(28, 28), // 마커이미지의 크기입니다
-                    imageOption = {offset: new kakao.maps.Point(27, 69)}; // 마커이미지의 옵션입니다. 마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정합니다.
-                      
-                    // 마커의 이미지정보를 가지고 있는 마커이미지를 생성합니다
-                    var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
-                        markerPosition = new kakao.maps.LatLng(37.61053235882, 126.998259182); // 마커가 표시될 위치입니다
-
-                    // 마커를 생성합니다
+                    
                     var marker = new kakao.maps.Marker({
                         position: markerPosition, 
-                        image: markerImage // 마커이미지 설정 
+                        image: markerImage
                     });
 
-                    // 마커가 지도 위에 표시되도록 설정합니다
-                    marker.setMap(map);  
+                      marker.setMap(map);  
                       map.setZoomable(false);
                       map.setDraggable(false);   
                     </script>
