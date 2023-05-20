@@ -14,11 +14,31 @@ a {
   
 .box {
 	width: 16rem; 
+	/* height: 40rem; */
 	margin: 5rem auto;
     background:#2B2D3E; 
 	padding: 0.5rem 1.05rem; 
-	border-radius: 1.2rem; 
+	border-radius: 1rem; 
 	box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.5);
+	/* overflow-y: auto; */
+}
+
+.box::-webkit-scrollbar{
+    width: 5px;
+	position: absolute;
+	right: 5px;
+  }
+
+	/* 스크롤바 막대 설정*/
+.box::-webkit-scrollbar-thumb{
+	height: 5% !important;
+	background: #1e2330;
+	border-radius: 25px;
+}
+
+	/* 스크롤바 뒷 배경 설정*/
+.box::-webkit-scrollbar-track{
+		background-color: #444651;
 }
 
 .PlaceContainer { 
