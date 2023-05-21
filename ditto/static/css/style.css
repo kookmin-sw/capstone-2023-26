@@ -30,7 +30,7 @@ a {
   }
 
   .box-event{
-	height: 22.5rem;
+	height: 22rem;
 	background:#2B2D3E; 
 	padding: 0.5rem 1rem; 
 	border-radius: 1.2rem; 
@@ -83,7 +83,7 @@ a {
 }
 
 .PlaceContainer { 
-	margin: 10px auto;
+	margin: 9px auto;
 	width: 165px; 
 	position:relative;
 	cursor:pointer;

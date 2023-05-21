@@ -45,7 +45,7 @@ def control(request, event_id):
     name = 'control'
     events = Event.objects.filter(user_id=request.user.id)
     event = Event.objects.get(id=event_id)
-    history = CountHistory.objects.filter(event_id_id=event_id).order_by('update_time')[:10]
+    history = CountHistory.objects.filter(event_id_id=event_id).order_by('update_time')[10:20]
     times = history.values('update_time')
     tmp_times = []
     for time in times:

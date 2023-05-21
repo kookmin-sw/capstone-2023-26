@@ -180,15 +180,47 @@
                       {% for headcount in headcounts %}
                         if({{headcount.count}}< 5){
                           opacity = 0.2
+                          var circle = new kakao.maps.Circle({
+                            center : new kakao.maps.LatLng({{headcount.coordinate.0}}, {{headcount.coordinate.1}}),
+                            radius: 5, 
+                            strokeOpacity: 0, 
+                            fillColor: '#ff001691', 
+                            fillOpacity: opacity   
+                          }); 
+                          circle.setMap(map);
                         }
                         else if({{headcount.count}} >= 5 && {{headcount.count}} < 11){
                           opacity = 0.4
+                          var circle = new kakao.maps.Circle({
+                            center : new kakao.maps.LatLng({{headcount.coordinate.0}}, {{headcount.coordinate.1}}),
+                            radius: 5, 
+                            strokeOpacity: 0, 
+                            fillColor: '#ff001691', 
+                            fillOpacity: opacity   
+                          }); 
+                          circle.setMap(map);
                         }
                         else if({{headcount.count}} >= 11 && {{headcount.count}} < 16){
                           opacity = 0.6
+                          var circle = new kakao.maps.Circle({
+                            center : new kakao.maps.LatLng({{headcount.coordinate.0}}, {{headcount.coordinate.1}}),
+                            radius: 5, 
+                            strokeOpacity: 0, 
+                            fillColor: '#ff001691', 
+                            fillOpacity: opacity   
+                          }); 
+                          circle.setMap(map);
                         }
                         else if({{headcount.count}} >= 16 && {{headcount.count}} < 21){
                           opacity = 0.8
+                          var circle = new kakao.maps.Circle({
+                            center : new kakao.maps.LatLng({{headcount.coordinate.0}}, {{headcount.coordinate.1}}),
+                            radius: 5, 
+                            strokeOpacity: 0, 
+                            fillColor: '#ff001691', 
+                            fillOpacity: opacity   
+                          }); 
+                          circle.setMap(map);
                         }
                         else{
                           var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
@@ -201,19 +233,12 @@
                           marker.setMap(map);  
                         }
                         
-                        var circle = new kakao.maps.Circle({
-                          center : new kakao.maps.LatLng({{headcount.coordinate.0}}, {{headcount.coordinate.1}}),
-                          radius: 5, 
-                          strokeOpacity: 0, 
-                          fillColor: '#ff001691', 
-                          fillOpacity: opacity   
-                        }); 
-                        circle.setMap(map);
-                        {% endfor %}
+                        
+                    {% endfor %}
                     
-                      
-                      map.setZoomable(false);
-                      map.setDraggable(false);   
+                    
+                     map.setZoomable(false);
+                     map.setDraggable(false);    
                     </script>
                     </div>
                 </div>
