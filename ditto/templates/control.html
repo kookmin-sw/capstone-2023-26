@@ -32,12 +32,23 @@
       <div class="content-area">
         <div class="container-fluid">
           
-          <div class="main" style="width: 1300px;">
+          <div class="main" style="width: 1300px; position:relative;">
             <div class="row sparkboxes mt-3">
               <div style="height: 2.5rem;">
                 <a href="{% url 'logout' %}">
                   <div class="logout-btn">
                     Logout
+                  </div>
+                </a>
+                <a href="{% url 'record' event.id %}">
+                  <div class="video-btn">
+                    <i class="bi bi-camera-reels-fill"></i>
+                  </div>
+                </a>
+                <a href="{% url 'event-add' %}">
+                  <div class="plus-btn">
+                    <i class="bi bi-plus" style="font-size:1.5rem;"></i>
+
                   </div>
                 </a>
               </div>               
@@ -47,9 +58,10 @@
 
             <div class="row mt-4">
               <div class="col-md-2">
-                <div class="box">
-                {% for event in events %}
-					
+                <div class="box-event">
+   
+                  {% for event in events %}
+                  
                 <div class="PlaceContainer">
 				          <a href="{% url 'control' event.id %}">
                   <div style="display: flex; gap: 18%;">
@@ -60,22 +72,22 @@
                     <img src="/static/imgs/map.png" class="Icon">
                   </div>
 				          </a>
-                  <div style="width: 170px; height: 2px; background:#2B2D3E; margin:3px auto;"></div>
                   
                 </div> 
 
                 {% endfor %}   
+              
               </div>
 
               </div>
               
               
               <div class="col-md-6">
-                <div class="box">
+                <div class="box" style="height:23rem;">
                   <div style="display:flex;">
                   <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
                   
-                <video autoplay muted id="video" style="width: 97%; height: 40vh; background:#00000040; margin-top:6px;"></video>
+                <video autoplay muted id="video" style="width: 37.4rem; height: 20.5rem; background:#00000040; margin-top:0.75rem;"></video>
                   
                   <script>
                      if(Hls.isSupported()) {
@@ -95,7 +107,7 @@
                      }
                   </script>
                  
-                    <i class="bi bi-file-earmark-arrow-down" style="color:#dddd; margin:6px; cursor:pointer;"></i>
+                   
                   
                 </div>
                   
@@ -104,13 +116,13 @@
 
 
               <div class="col-md-4">
-                <div class="box">
+                <div class="box" style="height:23rem;">
                   <div id="pie"></div>
                   <script>
                     var options = {
                       series: [{{droneinfo.voltage}}],
                       chart: {
-                      height: 378,
+                      height: 400,
                       type: 'radialBar',
                       dataLabels: {
                         style: {
@@ -121,7 +133,7 @@
                     plotOptions: {
                       radialBar: {
                         hollow: {
-                          size: '57%',
+                          size: '60%',
                         }
 
                       },
@@ -140,12 +152,12 @@
 
             <div class="row mt-4">
               <div class="col-md-5">
-                <div class="box">
+                <div class="box" style="height: 25rem;">
                   <div style="display:flex; flex-direction:column;">
                     <a href="{% url 'initHeadcount' event.id %}">
                     <i class="bi bi-arrow-clockwise" style="color:#dddd; cursor:pointer; position:absolute; right:2rem;"></i>
                     </a>
-                  <div id="map" style="width: 100%; height: 38vh; margin-top: 1.75rem;"></div>
+                  <div id="map" style="width: 100%; height: 21.75rem; margin-top: 1.75rem;"></div>
                   
                     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e00ee7b35d9447fc1b074a96fd8ee6d0"></script>
                     <script>
@@ -178,6 +190,12 @@
                         else{
                           var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
                           markerPosition = new kakao.maps.LatLng({{headcount.coordinate.0}}, {{headcount.coordinate.1}}); // 마커가 표시될 위치입니다
+                          var marker = new kakao.maps.Marker({
+                            position: markerPosition, 
+                            image: markerImage
+                          });
+                          opacity = 0.8;
+                          marker.setMap(map);  
                         }
                         
                         var circle = new kakao.maps.Circle({
@@ -188,24 +206,36 @@
                           fillOpacity: opacity   
                         }); 
                         circle.setMap(map);
-                    {% endfor %}
+                        {% endfor %}
                     
-                    var marker = new kakao.maps.Marker({
-                        position: markerPosition, 
-                        image: markerImage
-                    });
-
-                      marker.setMap(map);  
+                      
                       map.setZoomable(false);
                       map.setDraggable(false);   
                     </script>
                     </div>
                 </div>
               </div>
-              <div class="col-md-7">
-                <div class="box">
+              <div class="col-md-7" >
+                <div class="box" style="height: 25rem;">
                   <div id="graph"></div>
                   <script>
+                    var cnt = [];
+                    var time = []; 
+                    {% for history in historys %}
+                      
+                      cnt.push({{history.count}});
+                      console.log({{history.count}});
+                    {% endfor %}
+
+                    //console.log("{{times}}");
+
+                    {% for time in times %}
+                      
+                      time.push("{{time}}");
+                    {% endfor %} 
+
+                    console.log(cnt);
+                    console.log(time);
                     color_id = {{event_id}}%3
                     if(color_id==0){
                       color_id =  '#4C83FF'
@@ -218,38 +248,45 @@
                     }
                     var options = {
                       series: [{
-                      name: '시간별 인구',
-                      data: [53, 94, 81, 112, 79, 102, 116],
-                      color: color_id
-                    }],
-                    title: {
-                      text: '시간별 사람수',
-                      align: 'left',
-                      offsetY: 25,
-                      offsetX: 20,
-                      style: {
-                        color:  '#cccccc'
+                        name: '시간별 인구',
+                        data: cnt,
+                        color: color_id
+                      }],
+                      title: {
+                        text: '시간별 사람수',
+                        align: 'left',
+                        offsetY: 25,
+                        offsetX: 20,
+                        style: {
+                          color: '#cccccc'
+                        }
                       },
-                    },
                       chart: {
-                      height: 345,
-                      type: 'area'
-                    },
-                    dataLabels: {
-                      enabled: false
-                    },
-                    stroke: {
-                      curve: 'smooth'
-                    },
-                    xaxis: {
-                      type: 'datetime',
-                      categories: ["2023-05-19 00:00:00.000", "2023-05-19 01:00:00.000", "2023-05-19 02:00:00.243865", "2023-05-19 03:00:00.243865", "2023-05-19 04:00:00.000", "2023-05-19 05:00:00.000", "2023-05-19 06:00:00.000"]
-                    },
-                    tooltip: {
-                      x: {
-                        format: 'yy/MM/ HH:mm'
+                        height: 378,
+                        type: 'area'
                       },
-                    },
+                      dataLabels: {
+                        enabled: false
+                      },
+                      stroke: {
+                        curve: 'smooth'
+                      },
+                      xaxis: {
+                        type: 'datetime',
+                        categories: time,
+                        labels: {
+                          datetimeUTC: false
+                        }
+                      },
+                      tooltip: {
+                        x: {
+                          format: 'yy/MM/dd HH:mm'
+                        }
+                      },
+                      fill: {
+                        opacity: 1
+                      }
+                     
                     };
 
                     var chart = new ApexCharts(document.querySelector("#graph"), options);
@@ -265,12 +302,14 @@
 
     {% else %}
     <div class="container-login">
-      <img class="blur-img" src="/static/imgs/blur.png">
-      <a href="{% url 'login' %}">
-        <div class="login-btn">
-          Login 하러 가기
-        </div>
-      </a>
+      <div class="container-login">
+        <img class="blur-img" src="/static/imgs/blur.png">
+        <a href="{% url 'login' %}">
+          <div class="login-btn">
+            Login 하러 가기
+          </div>
+        </a>
+      </div>
     </div>
     {% endif %}
 

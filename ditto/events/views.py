@@ -1,4 +1,9 @@
 from django.shortcuts import render, redirect
+import boto3
+import subprocess
+from urllib import parse
+from django.http import HttpResponse
+from django.conf import settings
 
 # Create your views here.
 
@@ -41,9 +46,15 @@ def control(request, event_id):
     events = Event.objects.filter(user_id=request.user.id)
     event = Event.objects.get(id=event_id)
     history = CountHistory.objects.filter(event_id_id=event_id).order_by('update_time')[:10]
+    times = history.values('update_time')
+    tmp_times = []
+    for time in times:
+        tmp_times.append(time['update_time'].strftime('%Y-%m-%d %H:%M:%S'))
+        # print(time)
     headcount = HeadCount.objects.filter(event_id_id=event_id)
     droneinfo = DroneInfo.objects.filter(id=event_id).last()
-    return render(request, '../templates/control.html', {'event': event, 'events':events, 'event_id':event_id, 'headcounts': headcount, 'droneinfo': droneinfo, 'history': history})
+    return render(request, '../templates/control.html', {'event': event, 'events':events, 'event_id':event_id, 'headcounts': headcount, 'droneinfo': droneinfo, 'historys': history, 'times': tmp_times})
+
 
 def map(request, event_id):
     name = 'map'
@@ -59,8 +70,8 @@ def control_detail(request):
 def control_record(request, event_id):
     name = 'control_record'
     
-    record = RecordingLog.objects.get(event_id=event_id)
-    return render(request, '../templates/control_record.html', {'records': record})
+    record = RecordingLog.objects.filter(event_id=event_id)
+    return render(request, '../templates/record.html', {'records': record})
 
 def area(request):
     name = 'area'
@@ -68,6 +79,31 @@ def area(request):
     city_list = City.objects.all()
     return render(request, '../templates/area.html', {'city_list': city_list})
 
+def eventAdd(request):
+    name = 'event-add'
+    return render(request, '../templates/event-add.html')
+
 def initHeadcount(request, event_id):
-    HeadCount.objects.filter(event_id_id=event_id).delete()
+
+    HeadCount.objects.filter(event_id=event_id).delete()
     return redirect('control', event_id)
+
+
+def download_video(request, key):
+    s3_client = boto3.client(
+        's3',
+        aws_access_key_id=settings.AWS_ACCESS_KEY_ID,
+        aws_secret_access_key=settings.AWS_SECRET_ACCESS_KEY
+    )
+    response = s3_client.get_object(
+        Bucket=settings.AWS_STORAGE_BUCKET_NAME,
+        Key=parse.unquote(key)
+    )
+    
+    content_type = response['ContentType']
+    response_data = response['Body'].read()
+    
+    response = HttpResponse(response_data, content_type=content_type)
+    response['Content-Disposition'] = 'attachment; filename={}'.format(key)
+    print(type(response))
+    return response

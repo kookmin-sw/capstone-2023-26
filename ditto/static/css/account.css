@@ -1,7 +1,7 @@
 body {
 	background: #343E59;
 	color: #b3b3b3;
-	font-family: Montserrat, Arial, sans-serif;
+	font-family: Montserrat, Arial, sans-serif !important;
 }
 
 a { 
@@ -19,9 +19,31 @@ h5{
 }
 
 .container{
-	width: 25.5%;  
+	width: 28rem;  
 	border-radius: 26px; 
 	background:#2B2D3E; 
 	margin: 8% auto; 
-	padding: 30px 60px 55px 60px;
+	padding: 30px 65px 50px 65px;
+	top:0;
+	position: absolute; 
+	top: 0; 
+	right: 40%;
+}
+
+.container-login{
+	position: relative;
+	/* text-align: center;  */
+	padding-top: 3%;
+	padding-left: 7.5%;
+	width: 100%;
+}
+
+.blur-img{
+	filter: blur(10px);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 86%;
+    height: 84vh;
 }
