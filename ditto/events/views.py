@@ -45,8 +45,11 @@ def control(request, event_id):
     name = 'control'
     events = Event.objects.filter(user_id=request.user.id)
     event = Event.objects.get(id=event_id)
-    history = CountHistory.objects.filter(event_id_id=event_id).order_by('update_time')[10:20]
+    history = CountHistory.objects.filter(event_id_id=event_id).order_by('update_time')#[:10]
     times = history.values('update_time')
+    length = len(history)
+    history = history[length-10:]
+    times = times[length-10:]
     tmp_times = []
     for time in times:
         tmp_times.append(time['update_time'].strftime('%Y-%m-%d %H:%M:%S'))
