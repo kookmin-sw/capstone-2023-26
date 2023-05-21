@@ -45,7 +45,7 @@ def control(request, event_id):
     name = 'control'
     events = Event.objects.filter(user_id=request.user.id)
     event = Event.objects.get(id=event_id)
-    history = CountHistory.objects.filter(event_id_id=event_id).order_by('update_time')[:10]
+    history = CountHistory.objects.filter(event_id_id=event_id).order_by('update_time')[:-20]
     times = history.values('update_time')
     tmp_times = []
     for time in times:
@@ -79,9 +79,31 @@ def area(request):
     city_list = City.objects.all()
     return render(request, '../templates/area.html', {'city_list': city_list})
 
-def eventAdd(request):
+def eventAdd(request, event_id):
     name = 'event-add'
-    return render(request, '../templates/event-add.html')
+    return render(request, '../templates/event-add.html', {'event_id': event_id})
+
+def createEvent(request, event_id):
+    name = 'createEvent'
+    # print(request.POST.get("name"), request.POST.get("location"), request.POST.get("coordinate"), request.POST.get("isheld"))
+    if request.method == "POST":
+        event_name = request.POST.get("event_name", False)
+        location = request.POST.get("location", False)
+        coordinate = request.POST.get("coordinate", False)
+        isheld = request.POST.get("isheld", False)
+        if isheld == "on":
+            isheld = True
+        else:
+            isheld = False
+        
+        tmp = Event.objects.get(id=event_id)
+        city = tmp.city
+
+        event = Event(event_name=event_name, location=location, coordinate=coordinate, is_being_held=isheld, user_id_id=request.user.id, city_id=city.id)
+        event.save()
+
+    return redirect('control', event_id)
+
 
 def initHeadcount(request, event_id):
 
