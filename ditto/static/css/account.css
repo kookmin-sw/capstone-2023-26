@@ -30,11 +30,12 @@ h5{
 	right: 40%;
 }
 
+
 .container-login{
 	position: relative;
 	/* text-align: center;  */
 	padding-top: 3%;
-	padding-left: 7.5%;
+	padding-left: 7.8%;
 	width: 100%;
 }
 
@@ -44,6 +45,6 @@ h5{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    width: 86%;
+    width: 82%;
     height: 84vh;
 }

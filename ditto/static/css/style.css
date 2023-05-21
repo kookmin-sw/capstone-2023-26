@@ -30,7 +30,7 @@ a {
   }
 
   .box-event{
-	height: 23rem;
+	height: 22.5rem;
 	background:#2B2D3E; 
 	padding: 0.5rem 1rem; 
 	border-radius: 1.2rem; 
@@ -83,7 +83,7 @@ a {
 }
 
 .PlaceContainer { 
-	margin: 10px auto;
+	margin: 10.5px auto;
 	width: 165px; 
 	position:relative;
 	cursor:pointer;
@@ -142,7 +142,8 @@ h5{
 .container-login{
 	position: relative;
 	text-align: center; 
-	padding: 7%;
+	padding-top: 2.5%;
+	padding-left: 0.1%;
 	width: 100%;
 }
 
@@ -152,8 +153,8 @@ h5{
     -moz-user-select: none;
     -ms-user-select: none;
     user-select: none;
-    width: 80%;
-    height: 80vh;
+    width: 72%;
+    height: 87vh;
 }
 
 .login-btn{
