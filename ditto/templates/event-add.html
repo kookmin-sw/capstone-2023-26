@@ -19,17 +19,20 @@
 				<div class="container-login">
 				<img class="blur-img" src="/static/imgs/blur.png">
 				<div class="container">
+					<a href="{% url 'administer' %}">
+						<i class="bi bi-x-lg" style="font-size:1.5rem; position:absolute; right:2.25rem; top:1.25rem; cursor:pointer; color:#cccc;"></i>
+					</a>
 				<div class="form-group" style="margin: 15px 0;">
 					<label for="exampleInputEmail1" style="color:white;">Event Name</label>
 					<input class="form-control" placeholder="event name" style="width: 320px; height:40px;" name="event_name">
 				</div>
 				<div class="form-group" style="margin-bottom: 20px;">
 					<label for="exampleInputPassword1" style="color:white;">Location</label>
-					<input type="password" class="form-control" placeholder="location" style="width: 320px; height:40px;" name="location" >
+					<input class="form-control" placeholder="location" style="width: 320px; height:40px;" name="location" >
 				</div>
 				<div class="form-group" style="margin-bottom: 20px;">
 					<label for="exampleInputPassword1" style="color:white;">Coordinate</label>
-					<input type="password" class="form-control" placeholder="coordinate" style="width: 320px; height:40px;" name="coordinate">
+					<input class="form-control" placeholder="[0, 0]" style="width: 320px; height:40px;" name="coordinate">
 				</div>
 				<div class="form-check" style="margin-bottom: 20px;">
 					<input class="form-check-input" type="checkbox" id="flexCheckDefault"  style="cursor:pointer;" name="isheld">
