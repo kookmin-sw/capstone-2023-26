@@ -48,9 +48,11 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_crontab',
     'boto3',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
+    'corsheaders.middleware.CorsMiddleware', 
     'django.middleware.security.SecurityMiddleware',
     'django.contrib.sessions.middleware.SessionMiddleware',
     'django.middleware.common.CommonMiddleware',
@@ -147,3 +149,7 @@ AWS_ACCESS_KEY_ID = "AKIAVW77YE3JMOJGFPUT"
 AWS_SECRET_ACCESS_KEY = "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"
 
 AWS_STORAGE_BUCKET_NAME = "ivs-ditto"
+
+# CORS 설정 - whitelist 에 추가된 주소 접근 허용
+CORS_ORIGIN_WHITELIST = ['http://0.0.0.0:8000' ,'http://localhost:8000']
+CORS_ALLOW_CREDENTIALS = True
