@@ -34,10 +34,10 @@
                 
                       {% for headcount in headcounts %}
                         if({{headcount.count}}< 5){
-                          opacity = 0.2
+                          opacity = 0.1
                           var circle = new kakao.maps.Circle({
                             center : new kakao.maps.LatLng({{headcount.coordinate.0}}, {{headcount.coordinate.1}}),
-                            radius: 5, 
+                            radius: 8, 
                             strokeOpacity: 0, 
                             fillColor: '#ff001691', 
                             fillOpacity: opacity   
@@ -45,10 +45,10 @@
                           circle.setMap(map);
                         }
                         else if({{headcount.count}} >= 5 && {{headcount.count}} < 11){
-                          opacity = 0.4
+                          opacity = 0.3
                           var circle = new kakao.maps.Circle({
                             center : new kakao.maps.LatLng({{headcount.coordinate.0}}, {{headcount.coordinate.1}}),
-                            radius: 5, 
+                            radius: 8, 
                             strokeOpacity: 0, 
                             fillColor: '#ff001691', 
                             fillOpacity: opacity   
@@ -56,10 +56,10 @@
                           circle.setMap(map);
                         }
                         else if({{headcount.count}} >= 11 && {{headcount.count}} < 16){
-                          opacity = 0.6
+                          opacity = 0.5
                           var circle = new kakao.maps.Circle({
                             center : new kakao.maps.LatLng({{headcount.coordinate.0}}, {{headcount.coordinate.1}}),
-                            radius: 5, 
+                            radius: 8, 
                             strokeOpacity: 0, 
                             fillColor: '#ff001691', 
                             fillOpacity: opacity   
@@ -67,10 +67,10 @@
                           circle.setMap(map);
                         }
                         else if({{headcount.count}} >= 16 && {{headcount.count}} < 21){
-                          opacity = 0.8
+                          opacity = 0.9
                           var circle = new kakao.maps.Circle({
                             center : new kakao.maps.LatLng({{headcount.coordinate.0}}, {{headcount.coordinate.1}}),
-                            radius: 5, 
+                            radius: 8, 
                             strokeOpacity: 0, 
                             fillColor: '#ff001691', 
                             fillOpacity: opacity   
@@ -84,7 +84,7 @@
                             position: markerPosition, 
                             image: markerImage
                           });
-                          opacity = 0.8;
+                          opacity = 0.9;
                           marker.setMap(map);  
                         }
                         

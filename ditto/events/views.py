@@ -49,8 +49,8 @@ def control(request, event_id):
     times = history.values('update_time')
     length = len(history)
     print(length)
-    history = history[length-6:]
-    times = times[length-6:]
+    history = history[length-3:]
+    times = times[length-3:]
     tmp_times = []
     for time in times:
         tmp_times.append(time['update_time'].strftime('%Y-%m-%d %H:%M:%S'))
