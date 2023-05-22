@@ -100,12 +100,8 @@ class HeadCountAPI(APIView):
             exist[0].coordinate = [new_lat, new_lng]
             exist[0].save()
         else: 
-<<<<<<< HEAD
             print("create new")
-            new = HeadCount(row=y, col=x, count=count)
-=======
             new = HeadCount(row=y, col=x, count=count, coordinate=[new_lat, new_lng])
->>>>>>> d03c84e60ab69d9e51c84b22fe05eacaf50e3a80
             event_id = drone_records.event_id
             new.event_id = event_id
             new.save()
