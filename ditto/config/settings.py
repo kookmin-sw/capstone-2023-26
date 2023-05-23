@@ -48,7 +48,7 @@ INSTALLED_APPS = [
     'rest_framework',
     'django_crontab',
     'boto3',
-    'jquery'
+    'jquery',
     
 ]
 
