@@ -5,7 +5,7 @@ from django.db import models
 class DroneInfo(models.Model):
     time = models.DateTimeField()
     coordinate = models.JSONField()
-    altitude = models.FloatField()
+    altitude = models.FloatField(default=0)
     voltage = models.FloatField()
     event_id = models.ForeignKey("events.Event", on_delete=models.CASCADE)
     

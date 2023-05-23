@@ -1,19 +1,10 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {% comment %} <script src="static/js/jquery-3.7.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script>
-      $(document).ready(function(){
-          window.setInterval(function(){
-          $("#map").load(window.location.href + "#map" );
-      }, 1000);
-      });
-    </script> {% endcomment %}
-    
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>DITTO Administer</title>
+    <title>Administer</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css" />
@@ -22,25 +13,17 @@
       rel="stylesheet"
       href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
     />
-    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="../../static/css/style.css" />
-    
-     {% comment %} <script>
-      // 페이지가 로드되면 실행되는 함수
-      window.onload = function() {
-        // 1초마다 reloadDiv() 함수 호출
-        setInterval(reloadDiv, 5000);
-      };
-      
-      function reloadDiv() {
-        // 새로고침할 div 요소를 가져옴
-        var div = document.getElementById('map');
-        
-        // div 요소를 다시 로드하기 위해 src 속성을 변경
-        console.log(div.src)
-        div.src = "control.html";
-      }
-    </script> {% endcomment %}
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
   </head>
 
   <body>
@@ -138,33 +121,17 @@
                 <div class="box" style="height:22.5rem;">
                   <div id="pie"></div>
                   <div class="Label">드론 현재 고도 {{droneinfo.altitude}}</div>
-
-
-		  <script>
-                
+                  <script>
                     var options = {
                       series: [{{droneinfo.voltage}}],
                       chart: {
-                        height: 330,
-                        type: 'radialBar',
-                        dataLabels: {
-                          style: {
-                            colors: ['#F44336']
-                          }
-                        },
-                        animations: {
-                          enabled: true,
-                          easing: 'easeinout',
-                          speed: 0,
-                          animateGradually: {
-                              enabled: true,
-                              delay: 0
-                          },
-                          dynamicAnimation: {
-                              enabled: true,
-                              speed: 0
-                          }
-                      }   
+                      height: 330,
+                      type: 'radialBar',
+                      dataLabels: {
+                        style: {
+                          colors: ['#F44336']
+                        }
+                      }
                     },
                     plotOptions: {
                       radialBar: {
@@ -193,8 +160,7 @@
                     <a href="{% url 'initHeadcount' event.id %}">
                     <i class="bi bi-arrow-clockwise" style="color:#dddd; cursor:pointer; position:absolute; right:2rem;"></i>
                     </a>
-                    
-                  <div id="map" style="width: 100%; height: 20.2rem; margin-top: 1.75rem;" src="control.html"></div>
+                  <div id="map" style="width: 100%; height: 20.2rem; margin-top: 1.75rem;"></div>
                   
                     <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e00ee7b35d9447fc1b074a96fd8ee6d0"></script>
                     <script>
@@ -280,7 +246,6 @@
                      map.setZoomable(false);
                      map.setDraggable(false);    
                     </script>
-                   
                     </div>
                 </div>
               </div>
@@ -296,8 +261,11 @@
                       
                     {% endfor %}
 
-                    
- 
+
+                    {% for time in times %}
+                      
+                      time.push("{{time}}");
+                    {% endfor %} 
 
                     color_id = {{event_id}}%3
                     if(color_id==0){
@@ -324,14 +292,9 @@
                           color: '#cccccc'
                         }
                       },
-                      
                       chart: {
                         height: 367,
-                        type: 'area',
-                        animations: {
-                          enabled: false
-                       
-                        }
+                        type: 'area'
                       },
                       dataLabels: {
                         enabled: false
@@ -341,8 +304,10 @@
                       },
                       xaxis: {
                         type: 'datetime',
-                        categories: ["2023-05-23T12:00:00.000Z", "2023-05-23T12:30:00.000Z", "2023-05-23T13:00:00.000Z", "2023-05-23T13:30:00.000Z","2023-05-23T14:00:00.000Z","2023-05-23T14:30:00.000Z","2023-05-23T15:00:00.000Z","2023-05-23T15:30:00.000Z","2023-05-23T16:00:00.000Z","2023-05-23T16:30:00.000Z"],
-                        
+                        categories: time,
+                        labels: {
+                          datetimeUTC: false
+                        }
                       },
                       tooltip: {
                         x: {
@@ -378,5 +343,7 @@
       </div>
     </div>
     {% endif %}
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.slim.min.js"></script>
   </body>
 </html>
