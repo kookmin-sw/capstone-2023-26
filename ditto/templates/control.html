@@ -292,12 +292,7 @@
                       cnt.push({{history.count}});
                       
                     {% endfor %}
-
-
-                    {% for time in times %}
-                      
-                      time.push("{{time}}");
-                    {% endfor %} 
+ 
 
                     color_id = {{event_id}}%3
                     if(color_id==0){
@@ -341,10 +336,10 @@
                       },
                       xaxis: {
                         type: 'datetime',
-                        categories: time,
-                        labels: {
+                        categories: ["2023-05-23T12:00:00.000Z", "2023-05-23T12:30:00.000Z", "2023-05-23T13:00:00.000Z", "2023-05-23T13:30:00.000Z","2023-05-23T14:00:00.000Z","2023-05-23T14:30:00.000Z","2023-05-23T15:00:00.000Z","2023-05-23T15:30:00.000Z","2023-05-23T16:00:00.000Z","2023-05-23T16:30:00.000Z"],
+                        {% comment %} labels: {
                           datetimeUTC: false
-                        }
+                        } {% endcomment %}
                       },
                       tooltip: {
                         x: {

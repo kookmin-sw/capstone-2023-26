@@ -46,18 +46,18 @@ def control(request, event_id):
     events = Event.objects.filter(user_id=request.user.id)
     event = Event.objects.get(id=event_id)
     history = CountHistory.objects.filter(event_id_id=event_id).order_by('update_time')
-    times = history.values('update_time')
+    # times = history.values('update_time')
     length = len(history)
     print(length)
-    history = history[length-3:]
-    times = times[length-3:]
-    tmp_times = []
-    for time in times:
-        tmp_times.append(time['update_time'].strftime('%Y-%m-%d %H:%M:%S'))
-        # print(time)
+    history = history[length-10:]
+    # times = times[length-10:]
+    # tmp_times = []
+    # for time in times:
+    #     tmp_times.append(time['update_time'].strftime('%Y-%m-%d %H:%M:%S'))
+    #     # print(time)
     headcount = HeadCount.objects.filter(event_id_id=event_id)
     droneinfo = DroneInfo.objects.filter(event_id_id=event_id).last()
-    return render(request, '../templates/control.html', {'event': event, 'events':events, 'event_id':event_id, 'headcounts': headcount, 'droneinfo': droneinfo, 'historys': history, 'times': tmp_times})
+    return render(request, '../templates/control.html', {'event': event, 'events':events, 'event_id':event_id, 'headcounts': headcount, 'droneinfo': droneinfo, 'historys': history})
 
 
 def map(request, event_id):
