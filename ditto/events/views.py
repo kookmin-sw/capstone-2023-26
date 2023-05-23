@@ -79,6 +79,11 @@ def control_record(request, event_id):
     record = RecordingLog.objects.filter(event_id=event_id)
     return render(request, '../templates/record.html', {'records': record})
 
+def control_play(request):
+    name = 'control_play'
+
+    return render(request, '../templates/play.html')
+
 def area(request):
     name = 'area'
     

@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    {% comment %} <script src="static/js/jquery-3.7.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <script>
-      $(document).ready(function(){
-          window.setInterval(function(){
-          $("#map").load(window.location.href + "#map" );
-      }, 1000);
-      });
-    </script> {% endcomment %}
-    
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -24,24 +15,7 @@
     />
     <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
     <link rel="stylesheet" href="../../static/css/style.css" />
-    <script>setTimeout('location.reload()',5000);</script>
-    
-     {% comment %} <script>
-      // 페이지가 로드되면 실행되는 함수
-      window.onload = function() {
-        // 1초마다 reloadDiv() 함수 호출
-        setInterval(reloadDiv, 5000);
-      };
-      
-      function reloadDiv() {
-        // 새로고침할 div 요소를 가져옴
-        var div = document.getElementById('map');
-        
-        // div 요소를 다시 로드하기 위해 src 속성을 변경
-        console.log(div.src)
-        div.src = "control.html";
-      }
-    </script> {% endcomment %}
+
   </head>
 
   <body>
@@ -64,7 +38,12 @@
 
                   </div>
                 </a>
-                <div style="width: 8rem; margin:6px auto; font-size:1.05rem; font-weight: 600; background:#2B2D3E; color:white; padding:0.4rem 0.6rem; border-radius:3px;">
+                <a href="{% url 'record' event.id %}">
+                  <div class="video-btn">
+                    <i class="bi bi-camera-reels-fill"></i>
+                  </div>
+                </a>
+                <div style="width: 7.9rem; margin:6px auto; font-size:1.05rem; font-weight: 600; background:#2B2D3E; color:white; padding:0.4rem 0.6rem; border-radius:3px;">
                   서울시 관리자
                 </div>
                 <div style="width: 14.8rem; margin:3px auto; font-size:0.7rem; color:white; border-radius:3px;">
@@ -268,7 +247,7 @@
                           markerPosition = new kakao.maps.LatLng({{headcount.coordinate.0}}, {{headcount.coordinate.1}}); // 마커가 표시될 위치입니다
                           var marker = new kakao.maps.Marker({
                             position: markerPosition, 
-                            image: markerImage
+                            {% comment %} image: markerImage {% endcomment %}
                           });
                           opacity = 0.8;
                           marker.setMap(map);  

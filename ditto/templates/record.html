@@ -22,7 +22,9 @@
 							<a href="{% url 'download_video' key=record.s3key %}">동영상 저장하기</a>
 							
 						</div> 
-						<img src="/static/imgs/play.png" class="Icon">
+						<a href="{% url 'play' %}">
+							<img src="/static/imgs/play.png" class="Icon">
+						</a>
 					</div>
 			
 			</div>

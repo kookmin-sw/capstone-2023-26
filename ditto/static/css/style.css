@@ -169,8 +169,8 @@ h5{
 	color: #b1b1b1;
 }
 
-/* .video-btn{
-	margin-top: 6px;
+.video-btn{
+	margin-top: 1.25rem;
 	position: absolute; 
 	right: 5.5rem;
 	padding: 0.5rem 0.7rem; 
@@ -178,12 +178,12 @@ h5{
 	cursor:pointer;
 	background-image: linear-gradient( 135deg,  #00e396 10%, #4C83FF 100%);
 	color: white;
-} */
+}
 
 .plus-btn{
 	margin-top: 1.25rem;
 	position: absolute; 
-	right: 5.5rem; 
+	right: 8.5rem; 
 	padding: 0.1rem 0.4rem; 
 	border-radius:0.5rem; 
 	cursor:pointer;
