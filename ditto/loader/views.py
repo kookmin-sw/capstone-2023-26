@@ -36,10 +36,10 @@ def reUpload():
 
     process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
     output, error = process.communicate()
-    output = output.decode('utf-8')
+    deoutput = output.decode('utf-8')
 
-    key_value = output.split(' ')[-1].strip()
-    print("output:", output)
+    key_value = deoutput.split(' ')[-1].strip()
+    print("output:", deoutput)
     print("uploaded key:", key_value)
 
     print("업로드 완료")
@@ -60,5 +60,7 @@ def reUpload():
         print("post!")
     else:
         print('fail')
+        
+    command = ['rm', '-rf', './videostorage' + '/*']
         
 reUpload()
