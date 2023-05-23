@@ -32,7 +32,7 @@ a {
   .box-event{
 	height: 22.5rem;
 	background:#2B2D3E; 
-	padding: 0.5rem 1rem; 
+	padding: 0.2rem 1rem; 
 	border-radius: 1.2rem; 
 	overflow-y: auto;
 	float:left;
