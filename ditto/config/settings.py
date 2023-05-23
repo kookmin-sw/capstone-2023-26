@@ -27,8 +27,8 @@ SECRET_KEY = 'django-insecure-r=+*5iljx4g0)(gduh08z-pi=5577xs3=4+w5)y(r=an#id(i9
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "43.201.173.18",
-     '127.0.0.1',
+  #  "43.201.173.18",
+ #    '127.0.0.1',
      '*'
 ]
 
@@ -151,5 +151,10 @@ AWS_SECRET_ACCESS_KEY = "2BeYfAFPjFKJSnKrqAuT/EV7RP/wDBg1OMrW5rLg"
 AWS_STORAGE_BUCKET_NAME = "ivs-ditto"
 
 # CORS 설정 - whitelist 에 추가된 주소 접근 허용
-CORS_ORIGIN_WHITELIST = ['http://0.0.0.0:8000' ,'http://localhost:8000']
-CORS_ALLOW_CREDENTIALS = True
+#CORS_ORIGIN_WHITELIST = ['http://0.0.0.0:8000' ,'http://localhost:8000']
+#CORS_ALLOW_CREDENTIALS = True
+#CORS_ORIGIN_ALLOW_ALL = True
+##CORS
+CORS_ORIGIN_ALLOW_ALL=True # <- 모든 호스트 허용
+CORS_ALLOW_CREDENTIALS = True # <-쿠키가 cross-site HTTP 요청에 포함될 수 있다
+SECURE_CROSS_ORIGIN_OPENER_POLICY = None

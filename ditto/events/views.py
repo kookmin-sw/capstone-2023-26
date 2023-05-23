@@ -56,7 +56,10 @@ def control(request, event_id):
         tmp_times.append(time['update_time'].strftime('%Y-%m-%d %H:%M:%S'))
         # print(time)
     headcount = HeadCount.objects.filter(event_id_id=event_id)
-    droneinfo = DroneInfo.objects.filter(id=event_id).last()
+  #  print("req :", request)
+ #   print("e id :", event_id)
+    droneinfo = DroneInfo.objects.filter(event_id=event_id).last()
+    print("droneinfo",droneinfo)
     return render(request, '../templates/control.html', {'event': event, 'events':events, 'event_id':event_id, 'headcounts': headcount, 'droneinfo': droneinfo, 'historys': history, 'times': tmp_times})
 
 
