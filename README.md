@@ -21,7 +21,7 @@
 
 2. [💻 주요 기능](#-주요-기능)
 
-3. [🎥 데모 영상](#-데모-영상)
+3. [🎥 소개 영상](#-데모-영상)
 
 4. [💁🏻 팀원 소개](#-팀원-소개)
 
@@ -38,12 +38,7 @@
 
 ## 🤖 프로젝트 소개
 
-<br/>
-
 <img alt="main_img" src="img/device_frame.png">
-
-<br/>
-
 
 <code>드론을 활용한 야외 인구 밀집도 및 위험 감지 서비스</code>
 <br/>
@@ -82,7 +77,7 @@
 
 <br/><br/>
 
-## 🎥 데모 영상
+## 🎥 소개 영상
 
 <br/><br/>
 
@@ -96,17 +91,16 @@
 | <img src="https://avatars.githubusercontent.com/u/35187793?v=4" width="200" height="180"> | <img src="https://avatars.githubusercontent.com/u/35187793?v=4" width="200" height="180">| <img src="https://avatars.githubusercontent.com/u/35187793?v=4" width="200" height="180"> |
 |                                                🧑🏻‍💻 학번: xxxx3082                                                 |                                                👩🏻‍💻 학번: xxxx1552                                                 |                                                👩🏻‍💻 학번: xxxx1611                                                 |
 |                                      📌 Role:                                      |                                       📌 Role:                                         |                                       📌 Role:                                         |
-
+|                                             📧 Email: ysck73@kookmin.ac.kr                                           |                                             📧 Email: soye0710@kookmin.ac.kr                                          |                                             📧 Email: pmj4138@kookmin.ac.kr                                          |
 
 <br/>
-
-
 
 |                                                       [서정현](https://github.com/junghyeon0427)                                                      |                                                      [이재원](https://github.com/ljwljy51)                                                    |                                                       [조현아](https://github.com/hacho08)                                                 |
 | :--------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------: |
 | <img src="https://avatars.githubusercontent.com/u/35187793?v=4"  width="200" height="180"> | <img src="https://avatars.githubusercontent.com/u/35187793?v=4"  width="200" height="180">| <img src="https://avatars.githubusercontent.com/u/35187793?v=4"  width="200" height="180"> |
 |                                                🧑🏻‍💻 학번: xxxx1383                                                 |                                                👩🏻‍💻 학번: xxxx0498                                                 |                                                👩🏻‍💻 학번: xxxx2912                                                 |
 |                                      📌 Role:                                      |                                       📌 Role:                                         |                                       📌 Role:                                         |
+|                                             📧 Email: jh04270312@kookmin.ac.kr                                          |                                             📧 Email: ljwljy51@kookmin.ac.kr                                          |                                             📧 Email:  chcho0819@kookmin.ac.kr                                          |
 
 </div>
 
