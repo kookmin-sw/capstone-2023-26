@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport">
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<link href="../../static/css/record.css" rel="stylesheet">
+        <title>Ditto {% block title %}{% endblock %}</title>
+        <style>
+        </style>
+    </head>
+
+    <body>
+        <div class="box">
+            
+			{% for record in records %}
+			<div class="PlaceContainer">
+				
+					<div style="display: flex;">
+						<div>
+							<h4 class="Label1">{{record.time}}</h4>
+							<a href="{% url 'download_video' key=record.s3key %}">동영상 저장하기</a>
+							
+						</div> 
+						<a href="{% url 'play' %}">
+							<img src="/static/imgs/play.png" class="Icon">
+						</a>
+					</div>
+			
+			</div>
+			<div class="line"></div>
+			{% endfor %}  
+        </div> 
+    </body>
+</html> 

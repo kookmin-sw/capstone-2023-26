@@ -1,0 +1,42 @@
+body {
+	background: #343E59;
+	font-family: Montserrat, Arial, sans-serif;
+  }
+
+a { 
+	text-decoration:none !important;
+}
+
+.Logo { 
+	width: 165px;
+	height: 38px;
+	cursor:pointer;
+	margin: 5px 0 10px 46%;
+}
+
+.PlaceContainer { 
+	margin: 8px auto;
+	width: 138px; 
+	position:relative;
+	cursor:pointer;
+}
+
+.Label1 { 
+	margin: 5px; 
+	text-align: left;
+	color: #ffffff;
+}
+
+.Label2 { 
+	margin: 5px; 
+	color: #a1a1a1; 
+	text-align: left;
+}
+
+.Icon{
+	width: 30px;
+	height: 30px;
+	position:absolute; 
+	top: 11px;
+	right:0; 
+}

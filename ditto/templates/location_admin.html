@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Administer</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Montserrat"
+      rel="stylesheet"
+    />
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../../static/css/style.css" />
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+  </head>
+
+  <body>
+    
+    {% if user.is_authenticated %}
+    <div id="wrapper">
+      <div class="content-area">
+        <div class="container-fluid">
+          
+          <div class="main" style="width: 1300px;">
+            <div class="row sparkboxes mt-3">
+
+              <div style="height: 2.5rem;">
+                <a href="{% url 'logout' %}">
+                  <div class="logout-btn">
+                    Logout
+                  </div>
+                </a>
+              </div>      
+            </div>
+            
+            
+
+            <div class="row mt-3">
+              <div class="col-md-2">
+                {% for event in events %}
+					
+                <div class="PlaceContainer">
+				          <a href="{% url 'control' event.id %}">
+                  <div style="display: flex; gap: 18%;">
+                    <div>
+                      <h4 class="Label1">{{event.event_name}}</h4>
+                      <h5 class="Label2">{{event.location}}</h5>
+                    </div> 
+                    <img src="/static/imgs/map.png" class="Icon">
+                  </div>
+				</a>
+                  
+                </div> 
+
+                {% endfor %}  
+
+              </div>
+              
+              <div class="col-md-4">
+                <div class="box">
+                  <div id="pie"></div>
+                  <script>
+                    var options = {
+                      chart: {
+                        type: 'radialBar',
+                        height: 345,
+                        width: "100%",
+                      },
+                      plotOptions: {
+                        radialBar: {
+                        size: undefined,
+                        inverseOrder: true,
+                        hollow: {
+                          margin: 5,
+                          size: '48%',
+                          background: 'transparent',
+                          color:'white',
+                    
+                        },
+                        track: {
+                          show: false,
+                        },
+                        startAngle: -180,
+                        endAngle: 180
+                    
+                        },
+                      },
+                      stroke: {
+                        lineCap: 'round'
+                      },
+                      title: {
+                        text: '대동제',
+                        align: 'left',
+                        offsetY: 25,
+                        offsetX: 20,
+                        style: {
+                          color:  '#cccccc'
+                        },
+                       
+                        },
+                      subtitle: {
+                        text: '일별 사람수',
+                        align: 'left',
+                        offsetY: 48,
+                        offsetX: 20,
+                        style: {
+                          color:  '#cccccc'
+                        },
+                        },
+                      series: [71, 63, 77],
+                      labels: ['1일전', '2일전', '오늘'],
+                      legend: {
+                        show: true,
+                        floating: true,
+                        position: 'right',
+                        offsetX: 5,
+                        offsetY: 235
+                      },
+                      }
+                    
+                      var chartCircle = new ApexCharts(document.querySelector('#pie'), options);
+                      chartCircle.render();
+                    </script>
+                </div>
+              </div>
+              <div class="col-md-6">
+                <div class="box">
+                  <div style="display: flex;">
+                  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+                  <div><video autoplay muted id="video" style="width: 100%; height: 38vh; background:#00000040; margin-top:2rem;"></video></div>
+                  
+                  <script>
+                     if(Hls.isSupported()) {
+                        var video = document.getElementById('video');
+                        var hls = new Hls();
+                        hls.loadSource("https://540f41fc71d9.ap-northeast-2.playback.live-video.net/api/video/v1/ap-northeast-2.392988993234.channel.eknAgsglpDNs.m3u8"); // 동영상경로
+                        hls.attachMedia(video);
+                        hls.on(Hls.Events.MANIFEST_PARSED,function() {
+                              video.play();
+                        });
+                     }
+                     else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                        video.src = "https://540f41fc71d9.ap-northeast-2.playback.live-video.net/api/video/v1/ap-northeast-2.392988993234.channel.eknAgsglpDNs.m3u8"; // 동영상경로
+                        video.addEventListener('canplay',function() {
+                              video.play();
+                        });
+                     }
+                  </script>
+                </div>
+                  
+                </div>
+              </div>
+            </div>
+
+            <div class="row mt-4">
+              <div class="col-md-5">
+                <div class="box">
+                  <div style="display:flex;">
+                  <div id="map" style="width: 100%; height: 38vh; margin-top: 0.5rem;"></div>
+                    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e00ee7b35d9447fc1b074a96fd8ee6d0"></script>
+                    <script>
+                      var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                          mapOption = { 
+                            center: new kakao.maps.LatLng(37.61092005882, 126.997209182), // 지도의 중심좌표
+                            level: 3 // 지도의 확대 레벨
+                          };
+
+                      // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+                      var map = new kakao.maps.Map(mapContainer, mapOption); 
+                
+                      var circle = new kakao.maps.Circle({
+                          center : new kakao.maps.LatLng(37.61092005882, 126.997259182),  // 원의 중심좌표 입니다 
+                          radius: 12, // 미터 단위의 원의 반지름입니다 
+                          strokeOpacity: 0, // 선의 불투명도 입니다 1에서 0 사이의 값이며 0에 가까울수록 투명합니다
+                          fillColor: '#ff001691', // 채우기 색깔입니다
+                          fillOpacity: 0.7  // 채우기 불투명도 입니다   
+                        }); 
+                      circle.setMap(map);
+                      map.setZoomable(false);
+                      map.setDraggable(false);   
+                    </script>
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-7">
+                <div class="box">
+                  <div id="graph"></div>
+                  <script>
+                    var options = {
+                      series: [{
+                      name: '시간별 인구',
+                      data: [3, 33, 21, 42, 19, 32, 40],
+                      color: '#00e396'
+                    }],
+                    title: {
+                      text: '시간별 사람수',
+                      align: 'left',
+                      offsetY: 25,
+                      offsetX: 20,
+                      style: {
+                        color:  '#cccccc'
+                      },
+                    },
+                      chart: {
+                      height: 325,
+                      type: 'area'
+                    },
+                    dataLabels: {
+                      enabled: false
+                    },
+                    stroke: {
+                      curve: 'smooth'
+                    },
+                    xaxis: {
+                      type: 'datetime',
+                      categories: ["2023-09-19T00:00:00.000Z", "2023-09-19T01:00:00.000Z", "2023-09-19T02:00:00.000Z", "2023-09-19T03:00:00.000Z", "2023-09-19T04:00:00.000Z", "2023-09-19T05:00:00.000Z", "2023-09-19T06:00:00.000Z"]
+                    },
+                    tooltip: {
+                      x: {
+                        format: 'yy/MM/ HH:mm'
+                      },
+                    },
+                    };
+
+                    var chart = new ApexCharts(document.querySelector("#graph"), options);
+                    chart.render();
+                  </script>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% else %}
+    <div class="container-login">
+      <img class="blur-img" src="/static/imgs/blur.png">
+      <a href="{% url 'login' %}">
+        <div class="login-btn">
+          Login
+        </div>
+      </a>
+    </div>
+    {% endif %}
+  
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.slim.min.js"></script>
+  </body>
+</html>
