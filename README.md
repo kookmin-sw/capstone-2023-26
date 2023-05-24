@@ -107,7 +107,17 @@
 
 <br/>
 
-<img src="img/structure.jpg">
+<code> 프로젝트 흐름도 </code>  
+
+<img src="img/structure.png">
+
+<br/>
+
+
+<code> 시스템 구조도 </code>  
+
+<img src="img/system.png">
+
 
 <br/><br/>
 
@@ -138,6 +148,7 @@ github의 issue와 pull request기능을 적극 활용해 프로젝트 작업 �
  
 야외행사의 특징에 맞게 시간과 장소에 구애받지 않고 CCTV 설치와 철거가 불필요합니다.
 
+<br/><br/>
 
 ## 🔑 관련 문서
 
