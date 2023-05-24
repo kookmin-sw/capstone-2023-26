@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>DITTO Administer</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.6.0/font/bootstrap-icons.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/apexcharts"></script>
+    <link rel="stylesheet" href="../../static/css/style.css" />
+
+  </head>
+
+  <body>
+    {% if user.is_authenticated %}
+    <div id="wrapper">
+      <div class="content-area">
+        <div class="container-fluid">
+          
+          <div class="main" style="width: 1250px; position:relative;">
+            <div class="row sparkboxes mt-3">
+              <div style="height: 3.2rem;">
+                <a href="{% url 'logout' %}">
+                  <div class="logout-btn">
+                    Logout
+                  </div>
+                </a>
+                <a href="{% url 'event-add' event.id %}">
+                  <div class="plus-btn">
+                    <i class="bi bi-plus" style="font-size:1.5rem;"></i>
+
+                  </div>
+                </a>
+                <a href="{% url 'record' event.id %}">
+                  <div class="video-btn">
+                    <i class="bi bi-camera-reels-fill"></i>
+                  </div>
+                </a>
+                <div style="width: 7.9rem; margin:6px auto; font-size:1.05rem; font-weight: 600; background:#2B2D3E; color:white; padding:0.4rem 0.6rem; border-radius:3px;">
+                  서울시 관리자
+                </div>
+                <div style="width: 15.5rem; margin:3px auto; font-size:0.7rem; color:white; border-radius:3px;">
+                  마지막 업데이트 시간 {{droneinfo.time}}
+                </div>
+              </div>               
+            </div>
+            
+            
+
+            <div class="row mt-4">
+              <div class="col-md-2">
+                <div class="box-event">
+   
+                  {% for event in events %}
+                  
+                <div class="PlaceContainer">
+				          <a href="{% url 'control' event.id %}">
+                  <div style="display: flex; gap: 18%;">
+                    <div>
+                      <h4 class="Label1">{{event.event_name}}</h4>
+                      <h5 class="Label2">{{event.location}}</h5>
+                    </div> 
+                    <img src="/static/imgs/map.png" class="Icon">
+                  </div>
+				          </a>
+                  
+                </div> 
+
+                {% endfor %}   
+              
+              </div>
+
+              </div>
+              
+              
+              <div class="col-md-6">
+                <div class="box" style="height:22.5rem;">
+                  <div style="display:flex;">
+                  <script src="https://cdn.jsdelivr.net/npm/hls.js@latest"></script>
+                  
+                <video autoplay muted id="video" style="width: 35.5rem; height: 20rem; margin-top:0.75rem;"></video>
+                  
+                  <script>
+                    
+                     if(Hls.isSupported()) {
+                        var video = document.getElementById('video');
+                        var hls = new Hls();
+                        hls.loadSource("https://540f41fc71d9.ap-northeast-2.playback.live-video.net/api/video/v1/ap-northeast-2.392988993234.channel.eknAgsglpDNs.m3u8"); // 동영상경로
+                        hls.attachMedia(video);
+                        hls.on(Hls.Events.MANIFEST_PARSED,function() {
+                              video.play();
+                        });
+                     }
+                     else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+                        video.src = "https://540f41fc71d9.ap-northeast-2.playback.live-video.net/api/video/v1/ap-northeast-2.392988993234.channel.eknAgsglpDNs.m3u8"; // 동영상경로
+                        video.addEventListener('canplay',function() {
+                              video.play();
+                        });
+                     }
+                  </script>
+                 
+                   
+                  
+                </div>
+                  
+                </div>
+              </div>
+
+
+              <div class="col-md-4">
+                <div class="box" style="height:22.5rem;">
+                  <div id="pie"></div>
+                  {% comment %} <div class="Label">드론 현재 고도 {{droneinfo.altitude}}</div> {% endcomment %}
+
+
+		  <script>
+                
+                    var options = {
+                      series: [{{droneinfo.voltage}}],
+                      chart: {
+                        height: 370,
+                        type: 'radialBar',
+                        dataLabels: {
+                          style: {
+                            colors: ['#F44336']
+                          }
+                        },
+                        animations: {
+                          enabled: true,
+                          easing: 'easeinout',
+                          speed: 0,
+                          animateGradually: {
+                              enabled: true,
+                              delay: 0
+                          },
+                          dynamicAnimation: {
+                              enabled: true,
+                              speed: 0
+                          }
+                      }   
+                    },
+                    plotOptions: {
+                      radialBar: {
+                        hollow: {
+                          size: '60%',
+                        }
+
+                      },
+                    },
+                    labels: ['DRONE BATTERY'],
+                    };
+            
+                    var chart = new ApexCharts(document.querySelector("#pie"), options);
+                    chart.render();
+                    </script>
+                </div>
+              </div>
+
+
+            </div>
+
+            <div class="row mt-4">
+              <div class="col-md-5">
+                <div class="box" style="height: 24rem;">
+                  <div style="display:flex; flex-direction:column;">
+                    <a href="{% url 'initHeadcount' event.id %}">
+                    <i class="bi bi-arrow-clockwise" style="color:#dddd; cursor:pointer; position:absolute; right:2rem;"></i>
+                    </a>
+                    
+                  <div id="map" style="width: 100%; height: 20.2rem; margin-top: 1.75rem;" src="control.html"></div>
+                  
+                    <script type="text/javascript" src="//dapi.kakao.com/v2/maps/sdk.js?appkey=e00ee7b35d9447fc1b074a96fd8ee6d0"></script>
+                    <script>
+                      if ({{event_id}} === 1){
+                          var lv = 3
+                      }
+                      else{
+                        var lv = 2
+                      }
+                      var mapContainer = document.getElementById('map'), // 지도를 표시할 div 
+                          mapOption = { 
+                            center: new kakao.maps.LatLng({{event.coordinate.0}}, {{event.coordinate.1}}), // 지도의 중심좌표
+                            level: lv // 지도의 확대 레벨
+                          };
+
+                      // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
+                      var map = new kakao.maps.Map(mapContainer, mapOption); 
+
+                      var imageSrc = "/static/imgs/location-pin.png",     
+                      imageSize = new kakao.maps.Size(25, 28), 
+                      imageOption = {offset: new kakao.maps.Point(27, 69)}; 
+                
+                      {% for headcount in headcounts %}
+                        if({{headcount.count}}< 5){
+                          opacity = 0.2
+                          var circle = new kakao.maps.Circle({
+                            center : new kakao.maps.LatLng({{headcount.coordinate.0}}, {{headcount.coordinate.1}}),
+                            radius: 5, 
+                            strokeOpacity: 0, 
+                            fillColor: '#ff001691', 
+                            fillOpacity: opacity   
+                          }); 
+                          circle.setMap(map);
+                        }
+                        else if({{headcount.count}} >= 5 && {{headcount.count}} < 11){
+                          opacity = 0.4
+                          var circle = new kakao.maps.Circle({
+                            center : new kakao.maps.LatLng({{headcount.coordinate.0}}, {{headcount.coordinate.1}}),
+                            radius: 5, 
+                            strokeOpacity: 0, 
+                            fillColor: '#ff001691', 
+                            fillOpacity: opacity   
+                          }); 
+                          circle.setMap(map);
+                        }
+                        else if({{headcount.count}} >= 11 && {{headcount.count}} < 16){
+                          opacity = 0.6
+                          var circle = new kakao.maps.Circle({
+                            center : new kakao.maps.LatLng({{headcount.coordinate.0}}, {{headcount.coordinate.1}}),
+                            radius: 5, 
+                            strokeOpacity: 0, 
+                            fillColor: '#ff001691', 
+                            fillOpacity: opacity   
+                          }); 
+                          circle.setMap(map);
+                        }
+                        else if({{headcount.count}} >= 16 && {{headcount.count}} < 21){
+                          opacity = 0.8
+                          var circle = new kakao.maps.Circle({
+                            center : new kakao.maps.LatLng({{headcount.coordinate.0}}, {{headcount.coordinate.1}}),
+                            radius: 5, 
+                            strokeOpacity: 0, 
+                            fillColor: '#ff001691', 
+                            fillOpacity: opacity   
+                          }); 
+                          circle.setMap(map);
+                        }
+                        else{
+                          var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
+                          markerPosition = new kakao.maps.LatLng({{headcount.coordinate.0}}, {{headcount.coordinate.1}}); // 마커가 표시될 위치입니다
+                          var marker = new kakao.maps.Marker({
+                            position: markerPosition, 
+                            {% comment %} image: markerImage {% endcomment %}
+                          });
+                          opacity = 0.8;
+                          marker.setMap(map);  
+                        }
+                        
+                        
+                    {% endfor %}
+                    
+                    
+                     map.setZoomable(false);
+                     map.setDraggable(false);    
+                    </script>
+                   
+                    </div>
+                </div>
+              </div>
+              <div class="col-md-7" >
+                <div class="box" style="height: 24rem;">
+                  <div id="graph"></div>
+                  <script>
+                    var cnt = [];
+                    var time = []; 
+                    {% for history in historys %}
+                      
+                      cnt.push({{history.count}});
+                      
+                    {% endfor %}
+
+                    
+ 
+
+                    color_id = {{event_id}}%3
+                    if(color_id==0){
+                      color_id =  '#4C83FF'
+                    }
+                    else if(color_id==1){
+                      color_id =  '#00e396'
+                    }
+                    else{
+                      color_id =  '#f02fc2'
+                    }
+                    var options = {
+                      series: [{
+                        name: '시간별 인구',
+                        data: cnt,
+                        color: color_id
+                      }],
+                      title: {
+                        text: '시간별 사람수',
+                        align: 'left',
+                        offsetY: 25,
+                        offsetX: 20,
+                        style: {
+                          color: '#cccccc'
+                        }
+                      },
+                      
+                      chart: {
+                        height: 367,
+                        type: 'area',
+                        animations: {
+                          enabled: false
+                       
+                        }
+                      },
+                      dataLabels: {
+                        enabled: false
+                      },
+                      stroke: {
+                        curve: 'smooth'
+                      },
+                      xaxis: {
+                        type: 'datetime',
+                        categories: ["2023-05-23T12:00:00.000Z", "2023-05-23T12:30:00.000Z", "2023-05-23T13:00:00.000Z", "2023-05-23T13:30:00.000Z","2023-05-23T14:00:00.000Z","2023-05-23T14:30:00.000Z","2023-05-23T15:00:00.000Z","2023-05-23T15:30:00.000Z","2023-05-23T16:00:00.000Z","2023-05-23T16:30:00.000Z"],
+                        
+                      },
+                      tooltip: {
+                        x: {
+                          format: 'yy/MM/dd HH:mm'
+                        }
+                      },
+                      fill: {
+                        opacity: 1
+                      }
+                     
+                    };
+
+                    var chart = new ApexCharts(document.querySelector("#graph"), options);
+                    chart.render();
+                  </script>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    {% else %}
+    <div class="container-login">
+      <div class="container-login">
+        <img class="blur-img" src="/static/imgs/blur.png">
+        <a href="{% url 'login' %}">
+          <div class="login-btn">
+            Login 하러 가기
+          </div>
+        </a>
+      </div>
+    </div>
+    {% endif %}
+  </body>
+</html>

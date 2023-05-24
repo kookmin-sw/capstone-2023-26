@@ -1,0 +1,211 @@
+
+body {
+	background: #343E59;
+	font-family: 'Wix Madefor Text', sans-serif !important;
+ }
+
+a { 
+	text-decoration:none !important;
+}
+  
+  .body-bg {
+	background: #F3F4FA !important;
+  }
+  
+  h1, h2, h3, h4, h6{
+	font-weight: 600;
+	color: #b5b5b5;
+  }
+  
+  .content-area {
+	max-width: 1280px;
+	margin: 0 auto;
+  }
+  
+  .box {
+	background:#2B2D3E; 
+	padding: 0.5rem 1.05rem; 
+	border-radius: 1.2rem; 
+	box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.5);
+  }
+
+  .box-event{
+	height: 22.5rem;
+	background:#2B2D3E; 
+	padding: 0.2rem 1rem; 
+	border-radius: 1.2rem; 
+	overflow-y: auto;
+	float:left;
+	box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.5);
+  }
+
+  .box-event::-webkit-scrollbar{
+    width: 5px;
+	position: absolute;
+	right: 5px;
+  }
+
+	/* 스크롤바 막대 설정*/
+  .box-event::-webkit-scrollbar-thumb{
+	height: 5% !important;
+	background: #1e2330;
+	border-radius: 25px;
+  }
+
+	/* 스크롤바 뒷 배경 설정*/
+	.box-event::-webkit-scrollbar-track{
+		background-color: #444651;
+	}
+  
+  .shadow {
+	box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.08);
+  }
+  .sparkboxes .box {
+	padding-top: 10px;
+	padding-bottom: 10px;
+	text-shadow: 0 1px 1px 1px #666;
+	box-shadow: 0px 1px 15px 1px rgba(69, 65, 78, 0.08);
+	position: relative;
+	border-radius: 5px;
+  }
+  
+  
+  .sparkboxes .box3 {
+	background-image: linear-gradient( 135deg,  #00e396 10%, #4C83FF 100%);
+	color: white;
+  }
+
+  .label{
+	margin: 9px 6px; 
+	color:#e7e7e7; 
+	font-weight: 600; 
+	font-size: 0.8rem;
+}
+
+.PlaceContainer { 
+	margin: 10.5px auto;
+	width: 165px; 
+	position:relative;
+	cursor:pointer;
+}
+
+.Label1 { 
+	margin: 7px 5px 1px 5px; 
+	text-align: left;
+	color: #ffffff;
+	font-size: 0.85rem;
+}
+
+.Label2 { 
+	margin: 5px; 
+	color: #a1a1a1; 
+	text-align: left;
+	font-size: 0.7rem;
+}
+
+.Icon{
+	width: 28px;
+	height: 28px;
+	position:absolute; 
+	top: 8px;
+	right:0; 
+}
+
+.IconSave{
+	width: 20px;
+	height: 20px;
+	cursor: pointer;
+	position: absolute;
+	right: 2rem;
+	fill: white;
+}
+  
+
+h5{
+	color:#b3b3b3;
+}
+
+.boxx{
+	margin-bottom: 20px; 
+	display: flex; 
+	flex-direction: column;
+}
+
+.container{
+	width: 25.5%;  
+	border-radius: 26px; 
+	background:#2B2D3E; 
+	margin: 8% auto; 
+	padding: 30px 60px 55px 60px;
+}
+
+.container-login{
+	position: relative;
+	text-align: center; 
+	padding-top: 2.5%;
+	padding-left: 0.1%;
+	width: 100%;
+}
+
+.blur-img{
+	filter: blur(10px);
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    width: 72%;
+    height: 87vh;
+}
+
+.login-btn{
+	position: absolute; 
+	top: 40%; 
+	right: 47%; 
+	background:#2B2D3E; 
+	font-weight: 800; 
+	padding: 0.5rem; 
+	border-radius:0.5rem; 
+	cursor:pointer;
+	color: #b1b1b1;
+}
+
+.video-btn{
+	margin-top: 1.25rem;
+	position: absolute; 
+	right: 5.5rem;
+	padding: 0.5rem 0.7rem; 
+	border-radius:0.5rem; 
+	cursor:pointer;
+	background-image: linear-gradient( 135deg,  #00e396 10%, #4C83FF 100%);
+	color: white;
+}
+
+.plus-btn{
+	margin-top: 1.25rem;
+	position: absolute; 
+	right: 8.5rem; 
+	padding: 0.1rem 0.4rem; 
+	border-radius:0.5rem; 
+	cursor:pointer;
+	background-image: linear-gradient( 135deg,  #00e396 10%, #4C83FF 100%);
+	color: white;
+}
+
+.logout-btn{
+	margin-top: 1.25rem;
+	position: absolute; 
+	right:1px;
+	font-weight: 800; 
+	padding: 0.5rem 0.7rem; 
+	border-radius:0.5rem; 
+	cursor:pointer;
+	background-image: linear-gradient( 135deg,  #00e396 10%, #4C83FF 100%);
+	color: white;
+}
+
+.Label{
+	width: 9.5rem; 
+	color:#cccc; 
+	font-weight:600; 
+	margin:0 auto;
+}
