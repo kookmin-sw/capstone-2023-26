@@ -1,0 +1,26 @@
+.Logo { 
+	width: 9.6rem; 
+	height: 2.25rem;
+	cursor:pointer;
+	margin: 0 0 10px 0;
+}
+
+.PlaceContainer { 
+	margin: 20px auto;
+	width: 11rem; 
+	position:relative;
+}
+
+.Label { 
+	margin: 5px; 
+	text-align: left;
+	color: #3D3D3D;
+}
+
+.Icon{
+	width: 35px;
+	height: 35px;
+	cursor:pointer; 
+	position:absolute; 
+	right:0;
+}

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Administer</title>
+
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css"
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Wix+Madefor+Text&display=swap" rel="stylesheet">
+
+
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="../../static/css/style.css" />
+  </head>
+
+  <body>
+    <div class="container">
+      <div style="display:flex; width: 7.5rem; margin:0.5rem auto;">
+        <a href="{% url 'login' %}">
+          <h5>login</h5>
+        </a>
+      <h5> &nbsp;/&nbsp; </h5>
+      <a href="{% url 'register' %}">
+          <h5>signup</h5>
+        </a>
+      </div>
+            <form action="" method="post">
+                {% csrf_token %}
+                <div class="boxx">
+                  <label for="exampleInputEmail1" style="color:white;">User Name</label>
+                  
+                  
+                  {{ form.username }}
+
+                  <small id="emailHelp" class="form-text text-muted">We'll never share your username with anyone else.</small>
+                </div>
+                <div class="boxx">
+                    <label for="exampleInputPassword1" style="color:white;">Password</label>
+                    {{ form.password }}
+                    <small id="emailHelp" class="form-text text-muted">We'll never share your password with anyone else.</small>
+                  </div>
+                  <input class="btn btn-primary" type="submit" value="Login" style="width: 100%; height:40px; background-color: #8FECC0; border:none; color: #191A21;">
+            </form>
+    </div>
+  </body>
+</html>
