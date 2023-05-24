@@ -28,7 +28,7 @@
          // 지도를 표시할 div와  지도 옵션으로  지도를 생성합니다
          var map = new kakao.maps.Map(mapContainer, mapOption); 
 
-                      var imageSrc = "/static/imgs/marker.png",     
+                      
                       imageSize = new kakao.maps.Size(28, 28), 
                       imageOption = {offset: new kakao.maps.Point(27, 69)}; 
                 
@@ -78,11 +78,11 @@
                           circle.setMap(map);
                         }
                         else{
-                          var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption),
+                          
                           markerPosition = new kakao.maps.LatLng({{headcount.coordinate.0}}, {{headcount.coordinate.1}}); // 마커가 표시될 위치입니다
                           var marker = new kakao.maps.Marker({
-                            position: markerPosition, 
-                            image: markerImage
+                            position: markerPosition
+                       
                           });
                           opacity = 0.9;
                           marker.setMap(map);  

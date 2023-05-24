@@ -117,7 +117,7 @@
               <div class="col-md-4">
                 <div class="box" style="height:22.5rem;">
                   <div id="pie"></div>
-                  <div class="Label">드론 현재 고도 {{droneinfo.altitude}}</div>
+                  {% comment %} <div class="Label">드론 현재 고도 {{droneinfo.altitude}}</div> {% endcomment %}
 
 
 		  <script>
@@ -125,7 +125,7 @@
                     var options = {
                       series: [{{droneinfo.voltage}}],
                       chart: {
-                        height: 330,
+                        height: 370,
                         type: 'radialBar',
                         dataLabels: {
                           style: {
