@@ -5,12 +5,12 @@
 <div align=center>
   <img src="https://img.shields.io/badge/pytorch-FF4154?style=for-the-badge&logo=pytorch&logoColor=white">
   <img src="https://img.shields.io/badge/YOLO-F7DF1E?style=for-the-badge&logo=yolo&logoColor=black">
+  <img src="https://img.shields.io/badge/openCV-61DAFB?style=for-the-badge&logo=openCV&logoColor=black">
+
   <img src="https://img.shields.io/badge/html5-E34F26?style=for-the-badge&logo=html5&logoColor=white">
+   <img src="https://img.shields.io/badge/Django-00C7B7?style=for-the-badge&logo=Django&logoColor=white">
   <img src="https://img.shields.io/badge/css-1572B6?style=for-the-badge&logo=css3&logoColor=white">
-  <img src="https://img.shields.io/badge/Django-00C7B7?style=for-the-badge&logo=Django&logoColor=white">
-  <img src="https://img.shields.io/badge/Javascript-F7DF1E?style=for-the-badge&logo=javascript&logoColor=black">
-  <img src="https://img.shields.io/badge/React-61DAFB?style=for-the-badge&logo=react&logoColor=black">
-  <img src="https://img.shields.io/badge/styled components-DB7093?style=for-the-badge&logo=styled-components&logoColor=white"/>
+  <img src="https://img.shields.io/badge/Javascript-DB7093?style=for-the-badge&logo=javascript&logoColor=white"/>
   <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
 </div>
 
