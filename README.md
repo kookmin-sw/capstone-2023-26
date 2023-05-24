@@ -84,12 +84,13 @@
 
 <br/>
 
+<div align="center">
+
 |                                                       [강윤석](https://github.com/YunSeok-Kang)                                                      |                                                      [권소예](https://github.com/soyekwon)                                                     |                                                       [박민준](https://github.com/mjun4138)                                                    |
 | :--------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------: |
 | <img src="https://avatars.githubusercontent.com/u/35187793?v=4" width="200" height="180"> | <img src="https://avatars.githubusercontent.com/u/35187793?v=4" width="200" height="180">| <img src="https://avatars.githubusercontent.com/u/35187793?v=4" width="200" height="180"> |
 |                                                🧑🏻‍💻 학번: xxxx3082                                                 |                                                👩🏻‍💻 학번: xxxx1552                                                 |                                                👩🏻‍💻 학번: xxxx1611                                                 |
 |                                      📌 Role:                                      |                                       📌 Role:                                         |                                       📌 Role:                                         |
-|                                             📧 Email: ysck73@kookmin.ac.kr                                           |                                             📧 Email: soye0710@kookmin.ac.kr                                          |                                             📧 Email: pmj4138@kookmin.ac.kr                                          |
 
 <br/>
 
@@ -98,8 +99,8 @@
 | <img src="https://avatars.githubusercontent.com/u/35187793?v=4"  width="200" height="180"> | <img src="https://avatars.githubusercontent.com/u/35187793?v=4"  width="200" height="180">| <img src="https://avatars.githubusercontent.com/u/35187793?v=4"  width="200" height="180"> |
 |                                                🧑🏻‍💻 학번: xxxx1383                                                 |                                                👩🏻‍💻 학번: xxxx0498                                                 |                                                👩🏻‍💻 학번: xxxx2912                                                 |
 |                                      📌 Role:                                      |                                       📌 Role:                                         |                                       📌 Role:                                         |
-|                                             📧 Email: jh04270312@kookmin.ac.kr                                          |                                             📧 Email: ljwljy51@kookmin.ac.kr                                          |                                             📧 Email:  chcho0819@kookmin.ac.kr                                          |
 
+</div>
 
 <br/><br/>
 
