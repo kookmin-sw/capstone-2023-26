@@ -84,7 +84,6 @@
 
 ## 💁🏻 팀원 소개
 
-<br/>
 
 <img align="left" src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="170" >
 
