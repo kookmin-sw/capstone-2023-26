@@ -86,23 +86,74 @@
 
 <br/>
 
-|                                                       [강윤석](https://github.com/YunSeok-Kang)                                                      |                                                      [권소예](https://github.com/soyekwon)                                                     |                                                       [박민준](https://github.com/mjun4138)                                                    |
-| :--------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------: |
-| <img src="https://avatars.githubusercontent.com/u/35187793?v=4" width="200" height="180"> | <img src="https://avatars.githubusercontent.com/u/35187793?v=4" width="200" height="180">| <img src="https://avatars.githubusercontent.com/u/35187793?v=4" width="200" height="180"> |
-|                                                🧑🏻‍💻 학번: xxxx3082                                                 |                                                👩🏻‍💻 학번: xxxx1552                                                 |                                                👩🏻‍💻 학번: xxxx1611                                                 |
-|                                      📌 Role:                                      |                                       📌 Role:                      front                   |                                       📌 Role:                                         |
-|                                             📧 Email: ysck73@kookmin.ac.kr                                           |                                             📧 Email: soye0710@kookmin.ac.kr                                          |                                             📧 Email: pmj4138@kookmin.ac.kr                                          |
+<img align="left" src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="165">
 
-<br/>
+```
+😀 이름 : 강윤석
+🧑🏻‍💻 학번 : xxxx3082
+📧 이메일 : ysck73@kookmin.ac.kr
 
-|                                                       [서정현](https://github.com/junghyeon0427)                                                      |                                                      [이재원](https://github.com/ljwljy51)                                                    |                                                       [조현아](https://github.com/hacho08)                                                 |
-| :--------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------: | :--------------------------------------------------------------------------------------------------------------: |
-| <img src="https://avatars.githubusercontent.com/u/35187793?v=4"  width="200" height="180"> | <img src="https://avatars.githubusercontent.com/u/35187793?v=4"  width="200" height="180">| <img src="https://avatars.githubusercontent.com/u/35187793?v=4"  width="200" height="180"> |
-|                                                🧑🏻‍💻 학번: xxxx1383                                                 |                                                👩🏻‍💻 학번: xxxx0498                                                 |                                                👩🏻‍💻 학번: xxxx2912                                                 |
-|                                      📌 Role:                                      |                                       📌 Role:                                         |                                       📌 Role:                                         |
-|                                             📧 Email: jh04270312@kookmin.ac.kr                                          |                                             📧 Email: ljwljy51@kookmin.ac.kr                                          |                                             📧 Email:  chcho0819@kookmin.ac.kr                                          |
+📌 역할 : 
+    - 
+    - 
+```
+<img align="left" src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="165">
 
+```
+😀 이름 : 권소예
+🧑🏻‍💻 학번 : xxxx1552
+📧 이메일 : soye0710@kookmin.ac.kr
 
+📌 역할 : Front-end
+    - UI/UX 디자인 및 개발
+    - git 관리
+```
+<img align="left" src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="165">
+
+```
+😀 이름 : 박민준
+🧑🏻‍💻 학번 : xxxx1611
+📧 이메일 : pmj4138@kookmin.ac.kr
+
+📌 역할 : Back-end
+    - 
+    - 
+```
+
+<img align="left" src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="165">
+
+```
+😀 이름 : 서정현
+🧑🏻‍💻 학번 : xxxx1383
+📧 이메일 : jh04270312@kookmin.ac.kr
+
+📌 역할 : AI
+    - 
+    - 
+```
+<img align="left" src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="165">
+
+```
+😀 이름 : 이재원
+🧑🏻‍💻 학번 : xxxx0498
+📧 이메일 : ljwljy51@kookmin.ac.kr
+
+📌 역할 : AI
+    - HeadCount 모델 구축 및 학습
+    - 
+```
+
+<img align="left" src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="165">
+
+```
+😀 이름 : 조현아
+🧑🏻‍💻 학번 : xxxx2912
+📧 이메일 : chcho0819@kookmin.ac.kr
+
+📌 역할 : PM, Back-end
+    - 
+    - 
+```
 
 <br/><br/>
 
