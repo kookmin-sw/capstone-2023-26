@@ -78,7 +78,7 @@
 <br/><br/>
 
 ## 🎥 소개 영상
-[![video](https://youtu.be/xVOopTkpRfs/0.jpg)](https://youtu.be/xVOopTkpRfs)
+[![video](http://img.youtube.com/vi/xVOopTkpRfs/0.jpg)](https://youtu.be/xVOopTkpRfs)
 
 <br/><br/>
 
