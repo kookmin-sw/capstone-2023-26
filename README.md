@@ -86,7 +86,7 @@
 
 <br/>
 
-<img align="left" src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="165">
+<img align="left" src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="170" >
 
 ```
 😀 이름 : 강윤석
@@ -97,7 +97,9 @@
     - 
     - 
 ```
-<img align="left" src="https://avatars.githubusercontent.com/u/35187793?v=4" width="200" height="175">
+<br/>
+
+<img align="left" src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="170" >
 
 ```
 😀 이름 : 권소예
@@ -108,7 +110,9 @@
     - UI/UX 디자인 및 개발
     - git 관리
 ```
-<img align="left" src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="165">
+<br/>
+
+<img align="left" src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="170" >
 
 ```
 😀 이름 : 박민준
@@ -119,8 +123,10 @@
     - 
     - 
 ```
+<br/>
 
-<img align="left" src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="165">
+
+<img align="left" src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="170" >
 
 ```
 😀 이름 : 서정현
@@ -131,7 +137,9 @@
     - 
     - 
 ```
-<img align="left" src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="165">
+<br/>
+
+<img align="left" src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="170" >
 
 ```
 😀 이름 : 이재원
@@ -142,8 +150,9 @@
     - HeadCount 모델 구축 및 학습
     - 
 ```
+<br/>
 
-<img align="left" src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="165">
+<img align="left" src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="170" >
 
 ```
 😀 이름 : 조현아
