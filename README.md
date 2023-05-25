@@ -97,7 +97,7 @@
     - 
     - 
 ```
-<br/>
+
 
 <img align="left" src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="170" >
 
@@ -110,7 +110,7 @@
     - UI/UX 디자인 및 개발
     - git 관리
 ```
-<br/>
+
 
 <img align="left" src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="170" >
 
@@ -123,7 +123,6 @@
     - 
     - 
 ```
-<br/>
 
 
 <img align="left" src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="170" >
@@ -137,7 +136,7 @@
     - 
     - 
 ```
-<br/>
+
 
 <img align="left" src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="170" >
 
@@ -150,7 +149,7 @@
     - HeadCount 모델 구축 및 학습
     - 
 ```
-<br/>
+
 
 <img align="left" src="https://avatars.githubusercontent.com/u/35187793?v=4" width="180" height="170" >
 
