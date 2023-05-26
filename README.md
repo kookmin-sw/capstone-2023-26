@@ -52,6 +52,10 @@
 <br/><br/>
 
 ## 💻 주요 기능
+<div>
+  <img src="img/GIF4.gif" alt="GIF 1" width="410" />
+  <img src="img/GIF6.gif" alt="GIF 2" width="410" />
+</div>
 
  <code>드론 자율 주행 </code>
  <br/>
