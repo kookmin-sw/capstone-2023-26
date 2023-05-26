@@ -13,8 +13,8 @@
 
 <img alt="main_img" src="img/drone2.png">
 <div>
-  <img src="img/drone_fly.gif" alt="GIF 1" width="415" />
-  <img src="img/drone_cam_box.gif" alt="GIF 2" width="415" />
+  <img src="img/drone_fly.gif" alt="GIF 1" width="410" />
+  <img src="img/drone_cam_box.gif" alt="GIF 2" width="410" />
 </div>
 
 <br/><br/>
