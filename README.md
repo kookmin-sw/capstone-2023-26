@@ -1,7 +1,5 @@
 # DITTO: Drone Is Tracking Twenty-four-seven Ours
 
-<img alt="main_img" src="img/drone.png">
-
 <div align=center>
   <img src="https://img.shields.io/badge/pytorch-FF4154?style=for-the-badge&logo=pytorch&logoColor=white">
   <img src="https://img.shields.io/badge/YOLO-F7DF1E?style=for-the-badge&logo=yolo&logoColor=black">
@@ -11,6 +9,12 @@
   <img src="https://img.shields.io/badge/Javascript-DB7093?style=for-the-badge&logo=javascript&logoColor=white"/>
   <img src="https://img.shields.io/badge/Django-00C7B7?style=for-the-badge&logo=Django&logoColor=white">
   <img src="https://img.shields.io/badge/github-181717?style=for-the-badge&logo=github&logoColor=white">
+</div>
+
+<img alt="main_img" src="img/drone2.png">
+<div>
+  <img src="img/drone_fly.gif" alt="GIF 1" width="500" />
+  <img src="img/drone_cam_box.gif" alt="GIF 2" width="500" />
 </div>
 
 <br/><br/>
