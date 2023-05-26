@@ -4,21 +4,25 @@ import subprocess
 import datetime
 import requests
 import json
+from urllib import parse
 # Create your views here.
 
 def reUpload():
+    current_dir = os.path.abspath(__file__)
+    target_dir = os.path.dirname(current_dir) + '/videostorage'
+
     now = datetime.datetime.now()
 
-    command = 'aws s3 cp s3://ivs-ditto/ivs/v1/392988993234/eknAgsglpDNs/2023/5/12/ ./videostorage --exclude "*" --include "**/160p30/*.ts" --recursive'
+    command = f'aws s3 cp s3://ivs-ditto/ivs/v1/392988993234/eknAgsglpDNs/2023/5/12/ {target_dir} --exclude "*" --include "**/160p30/*.ts" --recursive'
     subprocess.run(command, shell=True, check=True)
 
-    command = 'find ./videostorage -type f -name "*.ts" -exec sh -c \'mv "$0" "./videostorage/$(date -r "$0" +"%Y%m%d%H%M%S").ts"\' {} \\;'
+    command = f'find {target_dir} -type f -name "*.ts" -exec sh -c \'mv "$0" "{target_dir}/$(date -r "$0" +"%Y%m%d%H%M%S").ts"\' {{}} \\;'
     subprocess.run(command, shell=True, check=True)
 
     print("다운로드 완료")
 
-    folder_path = "./videostorage"  # 대상 폴더 경로를 지정해주세요
-    output_file = f"./videostorage/{now.year}.{now.month}.{now.day}.mp4"  # 합쳐진 mp4 파일의 이름을 지정해주세요
+    folder_path = target_dir  # 대상 폴더 경로를 지정해주세요
+    output_file = f"{target_dir}/{now.year}.{now.month}.{now.day}.mp4"  # 합쳐진 mp4 파일의 이름을 지정해주세요
 
     ts_files = [f for f in os.listdir(folder_path) if f.endswith(".ts")]
     ts_files.sort(key=lambda x: os.path.getmtime(os.path.join(folder_path, x)))
@@ -32,7 +36,7 @@ def reUpload():
 
     print("변환 완료")
 
-    command = f'aws s3 cp 2023.5.23.mp4 s3://ivs-ditto/ivs/v1/392988993234/eknAgsglpDNs/2023/5/12/'
+    command = f'aws s3 cp {target_dir}/{now.year}.{now.month}.{now.day}.mp4 s3://ivs-ditto/ivs/v1/392988993234/eknAgsglpDNs/2023/5/12/'
 
     process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
     output, error = process.communicate()
@@ -41,6 +45,9 @@ def reUpload():
     key_value = deoutput.split(' ')[-1].strip()
     print("output:", deoutput)
     print("uploaded key:", key_value)
+    
+    # url 인코딩
+    s3key = parse.quote(key_value)
 
     print("업로드 완료")
 
@@ -48,7 +55,7 @@ def reUpload():
 
     data = {
                 "time": f'{now}',
-                "s3key": f'{key_value}',
+                "s3key": f'{s3key}',
                 "event_id": 1
             }
 
@@ -61,6 +68,7 @@ def reUpload():
     else:
         print('fail')
         
-    command = ['rm', '-rf', './videostorage' + '/*']
+    command = ['rm', '-rf', target_dir + '/*']
+    subprocess.run(command, check=True)
         
 reUpload()
