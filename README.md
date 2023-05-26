@@ -229,4 +229,4 @@ github의 issue와 pull request기능을 활용해 프로젝트 작업 진행
 ### [시연 동영상](docs/팀26조-시연동영상.mp4) 
 ### [포스터](docs/팀26조-포스터.pdf)  
 ### [최종 발표 자료](docs/팀26조-최종발표자료.pdf) 
-### [결과 보고서](docs/팀26조-결과보고서.pdf)
+### [결과 보고서](https://github.com/kookmin-sw/capstone-2023-26/blob/main/docs/%E1%84%90%E1%85%B5%E1%86%B726%E1%84%8C%E1%85%A9-%E1%84%80%E1%85%A7%E1%86%AF%E1%84%80%E1%85%AA%E1%84%87%E1%85%A9%E1%84%80%E1%85%A9%E1%84%89%E1%85%A5.pdf)
