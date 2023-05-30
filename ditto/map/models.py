@@ -22,6 +22,7 @@ class HeadCount(models.Model):
 
     class Meta:
         ordering = ['id']
+        get_latest_by = ['update_time']
 
 class CountHistory(models.Model):
     update_time = models.DateTimeField(auto_now=True)
