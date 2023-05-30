@@ -140,3 +140,10 @@ def download_video(request, key):
     response['Content-Disposition'] = 'attachment; filename={}'.format(key)
     print(type(response))
     return response
+
+def reload_table(request, event_id):
+    
+    HeadCount.objects.filter(event_id_id=event_id).order_by('id')[:10].delete()
+    
+    return redirect(control, event_id)
+    
