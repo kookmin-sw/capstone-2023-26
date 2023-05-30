@@ -147,7 +147,7 @@ def reload_table(request, event_id):
         obj = HeadCount.objects.filter(event_id_id=event_id)
         if obj.exists() == True:
             print('object is exist')
-            obj.latest().delete()
+            obj.latest().delete('id')
         else:
             print('object is not exist')
             break
