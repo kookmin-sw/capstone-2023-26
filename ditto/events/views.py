@@ -143,7 +143,12 @@ def download_video(request, key):
 
 def reload_table(request, event_id):
     
-    HeadCount.objects.filter(event_id_id=event_id).order_by('id')[:10].delete()
+    for i in range(10):
+        if HeadCount.objects.aexists() == True:
+            print('object is exist')
+            HeadCount.objects.get(event_id_id=event_id).delete()
+        else:
+            print('object is not exist')
+            break
     
     return redirect(control, event_id)
-    
