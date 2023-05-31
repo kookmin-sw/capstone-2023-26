@@ -140,3 +140,16 @@ def download_video(request, key):
     response['Content-Disposition'] = 'attachment; filename={}'.format(key)
     print(type(response))
     return response
+
+def reload_table(request, event_id):
+    
+    for i in range(10):
+        obj = HeadCount.objects.filter(event_id_id=event_id)
+        if obj.exists() == True:
+            print('object is exist')
+            obj.latest('update_time').delete()
+        else:
+            print('object is not exist')
+            break
+    
+    return redirect(control, event_id)
