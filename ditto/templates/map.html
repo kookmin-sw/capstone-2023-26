@@ -32,7 +32,7 @@
                 
                       {% for headcount in headcounts %}
                         if({{headcount.count}}< 5){
-                          opacity = 0.3
+                          opacity = 0.25
                           var circle = new kakao.maps.Circle({
                             center : new kakao.maps.LatLng({{headcount.coordinate.0}}, {{headcount.coordinate.1}}),
                             radius: 5, 
