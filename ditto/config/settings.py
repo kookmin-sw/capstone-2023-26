@@ -65,8 +65,8 @@ MIDDLEWARE = [
 # 주기적인 자동 수행 위함
 CRONJOBS = [
     # * * * * * 일분마다 수행 
-    ('* * * * *', 'config.cron.updateCountHistory'),
-    ('* * * * *', 'config.cron.reUpload')
+    ('* * * * *', 'config.cron.updateCountHistory', f'>> {os.path.dirname(os.path.abspath(__file__))}/log/headcount.log'),
+    ('0 * * * *', 'config.cron.reUpload', f'>> {os.path.dirname(os.path.abspath(__file__))}/log/conversion.log')
 ]
 
 ROOT_URLCONF = 'config.urls'
