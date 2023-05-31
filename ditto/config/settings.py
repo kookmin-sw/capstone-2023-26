@@ -65,7 +65,8 @@ MIDDLEWARE = [
 # 주기적인 자동 수행 위함
 CRONJOBS = [
     # * * * * * 일분마다 수행 
-    ('* * * * *', 'config.cron.updateCountHistory', '>> /home/ubuntu/capstone-2023-26/ditto/config/test.log')
+    ('* * * * *', 'config.cron.updateCountHistory'),
+    ('* * * * *', 'config.cron.reUpload')
 ]
 
 ROOT_URLCONF = 'config.urls'
