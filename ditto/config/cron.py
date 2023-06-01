@@ -26,24 +26,27 @@ def reUpload():
     print(f'target_dir: {target_dir}')
     print(now)
     
-    #print('========================== Download Process Start ==========================')
-    ## 특정일 폴더 하위의 ts파일을 폴더 구조를 유지한 채로 복사
-    #command = f'aws s3 cp s3://ivs-ditto/ivs/v1/392988993234/eknAgsglpDNs/2023/5/12/ {target_dir} --exclude "*" --include "**/160p30/*.ts" --recursive'
-    #try:
-    #    process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
-    #    print('s3 download success')
-    #except:
-    #    print('s3 download fail')
-    #output, error = process.communicate()
-    #print(error)
+    print('========================== Download Process Start ==========================')
+    # 특정일 폴더 하위의 ts파일을 폴더 구조를 유지한 채로 복사
+    command = f'aws s3 cp s3://ivs-ditto/ivs/v1/392988993234/eknAgsglpDNs/2023/5/12/ {target_dir} --exclude "*" --include "**/160p30/*.ts" --recursive'
+    try:
+        process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
+        print('s3 download success')
+    except:
+        print('s3 download fail')
+    output, error = process.communicate()
+    print(error)
     
-    #print('========================== Download Process Done ==========================')
+    print('========================== Download Process Done ==========================')
 
     print('========================== Sorting Process Start ==========================')
+    command = f'pwd'
+    subprocess.run(command)
     # ts파일들을 폴더 구조를 파괴하며 시간순으로 정렬하여 옮김
     command = f'find {target_dir} -type f -name "*.ts" -exec sh -c \'mv "$0" "{target_dir}/$(date -r "$0" +"%Y%m%d%H%M%S").ts"\' {{}} \\;'
     process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE, shell=True)
-    output, error = process.communicate()    
+    output, error = process.communicate()
+    print(output)
     print(error)
 
     folder_path = target_dir  # 대상 폴더 경로를 지정해주세요
@@ -55,11 +58,14 @@ def reUpload():
 
     print('========================== Conversion Process Start ==========================')
     # ts 파일 경로 목록 생성
-    ts_file_paths = [os.path.join(folder_path, f) for f in ts_files]
+    ts_file_paths = [os.path.abspath(os.path.join(folder_path, f)) for f in ts_files]
 
     # ts 파일들을 합쳐서 .mp4 파일로 변환
     command = ["ffmpeg", "-i", "concat:" + "|".join(ts_file_paths), "-c:v", "copy", "-c:a", "copy", output_file]
-    subprocess.run(command, check=True)
+    process = subprocess.Popen(command, stdout=subprocess.PIPE, stderr=subprocess.PIPE)
+    output, error = process.communicate()
+    print(output)
+    print(error)
     
     print('========================== Conversion Process Done ==========================')
 
