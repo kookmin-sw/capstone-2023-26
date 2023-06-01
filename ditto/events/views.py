@@ -143,7 +143,7 @@ def download_video(request, key):
 
 def reload_table(request, event_id):
     
-    for i in range(10):
+    for i in range(5):
         obj = HeadCount.objects.filter(event_id_id=event_id)
         if obj.exists() == True:
             print('object is exist')

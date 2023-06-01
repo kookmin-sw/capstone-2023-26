@@ -66,7 +66,7 @@ MIDDLEWARE = [
 CRONJOBS = [
     # * * * * * 일분마다 수행 
     ('* * * * *', 'config.cron.updateCountHistory', f'>> {os.path.dirname(os.path.abspath(__file__))}/log/headcount.log'),
-    ('0 * * * *', 'config.cron.reUpload', f'>> {os.path.dirname(os.path.abspath(__file__))}/log/conversion.log')
+    ('* * * * *', 'config.cron.reUpload', f'>> {os.path.dirname(os.path.abspath(__file__))}/log/conversion.log')
 ]
 
 ROOT_URLCONF = 'config.urls'
