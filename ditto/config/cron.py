@@ -86,7 +86,7 @@ def reUpload():
     print("uploaded key:", key_value)
     
     # url 인코딩
-    s3key = parse.quote(key_value)
+    s3key = parse.quote_plus(key_value)
 
     url = 'http://127.0.0.1:8000/api/recordinglog/'
 
